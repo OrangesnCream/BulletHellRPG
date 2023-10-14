@@ -15,6 +15,7 @@ public class BulletParticles : MonoBehaviour
     public Material material;
     public float spin_speed;
     private float time;
+    public LayerMask collision_layers;
 
     public ParticleSystem system;
 
@@ -46,11 +47,10 @@ public class BulletParticles : MonoBehaviour
             go.transform.position = this.transform.position;
             system = go.AddComponent<ParticleSystem>();
             go.GetComponent<ParticleSystemRenderer>().material = particleMaterial;
+            go.layer = LayerMask.NameToLayer("Bullet");
+
             var mainModule = system.main;
-            mainModule.startColor = Color.green;
-            mainModule.startSize = 0.5f;
             mainModule.startSpeed = speed;
-            //mainModule.maxParticles = 10000;
             mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
 
             var emission = system.emission;
@@ -62,9 +62,17 @@ public class BulletParticles : MonoBehaviour
             form.sprite = null;
 
             var text = system.textureSheetAnimation;
+            text.enabled = true;
             text.mode = ParticleSystemAnimationMode.Sprites;
             text.AddSprite(sprite);
-            text.enabled = true;
+
+            var collision = system.collision;
+            collision.enabled = true;
+            collision.type = ParticleSystemCollisionType.World;
+            collision.bounce = 0;
+            collision.lifetimeLoss = 1;
+            collision.mode = ParticleSystemCollisionMode.Collision2D;
+            collision.collidesWith = collision_layers;
         }
 
         // Every 2 secs we will emit.
