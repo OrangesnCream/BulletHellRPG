@@ -12,26 +12,30 @@ public class Enemy_Move : MonoBehaviour
     private Vector2 direction;
     private GameObject player;
     private float movementopportunity;
+    public bool canmove;
 
     public Rigidbody2D rb;
 
     private void Awake()
     {
-        movementopportunity = 0f;
+        movementopportunity = opportunitycheck;
         player = GameObject.FindGameObjectWithTag("Player");
+        canmove = true;
     }
 
     private void FixedUpdate()
     {
         movementopportunity++;
 
-        if (movementopportunity >= opportunitycheck)
+        if (movementopportunity >= opportunitycheck && canmove)
         {
             direction.x = player.transform.position.x - this.gameObject.transform.position.x;
             direction.y = player.transform.position.y - this.gameObject.transform.position.y;
 
             rb.velocity = direction.normalized * speed;
-            movementopportunity = 0;
+            movementopportunity = 0f;
         }
     }
+
+    public void setCanMove(bool canmove) { this.canmove = canmove; }
 }
