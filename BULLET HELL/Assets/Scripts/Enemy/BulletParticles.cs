@@ -9,7 +9,7 @@ public class BulletParticles : MonoBehaviour
     public Sprite sprite;
     public Color color;
     public float lifetime;
-    public float firerate;
+    public int firerate;
     public float size;
     private float angle;
     public Material material;
@@ -28,7 +28,6 @@ public class BulletParticles : MonoBehaviour
     {
         time += Time.fixedDeltaTime;
         this.transform.rotation = Quaternion.Euler(0, 0, time * spin_speed);
-
     }
 
     void Summon()
@@ -41,7 +40,7 @@ public class BulletParticles : MonoBehaviour
             Material particleMaterial = material;
 
             // Create a green Particle System.
-            var go = new GameObject("Particle System");
+            var go = new GameObject("Particle_System_" + i);
             go.transform.Rotate(angle * i, 90, 0); // Rotate so the system emits upwards.
             go.transform.parent = this.transform;
             go.transform.position = this.transform.position;
@@ -52,9 +51,13 @@ public class BulletParticles : MonoBehaviour
             var mainModule = system.main;
             mainModule.startSpeed = speed;
             mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
+            mainModule.startColor = color;
+            mainModule.startSize = size;
+            mainModule.startLifetime = lifetime;
 
             var emission = system.emission;
-            emission.enabled = false;
+            emission.enabled = true;
+            emission.rateOverTime = firerate;
 
             var form = system.shape;
             form.enabled = true;
@@ -74,23 +77,8 @@ public class BulletParticles : MonoBehaviour
             collision.mode = ParticleSystemCollisionMode.Collision2D;
             collision.collidesWith = collision_layers;
         }
-
-        // Every 2 secs we will emit.
-        InvokeRepeating("DoEmit", 0f, firerate);
     }
+    public void setSpinSpeed(float spinspeed) { this.spin_speed = spinspeed; }
+    public float getSpinSpeed() { return this.spin_speed; }
 
-    void DoEmit()
-    {
-        foreach (Transform child in transform)
-        {
-            system = child.GetComponent<ParticleSystem>();
-            // Any parameters we assign in emitParams will override the current system's when we call Emit.
-            // Here we will override the start color and size.
-            var emitParams = new ParticleSystem.EmitParams();
-            emitParams.startColor = color;
-            emitParams.startSize = size;
-            emitParams.startLifetime = lifetime;
-            system.Emit(emitParams, 10);
-        }
-    }
 }
