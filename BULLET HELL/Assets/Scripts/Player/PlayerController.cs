@@ -41,10 +41,12 @@ public class PlayerController : MonoBehaviour
             isDevMode = !isDevMode;
             if(isDevMode){
                 gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                gameObject.transform.GetChild(1).GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = true;
                 Debug.Log("Dev mode enabled");
             }
             else{
                 gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                gameObject.transform.GetChild(1).GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 Debug.Log("Dev mode disabled");
             }
         }
