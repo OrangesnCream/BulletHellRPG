@@ -13,6 +13,8 @@ public class PlayerStats : MonoBehaviour
     public int dashCooldown = 0;
     public DashBar dashBar;
 
+    public float baseDamageInvincibilityTime = 1.0f;
+    public float damageInvincibilityTime = 0f;
 
     void Start()
     {
@@ -36,9 +38,23 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+        takeDamage(10);
+    }
+
     void FixedUpdate()
     {
         dashTimer();
+        damageTimer();
+    }
+
+    void damageTimer()
+    {
+        if (damageInvincibilityTime > 0)
+        {
+            damageInvincibilityTime -= Time.deltaTime;
+        }
     }
 
     void dashTimer(){
@@ -54,9 +70,15 @@ public class PlayerStats : MonoBehaviour
 
     public void takeDamage(int damage)
     {
+        if (damageInvincibilityTime > 0)
+        {
+            Debug.Log("Player is invincible");
+            return;
+        }
+        damageInvincibilityTime = baseDamageInvincibilityTime;
         currentHealth -= damage;
         healthBar.setHealth(currentHealth);
-        Debug.Log(currentHealth);
+        Debug.Log("Player Health: " + currentHealth);
     }
 
     public void heal(int heal)
@@ -68,6 +90,6 @@ public class PlayerStats : MonoBehaviour
             currentHealth += heal;
         }
         healthBar.setHealth(currentHealth);
-        Debug.Log(currentHealth);
+        Debug.Log("Player Health: " + currentHealth);
     }
 }
