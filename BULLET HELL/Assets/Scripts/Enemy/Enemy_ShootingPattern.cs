@@ -5,19 +5,13 @@ using UnityEngine;
 public class Enemy_ShootingPattern : MonoBehaviour
 {
     private List<Transform> children;
-    private List<ParticleSystem> particleSystems;
+    public List<ParticleSystem> particleSystems;
     public float opportunitycheck;
     private float shootopportunity;
     void Start()
     {
-        // Getting Data --------------------------------------------------------
-
-        // - Get Children
         children = GetChildren(transform);
 
-        // Accessing Data ------------------------------------------------------
-
-        // - List/Array
          foreach(Transform child in children)
          {
             particleSystems.Add(child.GetComponent<ParticleSystem>());
@@ -27,16 +21,12 @@ public class Enemy_ShootingPattern : MonoBehaviour
 
     List<Transform> GetChildren(Transform parent)
     {
-        /** Get a list of children from a given parent, either the direct
-            descendants or all recursively. **/
-
         List<Transform> children = new List<Transform>();
 
         foreach (Transform child in parent)
         {
             children.Add(child);
         }
-
         return children;
     }
 
