@@ -47,6 +47,7 @@ public class BulletParticles : MonoBehaviour
             system = go.AddComponent<ParticleSystem>();
             go.GetComponent<ParticleSystemRenderer>().material = particleMaterial;
             go.layer = LayerMask.NameToLayer("Bullet");
+            go.tag = "Enemy_Bullet";
 
             var mainModule = system.main;
             mainModule.startSpeed = speed;
@@ -76,6 +77,7 @@ public class BulletParticles : MonoBehaviour
             collision.lifetimeLoss = 1;
             collision.mode = ParticleSystemCollisionMode.Collision2D;
             collision.collidesWith = collision_layers;
+            collision.sendCollisionMessages = true;
         }
     }
     public void setSpinSpeed(float spinspeed) { this.spin_speed = spinspeed; }

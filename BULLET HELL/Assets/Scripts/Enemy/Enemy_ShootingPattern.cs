@@ -36,17 +36,7 @@ public class Enemy_ShootingPattern : MonoBehaviour
 
         if (shootopportunity >= opportunitycheck)
         {
-            foreach (ParticleSystem particle in particleSystems)
-            {
-                if (particle.isPlaying)
-                {
-                    particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-                }
-                else
-                {
-                    particle.Play();
-                }
-            }
+            //firetoggle();
             shootopportunity = 0;
         }
     }
@@ -79,5 +69,20 @@ public class Enemy_ShootingPattern : MonoBehaviour
     {
         var mainModule = particleSystems[0].main;
         return mainModule.startSpeed.constant;
+    }
+
+    public void firetoggle()
+    {
+        foreach (ParticleSystem particle in particleSystems)
+            {
+                if (particle.isPlaying)
+                {
+                    particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                }
+                else
+                {
+                    particle.Play();
+                }
+            }
     }
 }
