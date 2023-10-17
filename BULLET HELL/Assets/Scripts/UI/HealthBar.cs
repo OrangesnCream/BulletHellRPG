@@ -18,8 +18,8 @@ public class HealthBar : MonoBehaviour
         slider.value = health;
     }
 
-    public float getHealth()
+    public int getHealth()
     {
-        return slider.value;
+        return (int) slider.value;
     }
 }

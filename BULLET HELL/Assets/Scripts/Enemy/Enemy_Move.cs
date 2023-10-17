@@ -5,13 +5,11 @@ using UnityEngine;
 public class Enemy_Move : MonoBehaviour
 {
     private float speed;
-    [SerializeField]
-    public float opportunitycheck;
-
+    private float opportunitycheck;
     private Vector2 direction;
     private GameObject player;
     private float movementopportunity;
-    public bool canmove;
+    private bool canmove;
 
     public Rigidbody2D rb;
 
@@ -40,5 +38,9 @@ public class Enemy_Move : MonoBehaviour
 
     public void setMoveSpeed(float speed) { this.speed = speed; }
 
+    public void setMovementOpportunityCheck(float movementopportunity) { this.opportunitycheck = movementopportunity; }
+
     public float getMoveSpeed() { return this.speed;}
+
+    public float getMovementOpportunityCheck() { return  this.opportunitycheck;}
 }

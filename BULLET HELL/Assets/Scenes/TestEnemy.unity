@@ -447,8 +447,9 @@ GameObject:
   - component: {fileID: 482459313}
   - component: {fileID: 482459312}
   - component: {fileID: 482459311}
+  - component: {fileID: 482459314}
   m_Layer: 7
-  m_Name: Canvas
+  m_Name: Enemy_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,6 +538,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &482459314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482459309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe49410e00f53774e9536b7fc61e5de1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 2132586538}
 --- !u!1 &485206811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,7 +1039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9ee6c56611fba47b4b86d61fd6d7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
   opportunitycheck: 30
   canmove: 1
   rb: {fileID: 851531124}
@@ -1098,7 +1111,10 @@ MonoBehaviour:
   desired_SpinSpeed: -30
   desired_Size: 0.5
   desired_Bounce: 1
-  desired_OpportunityCheck: 50
+  desired_ShootOpportunityCheck: 0
+  desired_MoveSpeed: 0
+  desired_MoveOpportunityCheck: 0
+  desired_MaxHealth: 5
 --- !u!1 &859680268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,7 +1615,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1137590667}
-  - component: {fileID: 1137590668}
   m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
@@ -1628,19 +1643,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 1.4}
   m_SizeDelta: {x: 3, y: 0.75}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1137590668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1137590666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe49410e00f53774e9536b7fc61e5de1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 2132586538}
 --- !u!1 &1566353253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,7 +1930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9ee6c56611fba47b4b86d61fd6d7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
   opportunitycheck: 30
   canmove: 0
   rb: {fileID: 1770435180}

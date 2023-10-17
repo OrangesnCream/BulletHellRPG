@@ -8,24 +8,25 @@ public class Enemy_Controller : MonoBehaviour
     private Enemy_Move move;
     private BulletParticles particles;
     private HealthBar healthBar;
-    private int tempFireRate;
-    private float tempBulletSpeed;
-    private float tempSpinSpeed;
-    private float tempSize;
-    private int tempBounce;
-    private int tempOpportunityCheck;
-    private float tempMoveSpeed;
-    private float tempHealth;
+    private int temp_FireRate;
+    private float temp_BulletSpeed;
+    private float temp_SpinSpeed;
+    private float temp_Size;
+    private int temp_Bounce;
+    private int temp_ShootOpportunityCheck;
+    private float temp_MoveSpeed;
+    private float temp_MoveOpportunityCheck;
+    private int temp_Health;
 
     public int desired_FireRate;
     public float desired_BulletSpeed;
     public float desired_SpinSpeed;
     public float desired_Size;
     public int desired_Bounce;
-    public int desired_OpportunityCheck;
+    public int desired_ShootOpportunityCheck;
     public float desired_MoveSpeed;
+    public float desired_MoveOpportunityCheck;
     public int desired_MaxHealth;
-    public int desired_Health;
 
     // Start is called before the first frame update
     private void Start()
@@ -40,22 +41,39 @@ public class Enemy_Controller : MonoBehaviour
         particles.setSpinSpeed(desired_SpinSpeed);
         shootingPattern.setSize(desired_Size);
         shootingPattern.setBounce(desired_Bounce);
-        shootingPattern.setOpportunityCheck(desired_OpportunityCheck);
+        shootingPattern.setOpportunityCheck(desired_ShootOpportunityCheck);
         move.setMoveSpeed(desired_MoveSpeed);
+        move.setMovementOpportunityCheck(desired_MoveOpportunityCheck);
         healthBar.setMaxHealth(desired_MaxHealth);
-        healthBar.setHealth(desired_Health);
 
-
-
-        tempFireRate = shootingPattern.getFireRate();
-        tempBulletSpeed = shootingPattern.getBulletSpeed();
-        tempSpinSpeed = particles.getSpinSpeed();
-        tempSize = shootingPattern.getSize();
-        tempBounce = shootingPattern.getBounce();
-        tempOpportunityCheck = shootingPattern.getOpportunityCheck();
-        tempMoveSpeed = move.getMoveSpeed();
-        tempHealth = healthBar.getHealth();
+        temp_FireRate = shootingPattern.getFireRate();
+        temp_BulletSpeed = shootingPattern.getBulletSpeed();
+        temp_SpinSpeed = particles.getSpinSpeed();
+        temp_Size = shootingPattern.getSize();
+        temp_Bounce = shootingPattern.getBounce();
+        temp_ShootOpportunityCheck = shootingPattern.getOpportunityCheck();
+        temp_MoveSpeed = move.getMoveSpeed();
+        temp_MoveOpportunityCheck = move.getMovementOpportunityCheck();
+        temp_Health = healthBar.getHealth();
     }
 
-    
+    public void resetFireRate() { shootingPattern.setFireRate(temp_FireRate); }
+
+    public void resetBulletSpeed() { shootingPattern.setBulletSpeed(temp_BulletSpeed); }
+
+    public void resetSpinSpeed() { particles.setSpinSpeed(temp_SpinSpeed); }
+
+    public void resetSize() { shootingPattern.setSize(temp_Size); }
+
+    public void resetBounce() { shootingPattern.setBounce(temp_Bounce); }
+
+    public void resetShootOpportunityCheck() { shootingPattern.setOpportunityCheck(temp_ShootOpportunityCheck); }
+
+    public void resetMoveSpeed() { move.setMoveSpeed(temp_MoveSpeed); }
+
+    public void resetMoveOpportunityCheck() { move.setMovementOpportunityCheck(desired_MoveOpportunityCheck); }
+
+    public void resetMaxHealth() { healthBar.setMaxHealth(desired_MaxHealth); }
+
+    public void resetHealth() { healthBar.setHealth(temp_Health); }
 }
