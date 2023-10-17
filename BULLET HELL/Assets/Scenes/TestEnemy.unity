@@ -596,7 +596,7 @@ MonoBehaviour:
   firerate: 3
   size: 0.5
   material: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
-  spin_speed: 10
+  spin_speed: 20
   collision_layers:
     serializedVersion: 2
     m_Bits: 320
@@ -613,6 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b5c90800442374996c0aa113eee289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSystems: []
   opportunitycheck: 200
 --- !u!1 &851531121
 GameObject:
@@ -627,6 +628,7 @@ GameObject:
   - component: {fileID: 851531125}
   - component: {fileID: 851531124}
   - component: {fileID: 851531123}
+  - component: {fileID: 851531127}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -780,6 +782,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &851531127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851531121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deda84f57e25c5c428ad8a6251931572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &859680268
 GameObject:
   m_ObjectHideFlags: 0

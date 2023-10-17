@@ -5,38 +5,29 @@ using UnityEngine;
 public class Enemy_ShootingPattern : MonoBehaviour
 {
     private List<Transform> children;
-    private List<ParticleSystem> particleSystems;
-    public float opportunitycheck;
-    private float shootopportunity;
+    public List<ParticleSystem> particleSystems;
+    private int opportunitycheck;
+    private int shootopportunity;
+    private bool isplaying;
     void Start()
     {
-        // Getting Data --------------------------------------------------------
-
-        // - Get Children
         children = GetChildren(transform);
 
-        // Accessing Data ------------------------------------------------------
-
-        // - List/Array
          foreach(Transform child in children)
          {
             particleSystems.Add(child.GetComponent<ParticleSystem>());
          }
-
+         this.isplaying = false;
     }
 
     List<Transform> GetChildren(Transform parent)
     {
-        /** Get a list of children from a given parent, either the direct
-            descendants or all recursively. **/
-
         List<Transform> children = new List<Transform>();
 
         foreach (Transform child in parent)
         {
             children.Add(child);
         }
-
         return children;
     }
 
@@ -44,21 +35,28 @@ public class Enemy_ShootingPattern : MonoBehaviour
     {
         shootopportunity++;
 
-        if (shootopportunity >= opportunitycheck)
+        if (shootopportunity >= opportunitycheck && !isplaying)
         {
-            foreach (ParticleSystem particle in particleSystems)
-            {
-                if (particle.isPlaying)
-                {
-                    particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-                }
-                else
-                {
-                    particle.Play();
-                }
-            }
+            firetoggle();
             shootopportunity = 0;
         }
+    }
+
+    public void firetoggle()
+    {
+        this.isplaying = true;
+        foreach (ParticleSystem particle in particleSystems)
+        {
+            if (particle.isEmitting)
+            {
+                particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            }
+            else
+            {
+                particle.Play();
+            }
+        }
+        this.isplaying = false;
     }
 
     public void setFireRate(int rate)
@@ -79,15 +77,55 @@ public class Enemy_ShootingPattern : MonoBehaviour
         }
     }
 
-    public float getFireRate()
+    public void setSize(float size)
+    {
+        foreach (ParticleSystem particle in particleSystems)
+        {
+            var mainModule = particle.main;
+            mainModule.startSize = size;
+        }
+    }
+
+    public void setBounce(int bounce)
+    {
+        foreach (ParticleSystem particle in particleSystems)
+        {
+            var collision = particle.collision;
+            collision.bounce = bounce;
+        }
+    }
+
+    public void setOpportunityCheck(int opportunity)
+    {
+        opportunitycheck = opportunity;
+    }
+
+    public int getFireRate()
     {
         var emission = particleSystems[0].emission;
-        return emission.rateOverTime.constant;
+        return (int) emission.rateOverTime.constant;
     }
 
     public float getBulletSpeed()
     {
         var mainModule = particleSystems[0].main;
         return mainModule.startSpeed.constant;
+    }
+
+    public float getSize()
+    {
+        var mainModule = particleSystems[0].main;
+        return mainModule.startSize.constant;
+    }
+
+    public int getBounce()
+    {
+        var collision = particleSystems[0].collision;
+        return (int) collision.bounce.constant;
+    }
+
+    public int getOpportunityCheck()
+    {
+        return this.opportunitycheck;
     }
 }

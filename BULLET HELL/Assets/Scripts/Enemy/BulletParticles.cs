@@ -5,15 +5,15 @@ using UnityEngine;
 public class BulletParticles : MonoBehaviour
 {
     public int number_of_columns;
-    public float speed;
+    private float bullet_speed;
     public Sprite sprite;
     public Color color;
     public float lifetime;
-    public int firerate;
-    public float size;
+    private int firerate;
+    private float size;
     private float angle;
     public Material material;
-    public float spin_speed;
+    private float spin_speed;
     private float time;
     public LayerMask collision_layers;
 
@@ -47,9 +47,10 @@ public class BulletParticles : MonoBehaviour
             system = go.AddComponent<ParticleSystem>();
             go.GetComponent<ParticleSystemRenderer>().material = particleMaterial;
             go.layer = LayerMask.NameToLayer("Bullet");
+            go.tag = "Enemy_Bullet";
 
             var mainModule = system.main;
-            mainModule.startSpeed = speed;
+            mainModule.startSpeed = bullet_speed;
             mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
             mainModule.startColor = color;
             mainModule.startSize = size;
@@ -76,6 +77,7 @@ public class BulletParticles : MonoBehaviour
             collision.lifetimeLoss = 1;
             collision.mode = ParticleSystemCollisionMode.Collision2D;
             collision.collidesWith = collision_layers;
+            collision.sendCollisionMessages = true;
         }
     }
     public void setSpinSpeed(float spinspeed) { this.spin_speed = spinspeed; }
