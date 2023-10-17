@@ -8,7 +8,9 @@ public class Bullet : MonoBehaviour
     private Camera cam;
     private Rigidbody2D rb;
     public float speed = 20f;
+    public float bulletDamage = 10f;
     public float lifeTime = 5f;
+    public bool canPierce = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,16 @@ public class Bullet : MonoBehaviour
         lifeTime -= Time.deltaTime;
         if(lifeTime <= 0){
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D hit) {
+        if(hit.transform.gameObject.tag == "Enemy"){
+            Debug.Log("Shot " + hit.transform.gameObject.name + " for " + (bulletDamage) + " damage");
+            // hit.gameObject.GetComponent<Enemy>().TakeDamage(bulletDamage);
+            if(!canPierce){
+                Destroy(gameObject);
+            }
         }
     }
 }
