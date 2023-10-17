@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Enemy_Move : MonoBehaviour
 {
-    [SerializeField]
-    public float speed;
+    private float speed;
     [SerializeField]
     public float opportunitycheck;
 
@@ -38,4 +37,8 @@ public class Enemy_Move : MonoBehaviour
     }
 
     public void setCanMove(bool canmove) { this.canmove = canmove; }
+
+    public void setMoveSpeed(float speed) { this.speed = speed; }
+
+    public float getMoveSpeed() { return this.speed;}
 }
