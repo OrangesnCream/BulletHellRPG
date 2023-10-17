@@ -8,6 +8,7 @@ public class Enemy_ShootingPattern : MonoBehaviour
     public List<ParticleSystem> particleSystems;
     public float opportunitycheck;
     private float shootopportunity;
+    private bool isplaying;
     void Start()
     {
         children = GetChildren(transform);
@@ -16,7 +17,7 @@ public class Enemy_ShootingPattern : MonoBehaviour
          {
             particleSystems.Add(child.GetComponent<ParticleSystem>());
          }
-
+         this.isplaying = false;
     }
 
     List<Transform> GetChildren(Transform parent)
@@ -34,11 +35,28 @@ public class Enemy_ShootingPattern : MonoBehaviour
     {
         shootopportunity++;
 
-        if (shootopportunity >= opportunitycheck)
+        if (shootopportunity >= opportunitycheck && !isplaying)
         {
-            //firetoggle();
+            firetoggle();
             shootopportunity = 0;
         }
+    }
+
+    public void firetoggle()
+    {
+        this.isplaying = true;
+        foreach (ParticleSystem particle in particleSystems)
+        {
+            if (particle.isEmitting)
+            {
+                particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            }
+            else
+            {
+                particle.Play();
+            }
+        }
+        this.isplaying = false;
     }
 
     public void setFireRate(int rate)
@@ -69,20 +87,5 @@ public class Enemy_ShootingPattern : MonoBehaviour
     {
         var mainModule = particleSystems[0].main;
         return mainModule.startSpeed.constant;
-    }
-
-    public void firetoggle()
-    {
-        foreach (ParticleSystem particle in particleSystems)
-            {
-                if (particle.isPlaying)
-                {
-                    particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-                }
-                else
-                {
-                    particle.Play();
-                }
-            }
     }
 }
