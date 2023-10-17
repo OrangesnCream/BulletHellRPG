@@ -28,7 +28,8 @@ public class Enemy_Controller : MonoBehaviour
     public float desired_MoveOpportunityCheck;
     public int desired_MaxHealth;
 
-    // Start is called before the first frame update
+    public int dashMultiplier;
+
     private void Start()
     {
         shootingPattern = this.gameObject.GetComponentInChildren<Enemy_ShootingPattern>();
@@ -71,9 +72,34 @@ public class Enemy_Controller : MonoBehaviour
 
     public void resetMoveSpeed() { move.setMoveSpeed(temp_MoveSpeed); }
 
-    public void resetMoveOpportunityCheck() { move.setMovementOpportunityCheck(desired_MoveOpportunityCheck); }
+    public void resetMoveOpportunityCheck() { move.setMovementOpportunityCheck(temp_MoveOpportunityCheck); }
 
     public void resetMaxHealth() { healthBar.setMaxHealth(desired_MaxHealth); }
 
     public void resetHealth() { healthBar.setHealth(temp_Health); }
+
+    public void dash()
+    {
+        move.setMoveSpeed(this.dashMultiplier * this.desired_MoveSpeed);
+        move.setCanMove(true);
+        move.setMovementOpportunityCheck(0);
+        resetMoveSpeed();
+        resetMoveOpportunityCheck();
+    }
+
+    public void movement()
+    {
+
+    }
+
+    public void shoot()
+    {
+        resetBulletSpeed();
+        resetShootOpportunityCheck();
+    }
+
+    public void spin()
+    {
+        resetSpinSpeed();
+    }
 }
