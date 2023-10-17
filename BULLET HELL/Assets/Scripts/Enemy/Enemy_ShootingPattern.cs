@@ -9,7 +9,7 @@ public class Enemy_ShootingPattern : MonoBehaviour
     private int opportunitycheck;
     private int shootopportunity;
     private bool isplaying;
-    void Start()
+    private void Start()
     {
         children = GetChildren(transform);
 
@@ -20,7 +20,7 @@ public class Enemy_ShootingPattern : MonoBehaviour
          this.isplaying = false;
     }
 
-    List<Transform> GetChildren(Transform parent)
+    private List<Transform> GetChildren(Transform parent)
     {
         List<Transform> children = new List<Transform>();
 
