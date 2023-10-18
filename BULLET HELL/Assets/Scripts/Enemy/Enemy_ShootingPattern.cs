@@ -6,9 +6,7 @@ public class Enemy_ShootingPattern : MonoBehaviour
 {
     private List<Transform> children;
     public List<ParticleSystem> particleSystems;
-    private int opportunitycheck;
-    private int shootopportunity;
-    private bool isplaying;
+    private bool canShoot;
     private void Start()
     {
         children = GetChildren(transform);
@@ -17,7 +15,6 @@ public class Enemy_ShootingPattern : MonoBehaviour
          {
             particleSystems.Add(child.GetComponent<ParticleSystem>());
          }
-         this.isplaying = false;
     }
 
     private List<Transform> GetChildren(Transform parent)
@@ -31,33 +28,25 @@ public class Enemy_ShootingPattern : MonoBehaviour
         return children;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        shootopportunity++;
-
-        if (shootopportunity >= opportunitycheck && !isplaying)
+        if (canShoot)
         {
-            firetoggle();
-            shootopportunity = 0;
+            foreach(ParticleSystem particleSystem in particleSystems)
+            {
+                particleSystem.Play();
+            }
+        }
+        else
+        {
+            foreach (ParticleSystem particleSystem in particleSystems)
+            {
+                particleSystem.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            }
         }
     }
 
-    public void firetoggle()
-    {
-        this.isplaying = true;
-        foreach (ParticleSystem particle in particleSystems)
-        {
-            if (particle.isEmitting)
-            {
-                particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-            }
-            else
-            {
-                particle.Play();
-            }
-        }
-        this.isplaying = false;
-    }
+    public void setCanShoot(bool canShoot) { this.canShoot = canShoot; }
 
     public void setFireRate(int rate)
     {
@@ -95,11 +84,6 @@ public class Enemy_ShootingPattern : MonoBehaviour
         }
     }
 
-    public void setOpportunityCheck(int opportunity)
-    {
-        opportunitycheck = opportunity;
-    }
-
     public int getFireRate()
     {
         var emission = particleSystems[0].emission;
@@ -122,10 +106,5 @@ public class Enemy_ShootingPattern : MonoBehaviour
     {
         var collision = particleSystems[0].collision;
         return (int) collision.bounce.constant;
-    }
-
-    public int getOpportunityCheck()
-    {
-        return this.opportunitycheck;
     }
 }

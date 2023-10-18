@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,12 +11,9 @@ public class Enemy_Controller : MonoBehaviour
     private HealthBar healthBar;
     private int temp_FireRate;
     private float temp_BulletSpeed;
-    private float temp_SpinSpeed;
     private float temp_Size;
     private int temp_Bounce;
-    private int temp_ShootOpportunityCheck;
     private float temp_MoveSpeed;
-    private float temp_MoveOpportunityCheck;
     private int temp_Health;
 
     public int desired_FireRate;
@@ -23,9 +21,8 @@ public class Enemy_Controller : MonoBehaviour
     public float desired_SpinSpeed;
     public float desired_Size;
     public int desired_Bounce;
-    public int desired_ShootOpportunityCheck;
     public float desired_MoveSpeed;
-    public float desired_MoveOpportunityCheck;
+    public int desired_MoveOpportunityCheck;
     public int desired_MaxHealth;
 
     public int dashMultiplier;
@@ -42,64 +39,122 @@ public class Enemy_Controller : MonoBehaviour
         particles.setSpinSpeed(desired_SpinSpeed);
         shootingPattern.setSize(desired_Size);
         shootingPattern.setBounce(desired_Bounce);
-        shootingPattern.setOpportunityCheck(desired_ShootOpportunityCheck);
         move.setMoveSpeed(desired_MoveSpeed);
         move.setMovementOpportunityCheck(desired_MoveOpportunityCheck);
         healthBar.setMaxHealth(desired_MaxHealth);
 
         temp_FireRate = shootingPattern.getFireRate();
         temp_BulletSpeed = shootingPattern.getBulletSpeed();
-        temp_SpinSpeed = particles.getSpinSpeed();
         temp_Size = shootingPattern.getSize();
         temp_Bounce = shootingPattern.getBounce();
-        temp_ShootOpportunityCheck = shootingPattern.getOpportunityCheck();
         temp_MoveSpeed = move.getMoveSpeed();
-        temp_MoveOpportunityCheck = move.getMovementOpportunityCheck();
         temp_Health = healthBar.getHealth();
     }
+
+    //--------------------reset functions-----------------------
 
     public void resetFireRate() { shootingPattern.setFireRate(temp_FireRate); }
 
     public void resetBulletSpeed() { shootingPattern.setBulletSpeed(temp_BulletSpeed); }
 
-    public void resetSpinSpeed() { particles.setSpinSpeed(temp_SpinSpeed); }
+    public void resetSpinSpeed() { particles.setSpinSpeed(0); }
 
     public void resetSize() { shootingPattern.setSize(temp_Size); }
 
     public void resetBounce() { shootingPattern.setBounce(temp_Bounce); }
 
-    public void resetShootOpportunityCheck() { shootingPattern.setOpportunityCheck(temp_ShootOpportunityCheck); }
-
     public void resetMoveSpeed() { move.setMoveSpeed(temp_MoveSpeed); }
-
-    public void resetMoveOpportunityCheck() { move.setMovementOpportunityCheck(temp_MoveOpportunityCheck); }
 
     public void resetMaxHealth() { healthBar.setMaxHealth(desired_MaxHealth); }
 
     public void resetHealth() { healthBar.setHealth(temp_Health); }
 
-    public void dash()
+    //----------action nullifier---------------------
+
+    public void actionNull()
     {
+        resetMoveSpeed();
+        move.setCanMove(false);
+        shootingPattern.setCanShoot(false);
+        resetSpinSpeed();
+    }
+
+    //----------------------basic actions-----------------------
+
+    public void startDash()
+    {
+        actionNull();
         move.setMoveSpeed(this.dashMultiplier * this.desired_MoveSpeed);
         move.setCanMove(true);
-        move.setMovementOpportunityCheck(0);
-        resetMoveSpeed();
-        resetMoveOpportunityCheck();
     }
 
-    public void movement()
+    public void startMovement()
     {
-
+        actionNull();
+        move.setCanMove(true);
     }
 
-    public void shoot()
+    public void startShoot()
     {
-        resetBulletSpeed();
-        resetShootOpportunityCheck();
+        actionNull();
+        shootingPattern.setCanShoot(true);
     }
 
-    public void spin()
+    public void startSpin()
     {
-        resetSpinSpeed();
+        actionNull();
+        shootingPattern.setCanShoot(true);
+        particles.setSpinSpeed(desired_SpinSpeed);
+    }
+
+    public void startSpinOpposite()
+    {
+        actionNull();
+        shootingPattern.setCanShoot(true);
+        particles.setSpinSpeed(-1 * desired_SpinSpeed);
+    }
+
+    //----------action combos-------------------
+
+    public void startDashShoot()
+    {
+        actionNull();
+        startDash();
+        startShoot();
+    }
+
+    public void startDashSpin()
+    {
+        actionNull();
+        startDash();
+        startSpin();
+    }
+
+    public void startDashSpinOpposite()
+    {
+        actionNull();
+        startDash();
+        startSpinOpposite();
+    }
+
+    public void startMoveShoot()
+    {
+        actionNull();
+        startMovement();
+        startShoot();
+    }
+
+    public void startMoveSpin()
+    {
+        actionNull();
+        startMovement();
+        startSpin();
+    }
+
+    public void startMoveSpinOpposite()
+    {
+        actionNull();
+        startMovement();
+        startSpinOpposite();
     }
 }
