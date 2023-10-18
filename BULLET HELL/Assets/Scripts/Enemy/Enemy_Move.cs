@@ -16,7 +16,8 @@ public class Enemy_Move : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        canmove = true;
+        canmove = false;
+        movementopportunity = opportunitycheck;
     }
 
     private void FixedUpdate()

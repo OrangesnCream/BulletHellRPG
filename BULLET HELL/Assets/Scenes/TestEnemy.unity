@@ -854,7 +854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38077e4f30f66084199f12d71dc00a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number_of_columns: 6
+  number_of_columns: 4
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   color: {r: 1, g: 0.5882352, b: 0, a: 1}
   lifetime: 10
@@ -941,6 +941,7 @@ GameObject:
   - component: {fileID: 851531124}
   - component: {fileID: 851531123}
   - component: {fileID: 851531127}
+  - component: {fileID: 851531128}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -1026,7 +1027,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!114 &851531125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1105,15 +1106,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   desired_FireRate: 3
-  desired_BulletSpeed: 2
+  desired_BulletSpeed: 3
   desired_SpinSpeed: 20
   desired_Size: 0.5
   desired_Bounce: 1
-  desired_ShootOpportunityCheck: 200
-  desired_MoveSpeed: 0
-  desired_MoveOpportunityCheck: 0
+  desired_MoveSpeed: 1.5
+  desired_MoveOpportunityCheck: 50
   desired_MaxHealth: 5
-  dashMultiplier: 0
+  dashMultiplier: 5
+--- !u!114 &851531128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851531121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27cf296865b4c0748b609fd1c603116e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 851531127}
+  oppurtinutycheck: 200
 --- !u!1 &859680268
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,6 +26,7 @@ public class Enemy_Controller : MonoBehaviour
     public int desired_MaxHealth;
 
     public int dashMultiplier;
+    private bool nullNeeded;
 
     private void Start()
     {
@@ -49,6 +50,8 @@ public class Enemy_Controller : MonoBehaviour
         temp_Bounce = shootingPattern.getBounce();
         temp_MoveSpeed = move.getMoveSpeed();
         temp_Health = healthBar.getHealth();
+
+        nullNeeded = true;
     }
 
     //--------------------reset functions-----------------------
@@ -83,33 +86,48 @@ public class Enemy_Controller : MonoBehaviour
 
     public void startDash()
     {
-        actionNull();
+        if (nullNeeded)
+        {
+            actionNull();
+        }
         move.setMoveSpeed(this.dashMultiplier * this.desired_MoveSpeed);
         move.setCanMove(true);
     }
 
     public void startMovement()
     {
-        actionNull();
+        if (nullNeeded)
+        {
+            actionNull();
+        }
         move.setCanMove(true);
     }
 
     public void startShoot()
     {
-        actionNull();
+        if (nullNeeded)
+        {
+            actionNull();
+        }
         shootingPattern.setCanShoot(true);
     }
 
     public void startSpin()
     {
-        actionNull();
+        if (nullNeeded)
+        {
+            actionNull();
+        }
         shootingPattern.setCanShoot(true);
         particles.setSpinSpeed(desired_SpinSpeed);
     }
 
     public void startSpinOpposite()
     {
-        actionNull();
+        if (nullNeeded)
+        {
+            actionNull();
+        }
         shootingPattern.setCanShoot(true);
         particles.setSpinSpeed(-1 * desired_SpinSpeed);
     }
@@ -119,42 +137,54 @@ public class Enemy_Controller : MonoBehaviour
     public void startDashShoot()
     {
         actionNull();
+        this.nullNeeded = false;
         startDash();
         startShoot();
+        this.nullNeeded = true;
     }
 
     public void startDashSpin()
     {
         actionNull();
+        this.nullNeeded = false;
         startDash();
         startSpin();
+        this.nullNeeded = true;
     }
 
     public void startDashSpinOpposite()
     {
         actionNull();
+        this.nullNeeded = false;
         startDash();
         startSpinOpposite();
+        this.nullNeeded = true;
     }
 
     public void startMoveShoot()
     {
         actionNull();
+        this.nullNeeded = false;
         startMovement();
         startShoot();
+        this.nullNeeded = true;
     }
 
     public void startMoveSpin()
     {
         actionNull();
+        this.nullNeeded = false;
         startMovement();
         startSpin();
+        this.nullNeeded = true;
     }
 
     public void startMoveSpinOpposite()
     {
         actionNull();
+        this.nullNeeded = false;
         startMovement();
         startSpinOpposite();
+        this.nullNeeded = true;
     }
 }
