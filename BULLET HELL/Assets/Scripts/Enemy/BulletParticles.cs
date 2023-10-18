@@ -32,7 +32,7 @@ public class BulletParticles : MonoBehaviour
 
     void Summon()
     {
-        angle = 180 / number_of_columns;
+        angle = 360 / number_of_columns;
 
         for (int i = 0; i < number_of_columns; i++)
         {

@@ -28,7 +28,7 @@ public class Enemy_ShootingPattern : MonoBehaviour
         return children;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (canShoot)
         {

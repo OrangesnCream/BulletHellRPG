@@ -15,7 +15,6 @@ public class Enemy_Move : MonoBehaviour
 
     private void Awake()
     {
-        movementopportunity = opportunitycheck;
         player = GameObject.FindGameObjectWithTag("Player");
         canmove = true;
     }
@@ -41,6 +40,4 @@ public class Enemy_Move : MonoBehaviour
     public void setMovementOpportunityCheck(float movementopportunity) { this.opportunitycheck = movementopportunity; }
 
     public float getMoveSpeed() { return this.speed;}
-
-    public float getMovementOpportunityCheck() { return  this.opportunitycheck;}
 }

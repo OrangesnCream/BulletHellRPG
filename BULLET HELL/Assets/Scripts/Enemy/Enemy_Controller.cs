@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,6 @@ public class Enemy_Controller : MonoBehaviour
     private HealthBar healthBar;
     private int temp_FireRate;
     private float temp_BulletSpeed;
-    private float temp_SpinSpeed;
     private float temp_Size;
     private int temp_Bounce;
     private float temp_MoveSpeed;
@@ -22,9 +22,12 @@ public class Enemy_Controller : MonoBehaviour
     public float desired_Size;
     public int desired_Bounce;
     public float desired_MoveSpeed;
+    public int desired_MoveOpportunityCheck;
     public int desired_MaxHealth;
 
     public int dashMultiplier;
+
+    private List<Action> AttackPattern;
 
     private void Start()
     {
@@ -39,22 +42,24 @@ public class Enemy_Controller : MonoBehaviour
         shootingPattern.setSize(desired_Size);
         shootingPattern.setBounce(desired_Bounce);
         move.setMoveSpeed(desired_MoveSpeed);
+        move.setMovementOpportunityCheck(desired_MoveOpportunityCheck);
         healthBar.setMaxHealth(desired_MaxHealth);
 
         temp_FireRate = shootingPattern.getFireRate();
         temp_BulletSpeed = shootingPattern.getBulletSpeed();
-        temp_SpinSpeed = particles.getSpinSpeed();
         temp_Size = shootingPattern.getSize();
         temp_Bounce = shootingPattern.getBounce();
         temp_MoveSpeed = move.getMoveSpeed();
         temp_Health = healthBar.getHealth();
     }
 
+    //--------------------reset functions-----------------------
+
     public void resetFireRate() { shootingPattern.setFireRate(temp_FireRate); }
 
     public void resetBulletSpeed() { shootingPattern.setBulletSpeed(temp_BulletSpeed); }
 
-    public void resetSpinSpeed() { particles.setSpinSpeed(temp_SpinSpeed); }
+    public void resetSpinSpeed() { particles.setSpinSpeed(0); }
 
     public void resetSize() { shootingPattern.setSize(temp_Size); }
 
@@ -66,37 +71,92 @@ public class Enemy_Controller : MonoBehaviour
 
     public void resetHealth() { healthBar.setHealth(temp_Health); }
 
+    //----------------------basic actions-----------------------
+
     public void startDash()
     {
+        actionNull();
         move.setMoveSpeed(this.dashMultiplier * this.desired_MoveSpeed);
         move.setCanMove(true);
     }
 
-    public void stopDash()
-    {
-        resetMoveSpeed();
-        move.setCanMove(false);
-    }
-
     public void startMovement()
     {
-        move.setMoveSpeed(this.desired_MoveSpeed);
+        actionNull();
         move.setCanMove(true);
-    }
-
-    public void stopMovement()
-    {
-        resetMoveSpeed();
-        move.setCanMove(false);
     }
 
     public void startShoot()
     {
-        resetBulletSpeed();
+        actionNull();
+        shootingPattern.setCanShoot(true);
     }
 
-    public void spin()
+    public void startSpin()
     {
+        actionNull();
+        startShoot();
+        particles.setSpinSpeed(desired_SpinSpeed);
+    }
+
+    public void startSpinOpposite()
+    {
+        actionNull();
+        startShoot();
+        particles.setSpinSpeed(-1 * desired_SpinSpeed);
+    }
+
+    //----------action nullifier---------------------
+
+    public void actionNull()
+    {
+        resetMoveSpeed();
+        move.setCanMove(false);
+        shootingPattern.setCanShoot(false);
         resetSpinSpeed();
+    }
+
+    //----------action combos-------------------
+
+    public void startDashShoot()
+    {
+        actionNull();
+        startDash();
+        startShoot();
+    }
+
+    public void startDashSpin()
+    {
+        actionNull();
+        startDash();
+        startSpin();
+    }
+
+    public void startDashSpinOpposite()
+    {
+        actionNull();
+        startDash();
+        startSpinOpposite();
+    }
+
+    public void startMoveShoot()
+    {
+        actionNull();
+        startMovement();
+        startShoot();
+    }
+
+    public void startMoveSpin()
+    {
+        actionNull();
+        startMovement();
+        startSpin();
+    }
+
+    public void startMoveSpinOpposite()
+    {
+        actionNull();
+        startMovement();
+        startSpinOpposite();
     }
 }
