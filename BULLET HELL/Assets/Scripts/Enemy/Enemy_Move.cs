@@ -25,11 +25,18 @@ public class Enemy_Move : MonoBehaviour
 
         if (movementopportunity >= opportunitycheck && canmove)
         {
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             direction.x = player.transform.position.x - this.gameObject.transform.position.x;
             direction.y = player.transform.position.y - this.gameObject.transform.position.y;
 
             rb.velocity = direction.normalized * speed;
             movementopportunity = 0f;
+        }
+        else if (!canmove)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 

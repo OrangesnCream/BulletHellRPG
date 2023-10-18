@@ -27,8 +27,6 @@ public class Enemy_Controller : MonoBehaviour
 
     public int dashMultiplier;
 
-    private List<Action> AttackPattern;
-
     private void Start()
     {
         shootingPattern = this.gameObject.GetComponentInChildren<Enemy_ShootingPattern>();
@@ -71,6 +69,16 @@ public class Enemy_Controller : MonoBehaviour
 
     public void resetHealth() { healthBar.setHealth(temp_Health); }
 
+    //----------action nullifier---------------------
+
+    public void actionNull()
+    {
+        resetMoveSpeed();
+        move.setCanMove(false);
+        shootingPattern.setCanShoot(false);
+        resetSpinSpeed();
+    }
+
     //----------------------basic actions-----------------------
 
     public void startDash()
@@ -95,25 +103,15 @@ public class Enemy_Controller : MonoBehaviour
     public void startSpin()
     {
         actionNull();
-        startShoot();
+        shootingPattern.setCanShoot(true);
         particles.setSpinSpeed(desired_SpinSpeed);
     }
 
     public void startSpinOpposite()
     {
         actionNull();
-        startShoot();
+        shootingPattern.setCanShoot(true);
         particles.setSpinSpeed(-1 * desired_SpinSpeed);
-    }
-
-    //----------action nullifier---------------------
-
-    public void actionNull()
-    {
-        resetMoveSpeed();
-        move.setCanMove(false);
-        shootingPattern.setCanShoot(false);
-        resetSpinSpeed();
     }
 
     //----------action combos-------------------
