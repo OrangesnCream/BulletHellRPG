@@ -16,6 +16,8 @@ public class Enemy_AttackPattern : MonoBehaviour
     void Start()
     {
         pattern = new List<Action>();
+
+        patternopportunity = oppurtinutycheck;
         iterator = 0;
         added = false;
     }
@@ -29,6 +31,12 @@ public class Enemy_AttackPattern : MonoBehaviour
             pattern.Add(controller.startSpin);
             pattern.Add(controller.startMovement);
             pattern.Add(controller.startSpinOpposite);
+            pattern.Add(controller.startDashShoot);
+            pattern.Add(controller.startMoveSpinOpposite);
+            pattern.Add(controller.startShoot);
+            pattern.Add(controller.startDashSpinOpposite);
+            pattern.Add(controller.startDashSpin);
+            pattern.Add(controller.startMoveSpin);
             added = true;
         }
 

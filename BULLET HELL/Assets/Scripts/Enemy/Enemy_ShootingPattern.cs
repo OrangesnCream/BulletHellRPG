@@ -34,14 +34,20 @@ public class Enemy_ShootingPattern : MonoBehaviour
         {
             foreach(ParticleSystem particleSystem in particleSystems)
             {
-                particleSystem.Play();
+                if (!particleSystem.isEmitting)
+                {
+                    particleSystem.Play();
+                }
             }
         }
-        else
+        else if (!canShoot)
         {
             foreach (ParticleSystem particleSystem in particleSystems)
             {
-                particleSystem.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                if (particleSystem.isEmitting)
+                {
+                    particleSystem.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                }
             }
         }
     }
