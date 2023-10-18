@@ -13,9 +13,7 @@ public class Enemy_Controller : MonoBehaviour
     private float temp_SpinSpeed;
     private float temp_Size;
     private int temp_Bounce;
-    private int temp_ShootOpportunityCheck;
     private float temp_MoveSpeed;
-    private float temp_MoveOpportunityCheck;
     private int temp_Health;
 
     public int desired_FireRate;
@@ -23,9 +21,7 @@ public class Enemy_Controller : MonoBehaviour
     public float desired_SpinSpeed;
     public float desired_Size;
     public int desired_Bounce;
-    public int desired_ShootOpportunityCheck;
     public float desired_MoveSpeed;
-    public float desired_MoveOpportunityCheck;
     public int desired_MaxHealth;
 
     public int dashMultiplier;
@@ -42,9 +38,7 @@ public class Enemy_Controller : MonoBehaviour
         particles.setSpinSpeed(desired_SpinSpeed);
         shootingPattern.setSize(desired_Size);
         shootingPattern.setBounce(desired_Bounce);
-        shootingPattern.setOpportunityCheck(desired_ShootOpportunityCheck);
         move.setMoveSpeed(desired_MoveSpeed);
-        move.setMovementOpportunityCheck(desired_MoveOpportunityCheck);
         healthBar.setMaxHealth(desired_MaxHealth);
 
         temp_FireRate = shootingPattern.getFireRate();
@@ -52,9 +46,7 @@ public class Enemy_Controller : MonoBehaviour
         temp_SpinSpeed = particles.getSpinSpeed();
         temp_Size = shootingPattern.getSize();
         temp_Bounce = shootingPattern.getBounce();
-        temp_ShootOpportunityCheck = shootingPattern.getOpportunityCheck();
         temp_MoveSpeed = move.getMoveSpeed();
-        temp_MoveOpportunityCheck = move.getMovementOpportunityCheck();
         temp_Health = healthBar.getHealth();
     }
 
@@ -68,34 +60,39 @@ public class Enemy_Controller : MonoBehaviour
 
     public void resetBounce() { shootingPattern.setBounce(temp_Bounce); }
 
-    public void resetShootOpportunityCheck() { shootingPattern.setOpportunityCheck(temp_ShootOpportunityCheck); }
-
     public void resetMoveSpeed() { move.setMoveSpeed(temp_MoveSpeed); }
-
-    public void resetMoveOpportunityCheck() { move.setMovementOpportunityCheck(temp_MoveOpportunityCheck); }
 
     public void resetMaxHealth() { healthBar.setMaxHealth(desired_MaxHealth); }
 
     public void resetHealth() { healthBar.setHealth(temp_Health); }
 
-    public void dash()
+    public void startDash()
     {
         move.setMoveSpeed(this.dashMultiplier * this.desired_MoveSpeed);
         move.setCanMove(true);
-        move.setMovementOpportunityCheck(0);
-        resetMoveSpeed();
-        resetMoveOpportunityCheck();
     }
 
-    public void movement()
+    public void stopDash()
     {
-
+        resetMoveSpeed();
+        move.setCanMove(false);
     }
 
-    public void shoot()
+    public void startMovement()
+    {
+        move.setMoveSpeed(this.desired_MoveSpeed);
+        move.setCanMove(true);
+    }
+
+    public void stopMovement()
+    {
+        resetMoveSpeed();
+        move.setCanMove(false);
+    }
+
+    public void startShoot()
     {
         resetBulletSpeed();
-        resetShootOpportunityCheck();
     }
 
     public void spin()
