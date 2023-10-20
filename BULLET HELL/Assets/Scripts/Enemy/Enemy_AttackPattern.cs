@@ -11,6 +11,7 @@ public class Enemy_AttackPattern : MonoBehaviour
     private int patternopportunity;
     private int iterator;
     private bool added;
+    public bool half;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class Enemy_AttackPattern : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if(!added)
+        if(!added)//health patterns || boss specific attacks || change hitbox for 2.5d look
         {
             pattern.Add(controller.startDash);
             pattern.Add(controller.startSpin);
