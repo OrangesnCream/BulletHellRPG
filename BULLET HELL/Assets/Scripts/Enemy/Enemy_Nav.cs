@@ -25,15 +25,7 @@ public class Enemy_Nav : MonoBehaviour
     {
         if (canmove)
         {
-            this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             agent.SetDestination(goal.position);
-        }
-            
-        else if (!canmove)
-        {
-            this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
-            this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 
