@@ -43,6 +43,7 @@ public class Enemy_Controller : MonoBehaviour
         shootingPattern.setSize(desired_Size);
         shootingPattern.setBounce(desired_Bounce);
         move.setMoveSpeed(desired_MoveSpeed);
+        nav.setMoveSpeed(desired_MoveSpeed);
         move.setMovementOpportunityCheck(desired_MoveOpportunityCheck);
         healthBar.setMaxHealth(desired_MaxHealth);
 
@@ -51,6 +52,7 @@ public class Enemy_Controller : MonoBehaviour
         temp_Size = shootingPattern.getSize();
         temp_Bounce = shootingPattern.getBounce();
         temp_MoveSpeed = move.getMoveSpeed();
+
         temp_Health = healthBar.getHealth();
 
         nullNeeded = true;
