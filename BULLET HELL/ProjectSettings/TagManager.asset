@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Enemy_Bullet
+  - BossCamera
   layers:
   - Default
   - TransparentFX
@@ -46,9 +47,12 @@ TagManager:
   - name: BG
     uniqueID: 3249405157
     locked: 0
-  - name: Player
-    uniqueID: 2892209943
+  - name: Enemy
+    uniqueID: 749546621
     locked: 0
   - name: Bullet
     uniqueID: 225179537
+    locked: 0
+  - name: Player
+    uniqueID: 2892209943
     locked: 0

@@ -14,7 +14,7 @@ public class Attacking : MonoBehaviour
 
     public Transform meleePoint;
     public float meleeRange = 1.0f;
-    public float meleeDamage = 33.5f;
+    public int meleeDamage = 33;
     public bool canMelee = true;
 
 
