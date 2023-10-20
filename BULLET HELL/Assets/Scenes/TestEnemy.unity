@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 482459312}
   - component: {fileID: 482459311}
   - component: {fileID: 482459314}
+  - component: {fileID: 482459315}
   m_Layer: 7
   m_Name: Enemy_UI
   m_TagString: Untagged
@@ -551,6 +552,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2132586538}
+--- !u!114 &482459315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482459309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab41f2961e2b9c4fa5a09daf2dd54b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 1566353253}
+  inline: {fileID: 2132586536}
+  fill: {fileID: 69959529}
 --- !u!1 &485206811
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,7 +870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38077e4f30f66084199f12d71dc00a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number_of_columns: 4
+  number_of_columns: 6
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   color: {r: 1, g: 0.5882352, b: 0, a: 1}
   lifetime: 10
@@ -942,6 +958,9 @@ GameObject:
   - component: {fileID: 851531123}
   - component: {fileID: 851531127}
   - component: {fileID: 851531128}
+  - component: {fileID: 851531131}
+  - component: {fileID: 851531130}
+  - component: {fileID: 851531129}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -1105,13 +1124,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deda84f57e25c5c428ad8a6251931572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desired_FireRate: 3
+  desired_FireRate: 2
   desired_BulletSpeed: 3
   desired_SpinSpeed: 20
   desired_Size: 0.5
   desired_Bounce: 1
   desired_MoveSpeed: 1.5
-  desired_MoveOpportunityCheck: 50
+  desired_MoveOpportunityCheck: 75
   desired_MaxHealth: 5
   dashMultiplier: 5
 --- !u!114 &851531128
@@ -1127,7 +1146,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 851531127}
-  oppurtinutycheck: 200
+  oppurtinutycheck: 150
+  half: 0
+--- !u!114 &851531129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851531121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca06759096b1def4ca3106c0b2711acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &851531130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851531121}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0cbb516bdb3434fa56c1049b570a83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!195 &851531131
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851531121}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 0
+  avoidancePriority: 50
+  m_AngularSpeed: 0
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 1
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &859680268
 GameObject:
   m_ObjectHideFlags: 0

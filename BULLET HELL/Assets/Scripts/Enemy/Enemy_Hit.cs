@@ -13,6 +13,6 @@ public class Enemy_Hit : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-        healthBar.setHealth(healthBar.getHealth() - damage);
+        healthBar.setHealth(healthBar.getHealth() - damage);// add healthbar fade in fade out
     }
 }
