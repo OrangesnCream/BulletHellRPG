@@ -21,7 +21,7 @@ public class Enemy_Nav : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (canmove)
         {
