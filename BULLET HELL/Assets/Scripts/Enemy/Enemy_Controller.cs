@@ -7,6 +7,7 @@ public class Enemy_Controller : MonoBehaviour
 {
     private Enemy_ShootingPattern shootingPattern;
     private Enemy_Move move;
+    private Enemy_Nav nav;
     private BulletParticles particles;
     private HealthBar healthBar;
     private int temp_FireRate;
@@ -34,6 +35,7 @@ public class Enemy_Controller : MonoBehaviour
         move = this.gameObject.GetComponent<Enemy_Move>();
         particles = this.gameObject.GetComponentInChildren<BulletParticles>();
         healthBar = this.gameObject.GetComponentInChildren<HealthBar>();
+        nav = this.gameObject.GetComponent<Enemy_Nav>();
 
         shootingPattern.setFireRate(desired_FireRate);
         shootingPattern.setBulletSpeed(desired_BulletSpeed);
