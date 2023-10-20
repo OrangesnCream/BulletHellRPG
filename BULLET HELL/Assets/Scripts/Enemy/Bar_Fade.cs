@@ -55,7 +55,7 @@ public class Bar_Fade : MonoBehaviour
         stay = temp_stay;
 
         color_outline.a = dim;
-            color_inline.a = dim;
-            color_fill.a = dim;
+        color_inline.a = dim;
+        color_fill.a = dim;
     }
 }
