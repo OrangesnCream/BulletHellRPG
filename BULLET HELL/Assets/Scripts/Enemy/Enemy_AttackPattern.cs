@@ -10,7 +10,6 @@ public class Enemy_AttackPattern : MonoBehaviour
     public int oppurtinutycheck;
     private int patternopportunity;
     private int iterator;
-
     private bool added;
     // Start is called before the first frame update
     void Start()

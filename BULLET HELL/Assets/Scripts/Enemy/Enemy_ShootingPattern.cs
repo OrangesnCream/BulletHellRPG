@@ -87,6 +87,7 @@ public class Enemy_ShootingPattern : MonoBehaviour
         {
             var collision = particle.collision;
             collision.bounce = bounce;
+            //collision.lifetimeLoss = 1 / (bounce + 1);
         }
     }
 
