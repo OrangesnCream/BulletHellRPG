@@ -1131,7 +1131,7 @@ MonoBehaviour:
   desired_Bounce: 1
   desired_MoveSpeed: 1.5
   desired_MoveOpportunityCheck: 75
-  desired_MaxHealth: 5
+  desired_MaxHealth: 200
   dashMultiplier: 5
 --- !u!114 &851531128
 MonoBehaviour:
