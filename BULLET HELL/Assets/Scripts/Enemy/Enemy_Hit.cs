@@ -11,8 +11,8 @@ public class Enemy_Hit : MonoBehaviour
         healthBar = this.gameObject.GetComponentInChildren<HealthBar>();
     }
 
-    public void takeDamage()
+    public void takeDamage(int damage)
     {
-
+        healthBar.setHealth(healthBar.getHealth() - damage);
     }
 }
