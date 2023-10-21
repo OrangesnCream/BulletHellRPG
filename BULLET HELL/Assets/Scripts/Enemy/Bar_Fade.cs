@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class Bar_Fade : MonoBehaviour
 {
@@ -22,15 +22,15 @@ public class Bar_Fade : MonoBehaviour
 
     void Start()
     {
-        color_outline = outline.GetComponent<Color>();
-        color_inline = inline.GetComponent<Color>();
-        color_fill = fill.GetComponent<Color>();
+        color_outline = outline.GetComponent<Image>().color;
+        color_inline = inline.GetComponent<Image>().color;
+        color_fill = fill.GetComponent<Image>().color;
 
-        color_outline.a = 0;
-        color_inline.a = 0;
-        color_fill.a = 0;
+        color_outline.a = 0f;
+        color_inline.a = 0f;
+        color_fill.a = 0f;
 
-        stay = 50;
+        stay = 200;
     }
 
     // Update is called once per frame
@@ -40,22 +40,24 @@ public class Bar_Fade : MonoBehaviour
         {
             stay--;
         }
-        else if (dim != 0)
+        else if (dim >= 0)
         {
             color_outline.a = dim;
             color_inline.a = dim;
             color_fill.a = dim;
             dim -= dim_amount;
+            Debug.Log(color_outline.a);
         }
     }
 
     public void fade()
     {
-        dim = 1;
+        dim = 1f;
         stay = temp_stay;
 
         color_outline.a = dim;
         color_inline.a = dim;
         color_fill.a = dim;
+        Debug.Log(color_outline.a);
     }
 }

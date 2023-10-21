@@ -46,6 +46,7 @@ public class Enemy_Controller : MonoBehaviour
         nav.setMoveSpeed(desired_MoveSpeed);
         move.setMovementOpportunityCheck(desired_MoveOpportunityCheck);
         healthBar.setMaxHealth(desired_MaxHealth);
+        healthBar.setHealth(desired_MaxHealth);
 
         temp_FireRate = shootingPattern.getFireRate();
         temp_BulletSpeed = shootingPattern.getBulletSpeed();
