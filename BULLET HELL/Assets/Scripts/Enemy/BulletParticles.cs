@@ -78,6 +78,10 @@ public class BulletParticles : MonoBehaviour
             collision.mode = ParticleSystemCollisionMode.Collision2D;
             collision.collidesWith = collision_layers;
             collision.sendCollisionMessages = true;
+
+            var velocity = system.velocityOverLifetime;
+            velocity.enabled = true;
+            
         }
     }
     public void setSpinSpeed(float spinspeed) { this.spin_speed = spinspeed; }
