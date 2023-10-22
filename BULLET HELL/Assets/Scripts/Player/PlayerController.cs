@@ -16,9 +16,15 @@ public class PlayerController : MonoBehaviour
 
     public PlayerStats ps;
 
+    private TrailRenderer tr;
+
     Vector2 movement;
 
     private bool isDevMode = false;
+
+    void Start(){
+        tr = gameObject.transform.GetComponent<TrailRenderer>();
+    }
 
     void Update(){
         if(isDash){
@@ -74,12 +80,20 @@ public class PlayerController : MonoBehaviour
     private IEnumerator Dash(){
         canDash = false;
         isDash = true;
+
         ps.damageInvincibilityTime = 200f;
         ps.resetDashCooldown();
+
+        tr.emitting = true;
+
         rb.velocity = lastDirection * (ps.dashMultiplier * speed);
+
         yield return new WaitForSeconds(.25f);
+
         ps.damageInvincibilityTime = 0f;
         isDash = false;
+
+        tr.emitting = false;
     }
     
 }
