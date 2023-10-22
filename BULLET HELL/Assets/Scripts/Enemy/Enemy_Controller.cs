@@ -7,7 +7,7 @@ public class Enemy_Controller : MonoBehaviour
 {
     private Enemy_ShootingPattern shootingPattern;
     private Enemy_Move move;
-    private Enemy_Nav nav;
+    //private Enemy_Nav nav;
     private BulletParticles particles;
     private HealthBar healthBar;
     private int temp_FireRate;
@@ -35,7 +35,7 @@ public class Enemy_Controller : MonoBehaviour
         move = this.gameObject.GetComponent<Enemy_Move>();
         particles = this.gameObject.GetComponentInChildren<BulletParticles>();
         healthBar = this.gameObject.GetComponentInChildren<HealthBar>();
-        nav = this.gameObject.GetComponent<Enemy_Nav>();
+        //nav = this.gameObject.GetComponent<Enemy_Nav>();
 
         shootingPattern.setFireRate(desired_FireRate);
         shootingPattern.setBulletSpeed(desired_BulletSpeed);
@@ -43,9 +43,10 @@ public class Enemy_Controller : MonoBehaviour
         shootingPattern.setSize(desired_Size);
         shootingPattern.setBounce(desired_Bounce);
         move.setMoveSpeed(desired_MoveSpeed);
-        nav.setMoveSpeed(desired_MoveSpeed);
+        //nav.setMoveSpeed(desired_MoveSpeed);
         move.setMovementOpportunityCheck(desired_MoveOpportunityCheck);
         healthBar.setMaxHealth(desired_MaxHealth);
+        healthBar.setHealth(desired_MaxHealth);
 
         temp_FireRate = shootingPattern.getFireRate();
         temp_BulletSpeed = shootingPattern.getBulletSpeed();

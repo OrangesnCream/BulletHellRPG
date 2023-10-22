@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy_Hit : MonoBehaviour
 {
     private HealthBar healthBar;
+    public Bar_Fade[] Bar_Fade;
 
     void Start()
     {
@@ -14,5 +15,17 @@ public class Enemy_Hit : MonoBehaviour
     public void takeDamage(int damage)
     {
         healthBar.setHealth(healthBar.getHealth() - damage);// add healthbar fade in fade out
+        foreach(Bar_Fade bar in Bar_Fade)
+        {
+            bar.fade();
+        }
+    }
+
+    private void Update()
+    {//test delete later
+        if(Input.GetMouseButtonDown(0))
+        {
+            takeDamage(1);
+        }
     }
 }
