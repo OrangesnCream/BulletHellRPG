@@ -10,6 +10,15 @@ public class Enemy_Hit : MonoBehaviour
     void Start()
     {
         healthBar = this.gameObject.GetComponentInChildren<HealthBar>();
+        Bar_Fade = this.gameObject.GetComponentInChildren<Bar_Fade>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            takeDamage(1);
+        }
     }
 
     public void takeDamage(int damage)
