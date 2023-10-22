@@ -8,6 +8,8 @@ TagManager:
   - Enemy_Bullet
   - BossCamera
   - NPC
+  - Background
+  - Wall
   layers:
   - Default
   - TransparentFX

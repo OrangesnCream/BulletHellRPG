@@ -37,6 +37,9 @@ public class Bullet : MonoBehaviour
         if(other.gameObject.tag == "Enemy"){
             Debug.Log("Hit enemy: " + other.gameObject.name);
             //other.gameObject.GetComponent<Enemy>().takeDamage(bulletDamage);
+            
+        }
+        if(other.gameObject.tag != "Background" && other.gameObject.tag != "Player"){
             if(!canPierce){
                 Destroy(gameObject);
             }
