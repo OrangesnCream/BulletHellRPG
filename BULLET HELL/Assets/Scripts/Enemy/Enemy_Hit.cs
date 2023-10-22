@@ -10,7 +10,6 @@ public class Enemy_Hit : MonoBehaviour
     void Start()
     {
         healthBar = this.gameObject.GetComponentInChildren<HealthBar>();
-        Bar_Fade = this.gameObject.GetComponentInChildren<Bar_Fade>();
     }
 
     private void Update()
@@ -27,14 +26,6 @@ public class Enemy_Hit : MonoBehaviour
         foreach(Bar_Fade bar in Bar_Fade)
         {
             bar.fade();
-        }
-    }
-
-    private void Update()
-    {//test delete later
-        if(Input.GetMouseButtonDown(0))
-        {
-            takeDamage(1);
         }
     }
 }
