@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemy_Controller : MonoBehaviour
 {
-    public Enemy_ShootingPattern shootingPattern;
+    public Enemy_ShootingPattern[] shootingPattern;
     private Enemy_Move move;
     //private Enemy_Nav nav;
     private BulletParticles particles;
@@ -30,7 +30,9 @@ public class Enemy_Controller : MonoBehaviour
 
     public int dashMultiplier;
     private bool nullNeeded;
-    private Vector2 direction;
+    private Vector2 vecPlayer;
+    private Vector2 vecEnemy;
+    private float angle;
 
     private void Start()
     {
@@ -40,10 +42,13 @@ public class Enemy_Controller : MonoBehaviour
         //nav = this.gameObject.GetComponent<Enemy_Nav>();
         player = GameObject.FindGameObjectWithTag("Player");
 
-        shootingPattern.setFireRate(desired_FireRate);
-        shootingPattern.setBulletSpeed(desired_BulletSpeed);
-        shootingPattern.setSize(desired_Size);
-        shootingPattern.setBounce(desired_Bounce);
+        foreach(Enemy_ShootingPattern pattern in shootingPattern)
+        {
+            pattern.setFireRate(desired_FireRate);
+            pattern.setBulletSpeed(desired_BulletSpeed);
+            pattern.setSize(desired_Size);
+            pattern.setBounce(desired_Bounce);
+        }
         particles.setSpinSpeed(desired_SpinSpeed);
         move.setMoveSpeed(desired_MoveSpeed);
         //nav.setMoveSpeed(desired_MoveSpeed);
@@ -51,34 +56,62 @@ public class Enemy_Controller : MonoBehaviour
         healthBar.setMaxHealth(desired_MaxHealth);
         healthBar.setHealth(desired_MaxHealth);
 
-        temp_FireRate = shootingPattern.getFireRate();
-        temp_BulletSpeed = shootingPattern.getBulletSpeed();
-        temp_Size = shootingPattern.getSize();
-        temp_Bounce = shootingPattern.getBounce();
+        temp_FireRate = shootingPattern[0].getFireRate();
+        temp_BulletSpeed = shootingPattern[0].getBulletSpeed();
+        temp_Size = shootingPattern[0].getSize();
+        temp_Bounce = shootingPattern[0].getBounce();
         temp_MoveSpeed = move.getMoveSpeed();
 
         temp_Health = healthBar.getHealth();
 
         nullNeeded = true;
+        vecPlayer.x = player.transform.position.x;
+        vecPlayer.y = player.transform.position.y;
+        vecEnemy.x  = this.gameObject.transform.position.x;
+        vecEnemy.y = this.gameObject.transform.position.y;
     }
 
     private void Update()
     {
-        direction.x = player.transform.position.x - this.gameObject.transform.position.x;
-        direction.y = player.transform.position.y - this.gameObject.transform.position.y;
+        angle = Vector2.Angle(vecEnemy, vecPlayer);
+        this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     //--------------------reset functions-----------------------
 
-    public void resetFireRate() { shootingPattern.setFireRate(temp_FireRate); }
+    public void resetFireRate() 
+    { 
+        foreach(Enemy_ShootingPattern pattern in shootingPattern)
+        {
+            pattern.setFireRate(temp_FireRate);
+        }
+    }
 
-    public void resetBulletSpeed() { shootingPattern.setBulletSpeed(temp_BulletSpeed); }
+    public void resetBulletSpeed() 
+    {
+        foreach(Enemy_ShootingPattern pattern in shootingPattern)
+        {
+            pattern.setBulletSpeed(temp_BulletSpeed); 
+        }
+    }
 
     public void resetSpinSpeed() { particles.setSpinSpeed(0); }
 
-    public void resetSize() { shootingPattern.setSize(temp_Size); }
+    public void resetSize() 
+    { 
+        foreach(Enemy_ShootingPattern pattern in shootingPattern)
+        {
+            pattern.setSize(temp_Size);
+        }
+    }
 
-    public void resetBounce() { shootingPattern.setBounce(temp_Bounce); }
+    public void resetBounce() 
+    { 
+        foreach(Enemy_ShootingPattern pattern in shootingPattern)
+        {
+            pattern.setBounce(temp_Bounce);
+        }
+    }
 
     public void resetMoveSpeed() { move.setMoveSpeed(temp_MoveSpeed); }
 
@@ -92,7 +125,7 @@ public class Enemy_Controller : MonoBehaviour
     {
         resetMoveSpeed();
         move.setCanMove(false);
-        shootingPattern.setCanShoot(false);
+        shootingPattern[0].setCanShoot(false);
         resetSpinSpeed();
     }
 
@@ -123,7 +156,7 @@ public class Enemy_Controller : MonoBehaviour
         {
             actionNull();
         }
-        shootingPattern.setCanShoot(true);
+        shootingPattern[0].setCanShoot(true);
     }
 
     public void startSpin()
@@ -132,7 +165,7 @@ public class Enemy_Controller : MonoBehaviour
         {
             actionNull();
         }
-        shootingPattern.setCanShoot(true);
+        shootingPattern[0].setCanShoot(true);
         particles.setSpinSpeed(desired_SpinSpeed);
     }
 
@@ -142,8 +175,13 @@ public class Enemy_Controller : MonoBehaviour
         {
             actionNull();
         }
-        shootingPattern.setCanShoot(true);
+        shootingPattern[0].setCanShoot(true);
         particles.setSpinSpeed(-1 * desired_SpinSpeed);
+    }
+
+    public void doNothing()
+    {
+        //nothing happens
     }
 
     //----------action combos-------------------
