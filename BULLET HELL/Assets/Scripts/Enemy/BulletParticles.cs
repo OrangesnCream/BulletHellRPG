@@ -16,6 +16,7 @@ public class BulletParticles : MonoBehaviour
     private float spin_speed;
     private float time;
     public LayerMask collision_layers;
+    public int degrees;
 
     public ParticleSystem system;
 
@@ -32,7 +33,7 @@ public class BulletParticles : MonoBehaviour
 
     void Summon()
     {
-        angle = 360 / number_of_columns;
+        angle = degrees / number_of_columns;
 
         for (int i = 0; i < number_of_columns; i++)
         {

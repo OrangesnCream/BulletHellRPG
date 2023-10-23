@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class Enemy_Controller : MonoBehaviour
 {
-    private Enemy_ShootingPattern shootingPattern;
+    public Enemy_ShootingPattern shootingPattern;
     private Enemy_Move move;
     //private Enemy_Nav nav;
     private BulletParticles particles;
     private HealthBar healthBar;
+    private GameObject player;
+
     private int temp_FireRate;
     private float temp_BulletSpeed;
     private float temp_Size;
@@ -28,20 +30,21 @@ public class Enemy_Controller : MonoBehaviour
 
     public int dashMultiplier;
     private bool nullNeeded;
+    private Vector2 direction;
 
     private void Start()
     {
-        shootingPattern = this.gameObject.GetComponentInChildren<Enemy_ShootingPattern>();
         move = this.gameObject.GetComponent<Enemy_Move>();
         particles = this.gameObject.GetComponentInChildren<BulletParticles>();
         healthBar = this.gameObject.GetComponentInChildren<HealthBar>();
         //nav = this.gameObject.GetComponent<Enemy_Nav>();
+        player = GameObject.FindGameObjectWithTag("Player");
 
         shootingPattern.setFireRate(desired_FireRate);
         shootingPattern.setBulletSpeed(desired_BulletSpeed);
-        particles.setSpinSpeed(desired_SpinSpeed);
         shootingPattern.setSize(desired_Size);
         shootingPattern.setBounce(desired_Bounce);
+        particles.setSpinSpeed(desired_SpinSpeed);
         move.setMoveSpeed(desired_MoveSpeed);
         //nav.setMoveSpeed(desired_MoveSpeed);
         move.setMovementOpportunityCheck(desired_MoveOpportunityCheck);
@@ -57,6 +60,12 @@ public class Enemy_Controller : MonoBehaviour
         temp_Health = healthBar.getHealth();
 
         nullNeeded = true;
+    }
+
+    private void Update()
+    {
+        direction.x = player.transform.position.x - this.gameObject.transform.position.x;
+        direction.y = player.transform.position.y - this.gameObject.transform.position.y;
     }
 
     //--------------------reset functions-----------------------

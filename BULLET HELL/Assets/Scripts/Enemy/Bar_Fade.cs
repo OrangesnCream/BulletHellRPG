@@ -14,7 +14,7 @@ public class Bar_Fade : MonoBehaviour
 
     private byte dim;
     private int startDim;
-    private const int temp_startDim = 300;
+    private const int temp_startDim = 400;
 
     void Start()
     {
