@@ -17,6 +17,7 @@ public class Attacking : MonoBehaviour
     public int meleeDamage = 33;
     public bool canMelee = true;
 
+    private PlayerController pc;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +25,15 @@ public class Attacking : MonoBehaviour
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         meleePoint.localScale = new Vector3(meleeRange*2, meleeRange*2, 1.0f);
         meleePoint.position = firePoint.position;
+        pc = transform.parent.gameObject.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(pc.isDash){
+            return;
+        }
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         Vector2 lookDir = mousePos - transform.position;

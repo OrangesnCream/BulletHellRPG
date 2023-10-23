@@ -9,16 +9,27 @@ public class PlayerController : MonoBehaviour
     private float speed = 10f;
 
     private Vector2 lastDirection = new Vector2(0, -1);
+    public bool isDash = false;
+    private bool canDash = true;
 
     public Rigidbody2D rb;
 
     public PlayerStats ps;
 
+    private TrailRenderer tr;
+
     Vector2 movement;
 
     private bool isDevMode = false;
 
+    void Start(){
+        tr = gameObject.transform.GetComponent<TrailRenderer>();
+    }
+
     void Update(){
+        if(isDash){
+            return;
+        }
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
@@ -30,11 +41,11 @@ public class PlayerController : MonoBehaviour
         }
 
         if(movement.x != 0 || movement.y != 0){
-            lastDirection = movement;
+            lastDirection = movement.normalized;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space)){
-            Dash();
+        if(Input.GetKeyDown(KeyCode.Space) && canDash){
+            StartCoroutine(Dash());
         }
 
         if(Input.GetKeyDown(KeyCode.F1)){
@@ -53,18 +64,36 @@ public class PlayerController : MonoBehaviour
     }
 
     void FixedUpdate(){
+        if(isDash){
+            return;
+        }
         Move();
+        if(ps.dashCooldown <= 0){
+            canDash = true;
+        }
     }
 
     void Move(){
         rb.velocity = movement.normalized * speed;
     }
 
-    void Dash(){
-        if(ps.dashCooldown <= 0){
-            rb.AddForce(lastDirection * (ps.dashMultiplier * 5000));
-            ps.resetDashCooldown();
-        }
+    private IEnumerator Dash(){
+        canDash = false;
+        isDash = true;
+
+        ps.damageInvincibilityTime = 200f;
+        ps.resetDashCooldown();
+
+        tr.emitting = true;
+
+        rb.velocity = lastDirection * (ps.dashMultiplier * speed);
+
+        yield return new WaitForSeconds(.25f);
+
+        ps.damageInvincibilityTime = 0f;
+        isDash = false;
+
+        tr.emitting = false;
     }
     
 }
