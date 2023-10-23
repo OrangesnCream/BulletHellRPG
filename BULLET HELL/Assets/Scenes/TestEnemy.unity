@@ -1193,8 +1193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deda84f57e25c5c428ad8a6251931572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingPattern: {fileID: 705732605}
-  desired_FireRate: 2
+  shootingPattern: []
+  desired_FireRate: 5
   desired_BulletSpeed: 3
   desired_SpinSpeed: 20
   desired_Size: 0.5
