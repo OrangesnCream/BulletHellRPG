@@ -6,9 +6,10 @@ using UnityEngine;
 public class Enemy_Controller : MonoBehaviour
 {
     public Enemy_ShootingPattern[] shootingPattern;
+    public BulletParticles[] particles;
+    public Transform ShootPoint_Aim;
     private Enemy_Move move;
     //private Enemy_Nav nav;
-    private BulletParticles particles;
     private HealthBar healthBar;
     private GameObject player;
 
@@ -37,7 +38,6 @@ public class Enemy_Controller : MonoBehaviour
     private void Start()
     {
         move = this.gameObject.GetComponent<Enemy_Move>();
-        particles = this.gameObject.GetComponentInChildren<BulletParticles>();
         healthBar = this.gameObject.GetComponentInChildren<HealthBar>();
         //nav = this.gameObject.GetComponent<Enemy_Nav>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -49,7 +49,10 @@ public class Enemy_Controller : MonoBehaviour
             pattern.setSize(desired_Size);
             pattern.setBounce(desired_Bounce);
         }
-        particles.setSpinSpeed(desired_SpinSpeed);
+        foreach(BulletParticles particles in particles)
+        {
+            particles.setSpinSpeed(desired_SpinSpeed);
+        }
         move.setMoveSpeed(desired_MoveSpeed);
         //nav.setMoveSpeed(desired_MoveSpeed);
         move.setMovementOpportunityCheck(desired_MoveOpportunityCheck);
@@ -65,16 +68,16 @@ public class Enemy_Controller : MonoBehaviour
         temp_Health = healthBar.getHealth();
 
         nullNeeded = true;
-        vecPlayer.x = player.transform.position.x;
-        vecPlayer.y = player.transform.position.y;
-        vecEnemy.x  = this.gameObject.transform.position.x;
-        vecEnemy.y = this.gameObject.transform.position.y;
     }
 
     private void Update()
     {
+        vecPlayer.x = player.transform.position.x;
+        vecPlayer.y = player.transform.position.y;
+        vecEnemy.x = this.gameObject.transform.position.x;
+        vecEnemy.y = this.gameObject.transform.position.y;
         angle = Vector2.Angle(vecEnemy, vecPlayer);
-        this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
+        ShootPoint_Aim.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     //--------------------reset functions-----------------------
@@ -95,7 +98,13 @@ public class Enemy_Controller : MonoBehaviour
         }
     }
 
-    public void resetSpinSpeed() { particles.setSpinSpeed(0); }
+    public void resetSpinSpeed() 
+    { 
+        foreach(BulletParticles particles in particles)
+        {
+            particles.setSpinSpeed(0);
+        }
+    }
 
     public void resetSize() 
     { 
@@ -125,8 +134,14 @@ public class Enemy_Controller : MonoBehaviour
     {
         resetMoveSpeed();
         move.setCanMove(false);
-        shootingPattern[0].setCanShoot(false);
+        foreach (Enemy_ShootingPattern pattern in shootingPattern)
+        {
+            pattern.setCanShoot(false);
+        }
         resetSpinSpeed();
+        resetFireRate();
+        resetBulletSpeed();
+        resetSize();
     }
 
     //----------------------basic actions-----------------------
@@ -166,7 +181,7 @@ public class Enemy_Controller : MonoBehaviour
             actionNull();
         }
         shootingPattern[0].setCanShoot(true);
-        particles.setSpinSpeed(desired_SpinSpeed);
+        particles[0].setSpinSpeed(desired_SpinSpeed);
     }
 
     public void startSpinOpposite()
@@ -176,7 +191,36 @@ public class Enemy_Controller : MonoBehaviour
             actionNull();
         }
         shootingPattern[0].setCanShoot(true);
-        particles.setSpinSpeed(-1 * desired_SpinSpeed);
+        particles[0].setSpinSpeed(-1 * desired_SpinSpeed);
+    }
+
+    public void start2Spin()
+    {
+        if (nullNeeded)
+        {
+            actionNull();
+        }
+        shootingPattern[1].setCanShoot(true);
+        particles[1].setSpinSpeed(desired_SpinSpeed);
+    }
+
+    public void start2SpinOpposite()
+    {
+        if (nullNeeded)
+        {
+            actionNull();
+        }
+        shootingPattern[1].setCanShoot(true);
+        particles[1].setSpinSpeed(desired_SpinSpeed);
+    }
+
+    public void aimAtPlayer()
+    {
+        if (nullNeeded)
+        {
+            actionNull();
+        }
+        shootingPattern[2].setCanShoot(true);
     }
 
     public void doNothing()
