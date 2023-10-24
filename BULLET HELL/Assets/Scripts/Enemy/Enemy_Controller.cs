@@ -607,6 +607,42 @@ public class Enemy_Controller : MonoBehaviour
         this.nullNeeded = true;
     }
 
+    public void MoveShoot1FireFaster()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Shoot1FireFaster();
+        this.nullNeeded = true;
+    }
+
+    public void MoveShoot1FireSlower()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Shoot1FireSlower();
+        this.nullNeeded = true;
+    }
+
+    public void MoveShoot1BulletFaster()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Shoot1BulletFaster();
+        this.nullNeeded = true;
+    }
+
+    public void MoveShoot1BulletSlower()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Shoot1BulletSlower();
+        this.nullNeeded = true;
+    }
+
     public void MoveSpin1()
     {
         actionNull();
@@ -616,12 +652,129 @@ public class Enemy_Controller : MonoBehaviour
         this.nullNeeded = true;
     }
 
+    public void MoveSpin1FireFaster()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Shoot1FireFasterSpin();
+        this.nullNeeded = true;
+    }
+
+    public void MoveSpin1FireSlower()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Shoot1FireSlowerSpin();
+        this.nullNeeded = true;
+    }
+
+    public void MoveSpin1BulletFaster()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Shoot1BulletFasterSpin();
+        this.nullNeeded = true;
+    }
+
+    public void MoveSpin1BulletSlower()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Shoot1BulletSlowerSpin();
+        this.nullNeeded = true;
+    }
+
     public void MoveSpin1Opposite()
     {
         actionNull();
         this.nullNeeded = false;
         Movement();
         Spin1Opposite();
+        this.nullNeeded = true;
+    }
+
+    public void MoveSpin1OppositeFireFaster()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Shoot1FireFasterSpinOpposite();
+        this.nullNeeded = true;
+    }
+
+    public void MoveSpin1OppositeFireSlower()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Shoot1FireSlowerSpinOpposite();
+        this.nullNeeded = true;
+    }
+
+    public void MoveSpin1OppositeBulletFaster()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Shoot1BulletFasterSpinOpposite();
+        this.nullNeeded = true;
+    }
+
+    public void MoveSpin1OppositeBulletSlower()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Shoot1BulletSlowerSpinOpposite();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot1Spin2()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Shoot1();
+        Spin2();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot1Spin2Opposite()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Shoot1();
+        Spin2Opposite();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot1Shoot2FireFaster()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Shoot1();
+        Shoot2FireFaster();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot1Shoot2FireSlower()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Shoot1();
+        Shoot2FireSlower();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot1Shoot2BulletFaster()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Shoot1();
+        Shoot2BulletFaster();
         this.nullNeeded = true;
     }
 
