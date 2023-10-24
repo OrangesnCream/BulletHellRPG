@@ -20,7 +20,7 @@ public class DialogueTrigger : MonoBehaviour {
         if (playerInRange) {
             triggerVisual.SetActive(true);
             if (Input.GetKeyDown("e")){
-                Debug.Log("TEST PRINT :DDDD");
+                Debug.Log(inkJSON.text);
             }
 
         }
