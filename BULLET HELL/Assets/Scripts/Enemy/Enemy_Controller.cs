@@ -146,7 +146,7 @@ public class Enemy_Controller : MonoBehaviour
 
     //----------------------basic actions-----------------------
 
-    public void startDash()
+    public void Dash()
     {
         if (nullNeeded)
         {
@@ -156,7 +156,7 @@ public class Enemy_Controller : MonoBehaviour
         move.setCanMove(true);
     }
 
-    public void startMovement()
+    public void Movement()
     {
         if (nullNeeded)
         {
@@ -165,7 +165,7 @@ public class Enemy_Controller : MonoBehaviour
         move.setCanMove(true);
     }
 
-    public void startShoot()
+    public void Shoot1()
     {
         if (nullNeeded)
         {
@@ -174,27 +174,148 @@ public class Enemy_Controller : MonoBehaviour
         shootingPattern[0].setCanShoot(true);
     }
 
-    public void startSpin()
+    public void Spin1()
+        {
+            if (nullNeeded)
+            {
+                actionNull();
+            }
+            shootingPattern[0].setCanShoot(true);
+            particles[0].setSpinSpeed(desired_SpinSpeed);
+        }
+
+    public void Spin1Opposite()
+        {
+            if (nullNeeded)
+            {
+                actionNull();
+            }
+            shootingPattern[0].setCanShoot(true);
+            particles[0].setSpinSpeed(-1 * desired_SpinSpeed);
+        }
+
+    public void Shoot1FireFaster()
+        {
+            if (nullNeeded)
+            {
+                actionNull();
+            }
+            shootingPattern[0].setFireRate(temp_FireRate * 2);
+            shootingPattern[0].setCanShoot(true);
+        }
+
+    public void Shoot1FireSlower()
+        {
+            if (nullNeeded)
+            {
+                actionNull();
+            }
+            shootingPattern[0].setFireRate((int)(temp_FireRate / 2));
+            shootingPattern[0].setCanShoot(true);
+        }
+
+    public void Shoot1BulletFaster()
+        {
+            if (nullNeeded)
+            {
+                actionNull();
+            }
+            shootingPattern[0].setBulletSpeed(temp_BulletSpeed * 2);
+            shootingPattern[0].setCanShoot(true);
+        }
+
+    public void Shoot1BulletSlower()
+        {
+            if (nullNeeded)
+            {
+                actionNull();
+            }
+            shootingPattern[0].setBulletSpeed(temp_BulletSpeed / 2);
+            shootingPattern[0].setCanShoot(true);
+        }
+
+    public void Shoot1FireFasterSpin()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin1();
+        Shoot1FireFaster();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot1FireSlowerSpin()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin1();
+        Shoot1FireSlower();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot1BulletFasterSpin()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin1();
+        Shoot1BulletFaster();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot1BulletSlowerSpin()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin1();
+        Shoot1BulletSlower();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot1FireFasterSpinOpposite()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin1Opposite();
+        Shoot1FireFaster();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot1FireSlowerSpinOpposite()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin1Opposite();
+        Shoot1FireSlower();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot1BulletFasterSpinOpposite()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin1Opposite();
+        Shoot1BulletFaster();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot1BulletSlowerSpinOpposite()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin1Opposite();
+        Shoot1BulletSlower();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot2()
     {
         if (nullNeeded)
         {
             actionNull();
         }
-        shootingPattern[0].setCanShoot(true);
-        particles[0].setSpinSpeed(desired_SpinSpeed);
+        shootingPattern[1].setCanShoot(true);
     }
 
-    public void startSpinOpposite()
-    {
-        if (nullNeeded)
-        {
-            actionNull();
-        }
-        shootingPattern[0].setCanShoot(true);
-        particles[0].setSpinSpeed(-1 * desired_SpinSpeed);
-    }
-
-    public void start2Spin()
+    public void Spin2()
     {
         if (nullNeeded)
         {
@@ -204,7 +325,7 @@ public class Enemy_Controller : MonoBehaviour
         particles[1].setSpinSpeed(desired_SpinSpeed);
     }
 
-    public void start2SpinOpposite()
+    public void Spin2Opposite()
     {
         if (nullNeeded)
         {
@@ -212,6 +333,118 @@ public class Enemy_Controller : MonoBehaviour
         }
         shootingPattern[1].setCanShoot(true);
         particles[1].setSpinSpeed(desired_SpinSpeed);
+    }
+
+    public void Shoot2FireFaster()
+    {
+        if (nullNeeded)
+        {
+            actionNull();
+        }
+        shootingPattern[1].setFireRate(temp_FireRate * 2);
+        shootingPattern[1].setCanShoot(true);
+    }
+
+    public void Shoot2FireSlower()
+    {
+        if (nullNeeded)
+        {
+            actionNull();
+        }
+        shootingPattern[1].setFireRate((int)(temp_FireRate / 2));
+        shootingPattern[1].setCanShoot(true);
+    }
+
+    public void Shoot2BulletFaster()
+    {
+        if (nullNeeded)
+        {
+            actionNull();
+        }
+        shootingPattern[1].setBulletSpeed(temp_BulletSpeed * 2);
+        shootingPattern[1].setCanShoot(true);
+    }
+
+    public void Shoot2BulletSlower()
+    {
+        if (nullNeeded)
+        {
+            actionNull();
+        }
+        shootingPattern[1].setBulletSpeed(temp_BulletSpeed / 2);
+        shootingPattern[1].setCanShoot(true);
+    }
+
+    public void Shoot2FireFasterSpin()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin2();
+        Shoot2FireFaster();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot2FireSlowerSpin()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin2();
+        Shoot2FireSlower();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot2BulletFasterSpin()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin2();
+        Shoot2BulletFaster();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot2BulletSlowerSpin()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin2();
+        Shoot2BulletSlower();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot2FireFasterSpinOpposite()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin2Opposite();
+        Shoot2FireFaster();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot2FireSlowerSpinOpposite()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin2Opposite();
+        Shoot2FireSlower();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot2BulletFasterSpinOpposite()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin2Opposite();
+        Shoot2BulletFaster();
+        this.nullNeeded = true;
+    }
+
+    public void Shoot2BulletSlowerSpinOpposite()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Spin2Opposite();
+        Shoot2BulletSlower();
+        this.nullNeeded = true;
     }
 
     public void aimAtPlayer()
@@ -228,59 +461,187 @@ public class Enemy_Controller : MonoBehaviour
         //nothing happens
     }
 
-    //----------action combos-------------------
+    //---------- simple action combos-------------------
 
-    public void startDashShoot()
+    public void DashShoot1()
     {
         actionNull();
         this.nullNeeded = false;
-        startDash();
-        startShoot();
+        Dash();
+        Shoot1();
         this.nullNeeded = true;
     }
 
-    public void startDashSpin()
+    public void DashShoot1FireFaster()
     {
         actionNull();
         this.nullNeeded = false;
-        startDash();
-        startSpin();
+        Dash();
+        Shoot1FireFaster();
         this.nullNeeded = true;
     }
 
-    public void startDashSpinOpposite()
+    public void DashShoot1FireSlower()
     {
         actionNull();
         this.nullNeeded = false;
-        startDash();
-        startSpinOpposite();
+        Dash();
+        Shoot1FireSlower();
         this.nullNeeded = true;
     }
 
-    public void startMoveShoot()
+    public void DashShoot1BulletFaster()
     {
         actionNull();
         this.nullNeeded = false;
-        startMovement();
-        startShoot();
+        Dash();
+        Shoot1BulletFaster();
         this.nullNeeded = true;
     }
 
-    public void startMoveSpin()
+    public void DashShoot1BulletSlower()
     {
         actionNull();
         this.nullNeeded = false;
-        startMovement();
-        startSpin();
+        Dash();
+        Shoot1BulletSlower();
         this.nullNeeded = true;
     }
 
-    public void startMoveSpinOpposite()
+    public void DashSpin1()
     {
         actionNull();
         this.nullNeeded = false;
-        startMovement();
-        startSpinOpposite();
+        Dash();
+        Spin1();
         this.nullNeeded = true;
     }
+
+    public void DashSpin1FireFaster()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Dash();
+        Shoot1FireFasterSpin();
+        this.nullNeeded = true;
+    }
+
+    public void DashSpin1FireSlower()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Dash();
+        Shoot1FireSlowerSpin();
+        this.nullNeeded = true;
+    }
+
+    public void DashSpin1BulletFaster()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Dash();
+        Shoot1BulletFasterSpin();
+        this.nullNeeded = true;
+    }
+
+    public void DashSpin1BulletSlower()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Dash();
+        Shoot1BulletSlowerSpin();
+        this.nullNeeded = true;
+    }
+
+    public void DashSpin1Opposite()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Dash();
+        Spin1Opposite();
+        this.nullNeeded = true;
+    }
+
+    public void DashSpin1OppositeFireFaster()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Dash();
+        Shoot1FireFasterSpinOpposite();
+        this.nullNeeded = true;
+    }
+
+    public void DashSpin1OppositeFireSlower()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Dash();
+        Shoot1FireSlowerSpinOpposite();
+        this.nullNeeded = true;
+    }
+
+    public void DashSpin1OppositeBulletFaster()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Dash();
+        Shoot1BulletFasterSpinOpposite();
+        this.nullNeeded = true;
+    }
+
+    public void DashSpin1OppositeBulletSlower()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Dash();
+        Shoot1BulletSlowerSpinOpposite();
+        this.nullNeeded = true;
+    }
+
+    public void MoveShoot1()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Shoot1();
+        this.nullNeeded = true;
+    }
+
+    public void MoveSpin1()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Spin1();
+        this.nullNeeded = true;
+    }
+
+    public void MoveSpin1Opposite()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        Spin1Opposite();
+        this.nullNeeded = true;
+    }
+
+    public void DashAimAtPLayer()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Dash();
+        aimAtPlayer();
+        this.nullNeeded = true;
+    }
+
+    public void MoveAimAtPlayer()
+    {
+        actionNull();
+        this.nullNeeded = false;
+        Movement();
+        aimAtPlayer();
+        this.nullNeeded = true;
+    }
+
+
 }

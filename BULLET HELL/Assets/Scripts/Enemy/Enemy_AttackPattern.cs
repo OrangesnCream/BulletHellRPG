@@ -5,7 +5,10 @@ using UnityEngine;
 public class Enemy_AttackPattern : MonoBehaviour
 {
     public Enemy_Controller controller;
-    public List<Action> pattern;
+    public List<Action> patternMove;
+    public List<Action> patternShoot1;
+    public List<Action> patternShoot2;
+    public List<Action> patternShootAim;
 
     public int oppurtinutycheck;
     private int patternopportunity;
@@ -15,7 +18,10 @@ public class Enemy_AttackPattern : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pattern = new List<Action>();
+        patternMove = new List<Action>();
+        patternShoot1 = new List<Action>();
+        patternShoot2 = new List<Action>();
+        patternShootAim = new List<Action>();
 
         patternopportunity = oppurtinutycheck;
         iterator = 0;
@@ -27,16 +33,11 @@ public class Enemy_AttackPattern : MonoBehaviour
     {
         if(!added)//health patterns || boss specific attacks || change hitbox for 2.5d look
         {
-            pattern.Add(controller.startDash);
-            pattern.Add(controller.startSpin);
-            pattern.Add(controller.startMovement);
-            pattern.Add(controller.startSpinOpposite);
-            pattern.Add(controller.startDashShoot);
-            pattern.Add(controller.startMoveSpinOpposite);
-            pattern.Add(controller.startShoot);
-            pattern.Add(controller.startDashSpinOpposite);
-            pattern.Add(controller.startDashSpin);
-            pattern.Add(controller.startMoveSpin);
+            patternMove.Add(controller.Dash);  patternShoot1.Add(controller.Dash);
+            patternMove.Add(controller.doNothing);
+            patternMove.Add(controller.Movement);
+            patternMove.Add(controller.doNothing);
+            patternMove.Add(controller.doNothing);
             added = true;
         }
 
@@ -44,14 +45,14 @@ public class Enemy_AttackPattern : MonoBehaviour
 
         if(patternopportunity >= oppurtinutycheck)
         {
-            if (iterator >= pattern.Count)
+            if (iterator >= pattern1.Count)
             {
                 iterator = 0;
             }
             else
             {
-                pattern[iterator].Invoke();
-                Debug.Log(pattern[iterator].Method.Name);
+                pattern1[iterator].Invoke();
+                Debug.Log(pattern1[iterator].Method.Name);
                 iterator++;
             }
 
