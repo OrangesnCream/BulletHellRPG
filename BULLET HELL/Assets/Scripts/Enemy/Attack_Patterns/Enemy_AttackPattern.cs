@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Enemy_AttackPattern : MonoBehaviour
 {
-    public Enemy_Controller controller;
+    public Enemy_Shoot1Command Shoot1Command;
+    public Enemy_Shoot2Command shoot2Command;
+    public Enemy_ShootAimCommand shootAimCommand;
     public List<Action> pattern;
 
     public int oppurtinutycheck;
@@ -27,16 +29,6 @@ public class Enemy_AttackPattern : MonoBehaviour
     {
         if(!added)//health patterns || boss specific attacks || change hitbox for 2.5d look
         {
-            pattern.Add(controller.Dash);
-            pattern.Add(controller.Spin1);
-            pattern.Add(controller.Movement);
-            pattern.Add(controller.Spin1Opposite);
-            pattern.Add(controller.DashShoot1);
-            pattern.Add(controller.MoveSpin1Opposite);
-            pattern.Add(controller.Shoot1);
-            pattern.Add(controller.DashSpin1Opposite);
-            pattern.Add(controller.DashSpin1);
-            pattern.Add(controller.MoveSpin1);
             added = true;
         }
 
