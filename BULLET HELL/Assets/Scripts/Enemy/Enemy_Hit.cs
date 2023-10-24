@@ -12,14 +12,6 @@ public class Enemy_Hit : MonoBehaviour
         healthBar = this.gameObject.GetComponentInChildren<HealthBar>();
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))//temp function
-        {
-            takeDamage(1);
-        }
-    }
-
     public void takeDamage(int damage)
     {
         healthBar.setHealth(healthBar.getHealth() - damage);// add healthbar fade in fade out
