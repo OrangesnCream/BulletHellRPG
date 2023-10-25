@@ -7,6 +7,7 @@ public class Enemy_ShootAimCommand : MonoBehaviour
     private Enemy_ShootingPattern shootingPattern;
     private BulletParticles particles;
     private GameObject player;
+    public GameObject enemy;
 
     private int temp_FireRate;
     private float temp_BulletSpeed;
@@ -20,8 +21,7 @@ public class Enemy_ShootAimCommand : MonoBehaviour
     public int desired_Bounce;
 
     private bool nullNeeded;
-    private Vector2 vecPlayer;
-    private Vector2 vecEnemy;
+    private Vector2 direction;
     private float angle;
 
     // Start is called before the first frame update
@@ -49,11 +49,9 @@ public class Enemy_ShootAimCommand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        vecPlayer.x = player.transform.position.x;
-        vecPlayer.y = player.transform.position.y;
-        vecEnemy.x = this.gameObject.transform.position.x;
-        vecEnemy.y = this.gameObject.transform.position.y;
-        angle = Vector2.Angle(vecEnemy, vecPlayer);
+        direction.x = player.transform.position.x - enemy.transform.position.x;
+        direction.y = player.transform.position.y - enemy.transform.position.y;
+        angle = Vector2.Angle(direction, Vector2.right);
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
@@ -109,5 +107,6 @@ public class Enemy_ShootAimCommand : MonoBehaviour
     public void doNothing()
     {
         //nothing happens
+        actionNull();
     }
 }

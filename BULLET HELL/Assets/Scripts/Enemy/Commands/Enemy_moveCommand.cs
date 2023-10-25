@@ -77,5 +77,6 @@ public class Enemy_moveCommand : MonoBehaviour
     public void doNothing()
     {
         //nothing happens
+        actionNull();
     }
 }

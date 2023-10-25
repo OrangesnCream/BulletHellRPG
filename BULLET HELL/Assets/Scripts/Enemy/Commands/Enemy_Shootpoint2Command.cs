@@ -224,5 +224,6 @@ public class Enemy_Shoot2Command : MonoBehaviour
     public void doNothing()
     {
         //nothing happens
+        actionNull();
     }
 }
