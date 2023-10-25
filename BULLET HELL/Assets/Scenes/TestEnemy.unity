@@ -333,6 +333,14 @@ PrefabInstance:
       propertyPath: shootAimCommand
       value: 
       objectReference: {fileID: 1743311907}
+    - target: {fileID: 5733762243246632245, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 433338492}
+    - target: {fileID: 5733762243246632245, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+      propertyPath: desired_Size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6039894310255634259, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: m_TagString
       value: Enemy_Bullet
@@ -358,12 +366,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+--- !u!1 &433338492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8579055973875199395, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+  m_PrefabInstance: {fileID: 433338488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &433338493 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6472355663519207985, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
   m_PrefabInstance: {fileID: 433338488}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 433338492}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2431557b52b006441aa06cf682ad6c7a, type: 3}
