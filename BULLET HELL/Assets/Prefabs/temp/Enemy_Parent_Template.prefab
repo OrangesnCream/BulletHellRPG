@@ -292,10 +292,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233ec64cc2e9c9d4e9306b5ffc3fcccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 8579055973875199395}
   desired_FireRate: 1
   desired_BulletSpeed: 5
   desired_SpinSpeed: 20
-  desired_Size: 2
+  desired_Size: 1
   desired_Bounce: 0
 --- !u!1 &6039894310255634259
 GameObject:
@@ -779,8 +780,8 @@ GameObject:
   - component: {fileID: 3607124231533255305}
   - component: {fileID: 4167120313908322887}
   - component: {fileID: 1492734272480394212}
-  - component: {fileID: 9070934168304617622}
   - component: {fileID: 6472355663519207985}
+  - component: {fileID: 7904599633534293153}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -967,8 +968,24 @@ MonoBehaviour:
   - {fileID: 2052373229731195442}
   - {fileID: 467059562957281391}
   - {fileID: 8889295628270441338}
---- !u!60 &9070934168304617622
-PolygonCollider2D:
+--- !u!114 &6472355663519207985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8579055973875199395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2431557b52b006441aa06cf682ad6c7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desired_MoveSpeed: 1
+  desired_MoveOpportunityCheck: 75
+  desired_MaxHealth: 200
+  dashMultiplier: 5
+--- !u!58 &7904599633534293153
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1000,51 +1017,5 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.11080609, y: -0.0015434027}
-      - {x: -0.26314986, y: 0.00027239323}
-      - {x: -0.19965844, y: -0.15751855}
-      - {x: -0.26821008, y: -0.0044581294}
-      - {x: -0.37351397, y: 0.006546274}
-      - {x: -0.5, y: 0}
-      - {x: -0.47265625, y: -0.15234375}
-      - {x: -0.40234375, y: -0.29296875}
-      - {x: -0.29296875, y: -0.40234375}
-      - {x: -0.15234375, y: -0.47265625}
-      - {x: 0, y: -0.5}
-      - {x: 0.15234375, y: -0.47265625}
-      - {x: 0.29296875, y: -0.40234375}
-      - {x: 0.40234375, y: -0.29296875}
-      - {x: 0.47265625, y: -0.15234375}
-      - {x: 0.5, y: 0}
-      - {x: 0.46099246, y: 0.00071437657}
-      - {x: 0.40234375, y: -0.0044580996}
-      - {x: 0.28713688, y: 0.0057745874}
-      - {x: 0.12318426, y: 0.0061043203}
-  m_UseDelaunayMesh: 0
---- !u!114 &6472355663519207985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8579055973875199395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2431557b52b006441aa06cf682ad6c7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  desired_MoveSpeed: 1
-  desired_MoveOpportunityCheck: 75
-  desired_MaxHealth: 200
-  dashMultiplier: 5
+  serializedVersion: 2
+  m_Radius: 0.5
