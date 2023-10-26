@@ -40,7 +40,7 @@ public class BulletParticles : MonoBehaviour
             // A simple particle material with no texture.
             Material particleMaterial = material;
 
-            // Create a green Particle System.
+            // Create a Particle System.
             var go = new GameObject("Particle_System_" + i);
             go.transform.Rotate(angle * i, 90, 0); // Rotate so the system emits upwards.
             go.transform.parent = this.transform;

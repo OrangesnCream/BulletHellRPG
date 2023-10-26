@@ -25,7 +25,7 @@ public class Enemy_ShootAimCommand : MonoBehaviour
     private float angle;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         shootingPattern = this.gameObject.GetComponent<Enemy_ShootingPattern>();
         particles = this.gameObject.GetComponent<BulletParticles>();
@@ -38,10 +38,10 @@ public class Enemy_ShootAimCommand : MonoBehaviour
 
         particles.setSpinSpeed(desired_SpinSpeed);
 
-        temp_FireRate = shootingPattern.getFireRate();
-        temp_BulletSpeed = shootingPattern.getBulletSpeed();
-        temp_Size = shootingPattern.getSize();
-        temp_Bounce = shootingPattern.getBounce();
+        temp_FireRate = desired_FireRate;
+        temp_BulletSpeed = desired_BulletSpeed;
+        temp_Size = desired_Size;
+        temp_Bounce = desired_Bounce;
 
         nullNeeded = true;
     }
@@ -51,7 +51,7 @@ public class Enemy_ShootAimCommand : MonoBehaviour
     {
         direction.x = player.transform.position.x - enemy.transform.position.x;
         direction.y = player.transform.position.y - enemy.transform.position.y;
-        angle = Vector2.Angle(direction, Vector2.right);
+        angle = (Mathf.Atan2(direction.y, direction.x) * 180) / Mathf.PI;
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 

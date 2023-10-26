@@ -20,7 +20,7 @@ public class Enemy_Shoot2Command : MonoBehaviour
 
     private bool nullNeeded;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         shootingPattern = this.gameObject.GetComponent<Enemy_ShootingPattern>();
         particles = this.gameObject.GetComponent<BulletParticles>();
@@ -32,10 +32,10 @@ public class Enemy_Shoot2Command : MonoBehaviour
 
         particles.setSpinSpeed(desired_SpinSpeed);
 
-        temp_FireRate = shootingPattern.getFireRate();
-        temp_BulletSpeed = shootingPattern.getBulletSpeed();
-        temp_Size = shootingPattern.getSize();
-        temp_Bounce = shootingPattern.getBounce();
+        temp_FireRate = desired_FireRate;
+        temp_BulletSpeed = desired_BulletSpeed;
+        temp_Size = desired_Size;
+        temp_Bounce = desired_Bounce;
 
         nullNeeded = true;
     }
