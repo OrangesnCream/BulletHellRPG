@@ -380,6 +380,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2152127815003737818, guid: 55b5fb79a8e65b54a8bc3ccf8bce2809, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.18922089
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152127815003737818, guid: 55b5fb79a8e65b54a8bc3ccf8bce2809, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.18075012
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152127815003737818, guid: 55b5fb79a8e65b54a8bc3ccf8bce2809, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152127815003737818, guid: 55b5fb79a8e65b54a8bc3ccf8bce2809, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.22
+      objectReference: {fileID: 0}
     - target: {fileID: 5690224215618895085, guid: 55b5fb79a8e65b54a8bc3ccf8bce2809, type: 3}
       propertyPath: inkJSON
       value: 
@@ -428,6 +444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 8575768017681211642, guid: 55b5fb79a8e65b54a8bc3ccf8bce2809, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 54aab5f4fc58f1046a525843d09d26ee, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
