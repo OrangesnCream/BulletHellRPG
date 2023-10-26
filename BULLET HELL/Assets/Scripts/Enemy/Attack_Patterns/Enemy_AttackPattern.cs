@@ -36,13 +36,15 @@ public class Enemy_AttackPattern : MonoBehaviour
     {
         if(!added)//health patterns || boss specific attacks || change hitbox for 2.5d look
         {
-            patternMove.Add(moveCommand.Dash);      patternShoot1.Add(Shoot1Command.doNothing);                     patternShoot2.Add(shoot2Command.doNothing);                     patternShootAim.Add(shootAimCommand.doNothing);
-            patternMove.Add(moveCommand.Movement);  patternShoot1.Add(Shoot1Command.doNothing);                     patternShoot2.Add(shoot2Command.doNothing);                     patternShootAim.Add(shootAimCommand.doNothing);
-            patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.ShootBulletSlower);             patternShoot2.Add(shoot2Command.ShootBulletSlowerSpin);         patternShootAim.Add(shootAimCommand.doNothing);
-            patternMove.Add(moveCommand.Movement);  patternShoot1.Add(Shoot1Command.doNothing);                     patternShoot2.Add(shoot2Command.doNothing);                     patternShootAim.Add(shootAimCommand.doNothing);
-            patternMove.Add(moveCommand.Dash);      patternShoot1.Add(Shoot1Command.doNothing);                     patternShoot2.Add(shoot2Command.doNothing);                     patternShootAim.Add(shootAimCommand.doNothing);
-            patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.ShootFireFasterSpin);           patternShoot2.Add(shoot2Command.ShootFireFasterSpinOpposite);   patternShootAim.Add(shootAimCommand.aimAtPlayer);
-            patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.doNothing);                     patternShoot2.Add(shoot2Command.doNothing);                     patternShootAim.Add(shootAimCommand.aimAtPlayer);
+            patternMove.Add(moveCommand.Dash);      patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);
+            patternMove.Add(moveCommand.Movement);  patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);
+            patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.BulletSlower);              patternShoot2.Add(shoot2Command.BulletSlowerSpin);          patternShootAim.Add(shootAimCommand.doNothing);
+            patternMove.Add(moveCommand.Movement);  patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);
+            patternMove.Add(moveCommand.Dash);      patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);
+            patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.FireFasterSpin);            patternShoot2.Add(shoot2Command.FireFasterSpinOpposite);    patternShootAim.Add(shootAimCommand.aimAtPlayer);
+            patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.aimAtPlayer);
+            patternMove.Add(moveCommand.Movement);  patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);
+            patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.FireFasterSpinOpposite);    patternShoot2.Add(shoot2Command.BulletSlower);              patternShootAim.Add(shootAimCommand.doNothing);
 
             added = true;
         }

@@ -275,7 +275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3397128361186676720, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: number_of_columns
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3536932739666920482, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: lifetime

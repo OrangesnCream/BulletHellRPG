@@ -32,11 +32,6 @@ public class Enemy_Shoot2Command : MonoBehaviour
 
         particles.setSpinSpeed(desired_SpinSpeed);
 
-        temp_FireRate = desired_FireRate;
-        temp_BulletSpeed = desired_BulletSpeed;
-        temp_Size = desired_Size;
-        temp_Bounce = desired_Bounce;
-
         nullNeeded = true;
     }
 
@@ -44,12 +39,12 @@ public class Enemy_Shoot2Command : MonoBehaviour
 
     public void resetFireRate()
     {
-        shootingPattern.setFireRate(temp_FireRate);
+        shootingPattern.setFireRate(desired_FireRate);
     }
 
     public void resetBulletSpeed()
     {
-        shootingPattern.setBulletSpeed(temp_BulletSpeed);
+        shootingPattern.setBulletSpeed(desired_BulletSpeed);
     }
 
     public void resetSpinSpeed()
@@ -59,12 +54,12 @@ public class Enemy_Shoot2Command : MonoBehaviour
 
     public void resetSize()
     {
-        shootingPattern.setSize(temp_Size);
+        shootingPattern.setSize(desired_Size);
     }
 
     public void resetBounce()
     {
-        shootingPattern.setBounce(temp_Bounce);
+        shootingPattern.setBounce(desired_Bounce);
     }
 
     //----------action nullifier---------------------
@@ -109,115 +104,115 @@ public class Enemy_Shoot2Command : MonoBehaviour
         particles.setSpinSpeed(-1 * desired_SpinSpeed);
     }
 
-    public void ShootFireFaster()
+    public void FireFaster()
     {
         if (nullNeeded)
         {
             actionNull();
         }
-        shootingPattern.setFireRate(temp_FireRate * 2);
+        shootingPattern.setFireRate(desired_FireRate * 2);
         shootingPattern.setCanShoot(true);
     }
 
-    public void ShootFireSlower()
+    public void FireSlower()
     {
         if (nullNeeded)
         {
             actionNull();
         }
-        shootingPattern.setFireRate((int)(temp_FireRate / 2));
+        shootingPattern.setFireRate((int)(desired_FireRate / 2));
         shootingPattern.setCanShoot(true);
     }
 
-    public void ShootBulletFaster()
+    public void BulletFaster()
     {
         if (nullNeeded)
         {
             actionNull();
         }
-        shootingPattern.setBulletSpeed(temp_BulletSpeed * 2);
+        shootingPattern.setBulletSpeed(desired_BulletSpeed * 2);
         shootingPattern.setCanShoot(true);
     }
 
-    public void ShootBulletSlower()
+    public void BulletSlower()
     {
         if (nullNeeded)
         {
             actionNull();
         }
-        shootingPattern.setBulletSpeed(temp_BulletSpeed / 2);
+        shootingPattern.setBulletSpeed(desired_BulletSpeed / 2);
         shootingPattern.setCanShoot(true);
     }
 
-    public void ShootFireFasterSpin()
+    public void FireFasterSpin()
     {
         actionNull();
         this.nullNeeded = false;
         Spin();
-        ShootFireFaster();
+        FireFaster();
         this.nullNeeded = true;
     }
 
-    public void ShootFireSlowerSpin()
+    public void FireSlowerSpin()
     {
         actionNull();
         this.nullNeeded = false;
         Spin();
-        ShootFireSlower();
+        FireSlower();
         this.nullNeeded = true;
     }
 
-    public void ShootBulletFasterSpin()
+    public void BulletFasterSpin()
     {
         actionNull();
         this.nullNeeded = false;
         Spin();
-        ShootBulletFaster();
+        BulletFaster();
         this.nullNeeded = true;
     }
 
-    public void ShootBulletSlowerSpin()
+    public void BulletSlowerSpin()
     {
         actionNull();
         this.nullNeeded = false;
         Spin();
-        ShootBulletSlower();
+        BulletSlower();
         this.nullNeeded = true;
     }
 
-    public void ShootFireFasterSpinOpposite()
+    public void FireFasterSpinOpposite()
     {
         actionNull();
         this.nullNeeded = false;
         SpinOpposite();
-        ShootFireFaster();
+        FireFaster();
         this.nullNeeded = true;
     }
 
-    public void ShootFireSlowerSpinOpposite()
+    public void FireSlowerSpinOpposite()
     {
         actionNull();
         this.nullNeeded = false;
         SpinOpposite();
-        ShootFireSlower();
+        FireSlower();
         this.nullNeeded = true;
     }
 
-    public void ShootBulletFasterSpinOpposite()
+    public void BulletFasterSpinOpposite()
     {
         actionNull();
         this.nullNeeded = false;
         SpinOpposite();
-        ShootBulletFaster();
+        BulletFaster();
         this.nullNeeded = true;
     }
 
-    public void ShootBulletSlowerSpinOpposite()
+    public void BulletSlowerSpinOpposite()
     {
         actionNull();
         this.nullNeeded = false;
         SpinOpposite();
-        ShootBulletSlower();
+        BulletSlower();
         this.nullNeeded = true;
     }
 

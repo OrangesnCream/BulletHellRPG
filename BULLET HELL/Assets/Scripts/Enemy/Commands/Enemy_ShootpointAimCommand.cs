@@ -9,11 +9,6 @@ public class Enemy_ShootAimCommand : MonoBehaviour
     private GameObject player;
     public GameObject enemy;
 
-    private int temp_FireRate;
-    private float temp_BulletSpeed;
-    private float temp_Size;
-    private int temp_Bounce;
-
     public int desired_FireRate;
     public float desired_BulletSpeed;
     public float desired_SpinSpeed;
@@ -38,11 +33,6 @@ public class Enemy_ShootAimCommand : MonoBehaviour
 
         particles.setSpinSpeed(desired_SpinSpeed);
 
-        temp_FireRate = desired_FireRate;
-        temp_BulletSpeed = desired_BulletSpeed;
-        temp_Size = desired_Size;
-        temp_Bounce = desired_Bounce;
-
         nullNeeded = true;
     }
 
@@ -52,6 +42,12 @@ public class Enemy_ShootAimCommand : MonoBehaviour
         direction.x = player.transform.position.x - enemy.transform.position.x;
         direction.y = player.transform.position.y - enemy.transform.position.y;
         angle = (Mathf.Atan2(direction.y, direction.x) * 180) / Mathf.PI;
+
+        if(particles.getColumns() > 1)
+        {
+            angle += particles.getDegrees() / 4;
+        }
+
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
@@ -59,12 +55,12 @@ public class Enemy_ShootAimCommand : MonoBehaviour
 
     public void resetFireRate()
     {
-        shootingPattern.setFireRate(temp_FireRate);
+        shootingPattern.setFireRate(desired_FireRate);
     }
 
     public void resetBulletSpeed()
     {
-        shootingPattern.setBulletSpeed(temp_BulletSpeed);
+        shootingPattern.setBulletSpeed(desired_BulletSpeed);
     }
 
     public void resetSpinSpeed()
@@ -74,12 +70,12 @@ public class Enemy_ShootAimCommand : MonoBehaviour
 
     public void resetSize()
     {
-        shootingPattern.setSize(temp_Size);
+        shootingPattern.setSize(desired_Size);
     }
 
     public void resetBounce()
     {
-        shootingPattern.setBounce(temp_Bounce);
+        shootingPattern.setBounce(desired_Bounce);
     }
 
     //----------action nullifier---------------------

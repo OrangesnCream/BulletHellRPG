@@ -88,4 +88,7 @@ public class BulletParticles : MonoBehaviour
     public void setSpinSpeed(float spinspeed) { this.spin_speed = spinspeed; }
     public float getSpinSpeed() { return this.spin_speed; }
 
+    public int getColumns() { return this.number_of_columns; }
+
+    public float getDegrees() { return this.degrees; }
 }
