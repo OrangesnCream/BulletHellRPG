@@ -20,7 +20,7 @@ public class DialogueTrigger : MonoBehaviour {
         if (playerInRange) {
             triggerVisual.SetActive(true);
             if (Input.GetKeyDown("e")){
-                Debug.Log(inkJSON.text);
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             }
 
         }
