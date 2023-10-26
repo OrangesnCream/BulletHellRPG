@@ -305,32 +305,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5733762243246632245, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 433338492}
-    - target: {fileID: 5733762243246632245, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: desired_Size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6296802709629211088, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6296802709629211088, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
---- !u!1 &433338492 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8579055973875199395, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-  m_PrefabInstance: {fileID: 433338488}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &485206811
 GameObject:
   m_ObjectHideFlags: 0
