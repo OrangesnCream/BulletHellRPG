@@ -8,6 +8,7 @@ public class Enemy_AttackPattern : MonoBehaviour
     public Enemy_Shoot1Command Shoot1Command;
     public Enemy_Shoot2Command shoot2Command;
     public Enemy_ShootAimCommand shootAimCommand;
+    public HealthBar healthBar;
     public List<Action> patternMove;
     public List<Action> patternShoot1;
     public List<Action> patternShoot2;

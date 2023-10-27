@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 3397128361186676720}
   - component: {fileID: 8978108092149460898}
   - component: {fileID: 5733762243246632245}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Shootpoint_Aim
   m_TagString: Enemy_Bullet
   m_Icon: {fileID: 0}
@@ -257,10 +257,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38077e4f30f66084199f12d71dc00a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number_of_columns: 1
+  number_of_columns: 3
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   color: {r: 1, g: 0, b: 0, a: 1}
-  lifetime: 10
+  lifetime: 100
   material: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
   collision_layers:
     serializedVersion: 2
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 8579055973875199395}
   desired_FireRate: 1
-  desired_BulletSpeed: 5
+  desired_BulletSpeed: 8
   desired_SpinSpeed: 20
   desired_Size: 1
   desired_Bounce: 0
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 2576834127472259560}
   - component: {fileID: 575671979552654016}
   - component: {fileID: 4445703209504317278}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Shootpoint_2
   m_TagString: Enemy_Bullet
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ MonoBehaviour:
   number_of_columns: 6
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   color: {r: 1, g: 0.5882352, b: 0, a: 1}
-  lifetime: 10
+  lifetime: 100
   material: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
   collision_layers:
     serializedVersion: 2
@@ -690,7 +690,7 @@ GameObject:
   - component: {fileID: 3536932739666920482}
   - component: {fileID: 3038915014392522402}
   - component: {fileID: 7502040917193518913}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Shootpoint_1
   m_TagString: Enemy_Bullet
   m_Icon: {fileID: 0}
@@ -727,7 +727,7 @@ MonoBehaviour:
   number_of_columns: 6
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   color: {r: 1, g: 0.5882352, b: 0, a: 1}
-  lifetime: 10
+  lifetime: 100
   material: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
   collision_layers:
     serializedVersion: 2
@@ -951,7 +951,8 @@ MonoBehaviour:
   Shoot1Command: {fileID: 7502040917193518913}
   shoot2Command: {fileID: 4445703209504317278}
   shootAimCommand: {fileID: 5733762243246632245}
-  oppurtinutycheck: 150
+  healthBar: {fileID: 0}
+  oppurtinutycheck: 225
   half: 0
 --- !u!195 &3607124231533255305
 NavMeshAgent:

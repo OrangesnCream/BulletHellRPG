@@ -67,7 +67,7 @@ public class Attacking : MonoBehaviour
         foreach(RaycastHit2D hit in hits){
             if(hit.transform.gameObject.tag == "Enemy"){
                 Debug.Log("Hit " + hit.transform.gameObject.name + " for " + (meleeDamage) + " damage");
-                // hit.transform.gameObject.GetComponent<Enemy>().TakeDamage(meleeDamage);
+                hit.transform.gameObject.GetComponent<Enemy_Hit>().takeDamage(meleeDamage);
             }
         }
         // canMelee = false; //TODO: canMelee = true when animation is done

@@ -321,14 +321,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4445703209504317278, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: desired_FireRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5115482149615774263, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: half
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5115482149615774263, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: oppurtinutycheck
       value: 225
@@ -344,10 +336,6 @@ PrefabInstance:
     - target: {fileID: 6296802709629211088, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502040917193518913, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: desired_FireRate
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
