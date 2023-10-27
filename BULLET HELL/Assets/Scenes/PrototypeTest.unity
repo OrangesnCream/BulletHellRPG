@@ -215,7 +215,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1363377713
+--- !u!1001 &1437926249
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -225,11 +225,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3231379570651199168, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: m_Name
-      value: Enemy_Parent_ParticleSystem
+      value: Enemy_Parent_Template
       objectReference: {fileID: 0}
     - target: {fileID: 3645540203741806786, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3645540203741806786, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: m_LocalPosition.y
@@ -274,14 +274,6 @@ PrefabInstance:
     - target: {fileID: 6296802709629211088, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6441065888978084146, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -16.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 6441065888978084146, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -366,5 +358,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 365075838}
-  - {fileID: 1363377713}
   - {fileID: 1770765216}
+  - {fileID: 1437926249}
