@@ -951,9 +951,10 @@ MonoBehaviour:
   Shoot1Command: {fileID: 7502040917193518913}
   shoot2Command: {fileID: 4445703209504317278}
   shootAimCommand: {fileID: 5733762243246632245}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 3475616584691865037}
   oppurtinutycheck: 225
-  half: 0
+  halfpattern: 0
+  fourthpattern: 0
 --- !u!195 &3607124231533255305
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -91,12 +91,52 @@ public class Enemy_ShootAimCommand : MonoBehaviour
 
     //----------------------actions-----------------------
 
-    public void aimAtPlayer()
+    public void Shoot()
     {
         if (nullNeeded)
         {
             actionNull();
         }
+        shootingPattern.setCanShoot(true);
+    }
+
+    public void FireFaster()
+    {
+        if (nullNeeded)
+        {
+            actionNull();
+        }
+        shootingPattern.setFireRate(desired_FireRate * 2);
+        shootingPattern.setCanShoot(true);
+    }
+
+    public void FireSlower()
+    {
+        if (nullNeeded)
+        {
+            actionNull();
+        }
+        shootingPattern.setFireRate((int)(desired_FireRate / 2));
+        shootingPattern.setCanShoot(true);
+    }
+
+    public void BulletFaster()
+    {
+        if (nullNeeded)
+        {
+            actionNull();
+        }
+        shootingPattern.setBulletSpeed(desired_BulletSpeed * 2);
+        shootingPattern.setCanShoot(true);
+    }
+
+    public void BulletSlower()
+    {
+        if (nullNeeded)
+        {
+            actionNull();
+        }
+        shootingPattern.setBulletSpeed(desired_BulletSpeed / 2);
         shootingPattern.setCanShoot(true);
     }
 
