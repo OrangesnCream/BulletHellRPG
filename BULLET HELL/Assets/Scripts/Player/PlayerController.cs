@@ -64,6 +64,9 @@ public class PlayerController : MonoBehaviour
     }
 
     void FixedUpdate(){
+       if (DialogueManager.GetInstance().dialogueIsPlaying) {
+            return;
+        }
         if(isDash){
             return;
         }

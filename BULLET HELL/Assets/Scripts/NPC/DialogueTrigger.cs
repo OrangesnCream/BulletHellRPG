@@ -17,7 +17,7 @@ public class DialogueTrigger : MonoBehaviour {
         triggerVisual.SetActive(false);
     }
     private void Update() {
-        if (playerInRange) {
+        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying) {
             triggerVisual.SetActive(true);
             if (Input.GetKeyDown("e")){
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
