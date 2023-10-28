@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
     private static DialogueManager instance;
+    private bool firstMessageRead;
     private void Awake(){
         if(instance!=null){
             Debug.LogWarning("Found multiple dialogue managers");
@@ -22,39 +23,46 @@ public class DialogueManager : MonoBehaviour
     }
     private void Start(){
         dialogueIsPlaying=false;
+        firstMessageRead = false;
         dialoguePanel.SetActive(false);
     }
     private void Update(){
         if(!dialogueIsPlaying){
             return;
         }
-        if(Input.GetKeyDown("e")){
+        if(Input.GetKeyDown("e")&&firstMessageRead){
             ContinueStory();
         }
+        firstMessageRead = true;
     }
     public void EnterDialogueMode(TextAsset inkJSON){
-      
-        currentStory=new Story(inkJSON.text);
-        dialogueIsPlaying=true;
+        Debug.Log("Entered Dialogue");
+        currentStory =new Story(inkJSON.text);
+       
         dialoguePanel.SetActive(true);
         ContinueStory();
+        dialogueIsPlaying = true;
+      
+
     }
-    private void ExitDialougeMode(){
+    private IEnumerator ExitDialougeMode(){
+        yield return new WaitForSeconds(0.2f);
         Debug.Log("Exited Dialogue");
         dialogueIsPlaying = false;
+        firstMessageRead = false;
         dialoguePanel.SetActive(false);
         dialogueText.text="";
     }
     private void ContinueStory(){
         Debug.Log("ran");
         if (currentStory.canContinue){
-            Debug.Log("Entered Dialogue");
+        
             dialogueText.text=currentStory.Continue();
             Debug.Log(dialogueText.text);
         }
         else{
     
-            ExitDialougeMode();
+            StartCoroutine(ExitDialougeMode());
         }
     }
 }

@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate(){
        if (DialogueManager.GetInstance().dialogueIsPlaying) {
+            //freezes player during dialogue
             return;
         }
         if(isDash){
