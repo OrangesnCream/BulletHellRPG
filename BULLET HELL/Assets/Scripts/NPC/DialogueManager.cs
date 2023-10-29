@@ -41,7 +41,7 @@ public class DialogueManager : MonoBehaviour
         if(!dialogueIsPlaying){
             return;
         }
-        if(Input.GetKeyDown("e")&&firstMessageRead){
+        if(Input.GetKeyDown("e")&&firstMessageRead&& currentStory.currentChoices.Count == 0) {
             ContinueStory();
         }
         firstMessageRead = true;
