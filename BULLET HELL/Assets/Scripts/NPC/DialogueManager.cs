@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Ink.Runtime;
+using UnityEngine.EventSystems;
 public class DialogueManager : MonoBehaviour
 {
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [Header("Choices UI")]
+    [SerializeField] private GameObject[] choices;
+    private TextMeshProUGUI[] choicesText;
+
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
     private static DialogueManager instance;
@@ -25,6 +30,12 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying=false;
         firstMessageRead = false;
         dialoguePanel.SetActive(false);
+        choicesText = new TextMeshProUGUI[choices.Length];
+        int i = 0;
+        foreach (GameObject choice in choices) {
+            choicesText[i] = choice.GetComponentInChildren<TextMeshProUGUI>();
+            i++;
+        }
     }
     private void Update(){
         if(!dialogueIsPlaying){
@@ -58,11 +69,37 @@ public class DialogueManager : MonoBehaviour
         if (currentStory.canContinue){
         
             dialogueText.text=currentStory.Continue();
-            Debug.Log(dialogueText.text);
+            displayChoices();
         }
         else{
     
             StartCoroutine(ExitDialougeMode());
         }
+    }
+    private void displayChoices() {
+        List<Choice> currentChoices = currentStory.currentChoices;
+
+        if (currentChoices.Count > choices.Length) {
+            Debug.LogError("More choices were given than can be supported");
+        }
+        int j = 0;
+        foreach (Choice choice in currentChoices) {
+            choices[j].gameObject.SetActive(true);
+            choicesText[j].text = choice.text;
+            j++;
+        }
+        for (int i = j; i < choices.Length; i++) {
+            choices[i].gameObject.SetActive(false);
+        }
+        StartCoroutine(selectFirstChoice());
+    }
+    private IEnumerator selectFirstChoice() {
+        EventSystem.current.SetSelectedGameObject(null);
+        yield return new WaitForEndOfFrame();
+        EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
+    }
+    public void MakeChoice(int choiceIndex) {
+        currentStory.ChooseChoiceIndex(choiceIndex);
+        ContinueStory();
     }
 }
