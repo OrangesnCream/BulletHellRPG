@@ -64,9 +64,12 @@ public class PlayerController : MonoBehaviour
     }
 
     void FixedUpdate(){
-       if (DialogueManager.GetInstance().dialogueIsPlaying) {
-            //freezes player during dialogue
-            return;
+        if (GameObject.FindGameObjectsWithTag("NPC").Length != 0) {
+            if (DialogueManager.GetInstance().dialogueIsPlaying) {
+                Debug.Log("freeze movement");
+                //freezes player during dialogue
+                return;
+            }
         }
         if(isDash){
             return;
