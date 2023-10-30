@@ -8,16 +8,14 @@ public class Enemy_Nav : MonoBehaviour
     private NavMeshAgent agent;
     private Transform goal;
 
-    private float speed;
     private bool canmove;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        goal = GameObject.FindWithTag("Player").transform;
-        agent.destination = goal.position;
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        goal = GameObject.FindWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -25,7 +23,12 @@ public class Enemy_Nav : MonoBehaviour
     {
         if (canmove)
         {
+            agent.acceleration = agent.speed;
             agent.SetDestination(goal.position);
+        }
+        else
+        {
+            agent.SetDestination(this.transform.position);
         }
     }
 

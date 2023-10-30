@@ -120945,6 +120945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Parent_Template
       objectReference: {fileID: 0}
+    - target: {fileID: 3607124231533255305, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+      propertyPath: m_Acceleration
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3645540203741806786, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.49
@@ -120992,6 +120996,10 @@ PrefabInstance:
     - target: {fileID: 6296802709629211088, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6472355663519207985, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+      propertyPath: dashMultiplier
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -121088,6 +121096,10 @@ PrefabInstance:
     - target: {fileID: 126417684974679318, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: m_Name
       value: Boss_Engine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672972137185641788, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: m_Acceleration
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7821945088273641964, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: m_AnchorMax.x
