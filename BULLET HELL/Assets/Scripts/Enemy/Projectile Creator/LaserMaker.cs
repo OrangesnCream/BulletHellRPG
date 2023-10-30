@@ -45,7 +45,7 @@ public class LaserMaker : MonoBehaviour
             system = go.AddComponent<LineRenderer>();
 
             system.startColor = color;
-            system.enabled = true;
+            system.enabled = false;
             system.useWorldSpace = true;
             system.material = material;
             system.SetPosition(0, transform.position);
