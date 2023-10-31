@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LaserMaker : MonoBehaviour
@@ -7,7 +8,7 @@ public class LaserMaker : MonoBehaviour
     public int number_of_columns;
     public Color color;
     public Material material;
-    private float spin_speed;
+    public float spin_speed;
     private float time;
     public LayerMask collision_layers;
     private float angle;
@@ -23,7 +24,7 @@ public class LaserMaker : MonoBehaviour
     private void FixedUpdate()
     {
         time += Time.fixedDeltaTime;
-        this.transform.rotation = Quaternion.Euler(0, 0, time * spin_speed);
+        //this.transform.rotation = Quaternion.Euler(0, 0, time * spin_speed);
     }
 
     // Update is called once per frame
@@ -45,11 +46,10 @@ public class LaserMaker : MonoBehaviour
             system = go.AddComponent<LineRenderer>();
 
             system.startColor = color;
-            system.enabled = false;
-            system.useWorldSpace = true;
+            system.endColor = color;
+            system.enabled = true;
+            system.useWorldSpace = false;
             system.material = material;
-            system.SetPosition(0, transform.position);
-            system.SetPosition(1, new Vector3(Mathf.Cos(((angle * i * Mathf.PI) / 180)), Mathf.Sin((angle * i * Mathf.PI) / 180), 0) * 5000);
         }
     }
 
@@ -59,4 +59,8 @@ public class LaserMaker : MonoBehaviour
     public int getColumns() { return this.number_of_columns; }
 
     public float getDegrees() { return this.degrees; }
+
+    public float getAngle() { return this.angle; }
+
+    public int getLayerMask() { return this.collision_layers; }
 }

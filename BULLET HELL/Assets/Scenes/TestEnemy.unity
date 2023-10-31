@@ -525,6 +525,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 749546621
       objectReference: {fileID: 0}
+    - target: {fileID: 5437008409480091089, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+      propertyPath: spin_speed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6296802709629211088, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

@@ -114606,7 +114606,7 @@ GameObject:
   - component: {fileID: 1399857398}
   - component: {fileID: 1399857401}
   - component: {fileID: 1399857400}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barriers Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
