@@ -40,17 +40,20 @@ public class Enemy_LaserPattern : MonoBehaviour
     // Update is called once per frame
     void Update()//do the spin here & draw the raycast hits
     {
-        foreach(LineRenderer child in lineRenderers)
-        {
-            child.SetPosition(0, Vector3.zero);
-            RaycastHit2D hit;
-
-            hit = Physics2D.Raycast(transform.position, child.transform.forward, 1000f, laserMaker.getLayerMask());
-
-            child.SetPosition(1, hit.transform.position);
-
-            Debug.Log(hit.transform.position);
-        }
+        foreach(LineRenderer child in lineRenderers)      
+            {
+                child.SetPosition(0, this.transform.position);
+                RaycastHit2D hit;
+                if (Physics2D.Raycast(this.transform.position, child.transform.forward))
+                {
+                    hit = Physics2D.Raycast(child.transform.position, child.transform.forward);
+                    child.SetPosition(1, hit.point);
+                }
+                else
+                {
+                    child.SetPosition(1, child.transform.forward * 1000f);
+                }
+            }
 
         if (canShoot)
         {
@@ -64,7 +67,8 @@ public class Enemy_LaserPattern : MonoBehaviour
     {
         foreach (LineRenderer line in lineRenderers)
         {
-            line.SetWidth(width, width);
+            line.startWidth = width;
+            line.endWidth = width / 2;
         }
     }
 

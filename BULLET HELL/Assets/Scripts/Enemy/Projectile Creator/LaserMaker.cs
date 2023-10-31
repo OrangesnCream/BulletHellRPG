@@ -24,7 +24,7 @@ public class LaserMaker : MonoBehaviour
     private void FixedUpdate()
     {
         time += Time.fixedDeltaTime;
-        //this.transform.rotation = Quaternion.Euler(0, 0, time * spin_speed);
+        this.transform.rotation = Quaternion.Euler(0, 0, time * spin_speed);
     }
 
     // Update is called once per frame
@@ -43,12 +43,13 @@ public class LaserMaker : MonoBehaviour
             go.transform.Rotate(angle * i, 90, 0); // Rotate so the system emits upwards.
             go.transform.parent = this.transform;
             go.transform.position = this.transform.position;
+            go.layer = LayerMask.NameToLayer("Enemy_Bullet");
             system = go.AddComponent<LineRenderer>();
 
             system.startColor = color;
             system.endColor = color;
             system.enabled = true;
-            system.useWorldSpace = false;
+            system.useWorldSpace = true;
             system.material = material;
         }
     }
