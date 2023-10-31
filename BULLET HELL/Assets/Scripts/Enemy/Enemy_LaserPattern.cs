@@ -10,7 +10,7 @@ public class Enemy_LaserPattern : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        children = GetChildren(transform);
+        children = GetChildren(transform);//for the barrel projectile do a thing where you give it a random vector & set velocity and set the gravity scale on then turn it off after a bit
 
         foreach (Transform child in children)
         {
