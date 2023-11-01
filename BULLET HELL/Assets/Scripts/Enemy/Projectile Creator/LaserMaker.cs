@@ -50,7 +50,7 @@ public class LaserMaker : MonoBehaviour
 
             system.startColor = color;
             system.endColor = color;
-            system.enabled = true;
+            system.enabled = false;
             system.useWorldSpace = true;
             system.material = material;
         }

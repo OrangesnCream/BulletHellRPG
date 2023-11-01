@@ -11,6 +11,7 @@ public class Enemy_LaserPattern : MonoBehaviour
     private LaserMaker laserMaker;
 
     private bool canShoot;
+    private bool canHit;
     // Start is called before the first frame update
     void Start()
     {
@@ -87,4 +88,6 @@ public class Enemy_LaserPattern : MonoBehaviour
             line.endWidth = width;
         }
     }
+
+    public void setCanHit(bool canHit) { this.canHit = canHit; }
 }

@@ -22,8 +22,8 @@ public class Enemy_ShootAimCommand : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        shootingPattern = this.gameObject.GetComponent<Enemy_ShootingPattern>();
-        particles = this.gameObject.GetComponent<BulletParticles>();
+        shootingPattern = this.GetComponent<Enemy_ShootingPattern>();
+        particles = this.GetComponent<BulletParticles>();
         player = GameObject.FindGameObjectWithTag("Player");
 
         shootingPattern.setFireRate(desired_FireRate);
