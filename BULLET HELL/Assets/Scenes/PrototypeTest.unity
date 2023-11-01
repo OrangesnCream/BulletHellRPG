@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBossCamera: 0
-  target: {fileID: 0}
+  target: {fileID: 1251512859}
 --- !u!1001 &401811377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -390,6 +390,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6036864969763423249, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 365075837}
     - target: {fileID: 6296802709629211088, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -24558,6 +24562,11 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!4 &1251512859 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4380048351329388155, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
+  m_PrefabInstance: {fileID: 1770765216}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1272650851 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1881705746796930884, guid: ee6ac8070b0418547a2101104fb0622f, type: 3}
@@ -24993,11 +25002,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4380048351329388155, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.61
+      value: -17.85
       objectReference: {fileID: 0}
     - target: {fileID: 4380048351329388155, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.26
       objectReference: {fileID: 0}
     - target: {fileID: 4380048351329388155, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
       propertyPath: m_LocalPosition.z
