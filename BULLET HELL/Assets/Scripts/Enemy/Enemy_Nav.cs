@@ -9,8 +9,7 @@ public class Enemy_Nav : MonoBehaviour
     private Transform goal;
 
     private bool canmove;
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;

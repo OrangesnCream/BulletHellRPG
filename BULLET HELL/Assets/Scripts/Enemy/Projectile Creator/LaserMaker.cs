@@ -44,6 +44,8 @@ public class LaserMaker : MonoBehaviour
             go.transform.parent = this.transform;
             go.transform.position = this.transform.position;
             go.layer = LayerMask.NameToLayer("Enemy_Bullet");
+            go.tag = transform.tag;
+
             system = go.AddComponent<LineRenderer>();
 
             system.startColor = color;

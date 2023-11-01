@@ -179,6 +179,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theImage: {fileID: 1477400798094895627}
+--- !u!1 &3172823236100994890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2981754035551942733}
+  - component: {fileID: 4450529453510085088}
+  - component: {fileID: 7037017813719622978}
+  m_Layer: 10
+  m_Name: Shootpoint_Laser2
+  m_TagString: Enemy_Laser
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2981754035551942733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172823236100994890}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6441065888978084146}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4450529453510085088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172823236100994890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959136a4475928447a8f6cb0e390fec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number_of_columns: 6
+  color: {r: 0, g: 0, b: 1, a: 1}
+  material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  spin_speed: 20
+  collision_layers:
+    serializedVersion: 2
+    m_Bits: 320
+  degrees: 360
+  system: {fileID: 0}
+--- !u!114 &7037017813719622978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172823236100994890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd21281e3fdb494e97d1af834040115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderers: []
 --- !u!1 &3231379570651199168
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +291,7 @@ GameObject:
   - component: {fileID: 8978108092149460898}
   - component: {fileID: 5733762243246632245}
   m_Layer: 10
-  m_Name: Shootpoint_Aim
+  m_Name: Shootpoint_BulletAim
   m_TagString: Enemy_Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -311,7 +378,7 @@ GameObject:
   - component: {fileID: 575671979552654016}
   - component: {fileID: 4445703209504317278}
   m_Layer: 10
-  m_Name: Shootpoint_2
+  m_Name: Shootpoint_Bullet2
   m_TagString: Enemy_Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -473,6 +540,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theImage: {fileID: 6274620729126593337}
+--- !u!1 &6816200718542339722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3991321204634502758}
+  - component: {fileID: 300699676701879522}
+  - component: {fileID: 5961436384528019593}
+  m_Layer: 10
+  m_Name: Shootpoint_LaserAim
+  m_TagString: Enemy_Laser
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3991321204634502758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6816200718542339722}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6441065888978084146}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &300699676701879522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6816200718542339722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959136a4475928447a8f6cb0e390fec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number_of_columns: 6
+  color: {r: 0, g: 0, b: 1, a: 1}
+  material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  spin_speed: 20
+  collision_layers:
+    serializedVersion: 2
+    m_Bits: 320
+  degrees: 360
+  system: {fileID: 0}
+--- !u!114 &5961436384528019593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6816200718542339722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd21281e3fdb494e97d1af834040115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderers: []
 --- !u!1 &7063777921804102979
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +825,7 @@ GameObject:
   - component: {fileID: 3038915014392522402}
   - component: {fileID: 7502040917193518913}
   m_Layer: 10
-  m_Name: Shootpoint_1
+  m_Name: Shootpoint_Bullet1
   m_TagString: Enemy_Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -775,9 +909,9 @@ GameObject:
   - component: {fileID: 5708982372973339114}
   - component: {fileID: 5437008409480091089}
   - component: {fileID: 2013346198544478358}
-  m_Layer: 0
-  m_Name: Shootpoint_Laser
-  m_TagString: Untagged
+  m_Layer: 10
+  m_Name: Shootpoint_Laser1
+  m_TagString: Enemy_Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -809,9 +943,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959136a4475928447a8f6cb0e390fec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number_of_columns: 3
+  number_of_columns: 6
   color: {r: 0, g: 0, b: 1, a: 1}
   material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  spin_speed: 20
   collision_layers:
     serializedVersion: 2
     m_Bits: 320
@@ -871,6 +1006,8 @@ Transform:
   - {fileID: 1332235952743906257}
   - {fileID: 2144052366871134974}
   - {fileID: 5708982372973339114}
+  - {fileID: 2981754035551942733}
+  - {fileID: 3991321204634502758}
   - {fileID: 5456432629521850299}
   m_Father: {fileID: 3645540203741806786}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

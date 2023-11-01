@@ -11,8 +11,6 @@ public class Enemy_LaserPattern : MonoBehaviour
     private LaserMaker laserMaker;
 
     private bool canShoot;
-    private bool canAim;
-    private bool canSpin;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +22,7 @@ public class Enemy_LaserPattern : MonoBehaviour
         }
 
         laserMaker = GetComponent<LaserMaker>();
+        canShoot = true;
     }
 
     private List<Transform> GetChildren(Transform parent)
@@ -46,8 +45,9 @@ public class Enemy_LaserPattern : MonoBehaviour
                 RaycastHit2D hit;
                 if (Physics2D.Raycast(this.transform.position, child.transform.forward))
                 {
-                    hit = Physics2D.Raycast(child.transform.position, child.transform.forward);
+                    hit = Physics2D.Raycast(child.transform.position, child.transform.forward, 1000f, laserMaker.getLayerMask());
                     child.SetPosition(1, hit.point);
+                    Debug.Log("hit laser");
                 }
                 else
                 {
@@ -57,7 +57,23 @@ public class Enemy_LaserPattern : MonoBehaviour
 
         if (canShoot)
         {
-            
+            foreach(LineRenderer line in lineRenderers)
+            {
+                if (!line.enabled)
+                {
+                    line.enabled = true;
+                }
+            }
+        }
+        else if (!canShoot)
+        {
+            foreach (LineRenderer line in lineRenderers)
+            {
+                if (line.enabled)
+                {
+                    line.enabled = false;
+                }
+            }
         }
     }
 
@@ -68,9 +84,7 @@ public class Enemy_LaserPattern : MonoBehaviour
         foreach (LineRenderer line in lineRenderers)
         {
             line.startWidth = width;
-            line.endWidth = width / 2;
+            line.endWidth = width;
         }
     }
-
-    public void setCanAim(bool canAim) { this.canAim = canAim; }
 }

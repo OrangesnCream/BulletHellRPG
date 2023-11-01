@@ -48,7 +48,7 @@ public class BulletParticles : MonoBehaviour
             system = go.AddComponent<ParticleSystem>();
             go.GetComponent<ParticleSystemRenderer>().material = particleMaterial;
             go.layer = LayerMask.NameToLayer("Bullet");
-            go.tag = "Enemy_Bullet";
+            go.tag = transform.tag;
 
             var mainModule = system.main;
             mainModule.startSpeed = bullet_speed;
