@@ -9,22 +9,22 @@ public class HealthBar : MonoBehaviour
 
     public void setMaxHealth(int health)
     {
-        slider.maxValue = health;
-        slider.value = health;
+        this.slider.maxValue = health;
+        this.slider.value = health;
     }
 
     public void setHealth(int health)
     {
-        slider.value = health;
+        this.slider.value = health;
     }
 
     public int getMaxHealth()
     {
-        return (int) slider.maxValue;
+        return (int) this.slider.maxValue;
     }
 
     public int getHealth()
     {
-        return (int) slider.value;
+        return (int) this.slider.value;
     }
 }

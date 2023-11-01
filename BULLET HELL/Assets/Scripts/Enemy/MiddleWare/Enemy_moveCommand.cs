@@ -10,23 +10,17 @@ public class Enemy_moveCommand : MonoBehaviour
     public float desired_MoveSpeed;
     public int desired_MaxHealth;
 
-    private int temp_Health;
-
-
     public int dashMultiplier;
     private bool nullNeeded;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         move = this.gameObject.GetComponent<Enemy_Nav>();
         healthBar = this.gameObject.GetComponentInChildren<HealthBar>();
 
-        move.setMoveSpeed(desired_MoveSpeed);
         healthBar.setMaxHealth(desired_MaxHealth);
         healthBar.setHealth(desired_MaxHealth);
-
-        temp_Health = healthBar.getHealth();
-
+        move.setMoveSpeed(desired_MoveSpeed);
 
         nullNeeded = true;
     }
@@ -37,7 +31,7 @@ public class Enemy_moveCommand : MonoBehaviour
 
     public void resetMaxHealth() { healthBar.setMaxHealth(desired_MaxHealth); }
 
-    public void resetHealth() { healthBar.setHealth(temp_Health); }
+    public void resetHealth() { healthBar.setHealth(desired_MaxHealth); }
 
     //----------action nullifier---------------------
 
