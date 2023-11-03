@@ -12,7 +12,11 @@ public class Enemy_Laser1Command : MonoBehaviour
     public float desired_chargewidth;
     public float desired_spinspeed;
 
+    private int opportunity;
+    private int opportunitycheck;
+
     private bool nullNeeded;
+    private bool isShooting;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,6 +25,33 @@ public class Enemy_Laser1Command : MonoBehaviour
 
         pattern.setWidth(desired_width);
         laser.setSpinSpeed(desired_spinspeed);
+        opportunitycheck = attackPattern.getOpportunityCheck();
+
+        nullNeeded = true;
+        isShooting = false;
+    }
+
+    private void Update()
+    {
+        if (isShooting)
+        {
+            opportunity++;
+        }
+        else
+        {
+            opportunity = 0;
+        }
+
+        if (opportunity <= opportunitycheck / 2)
+        {
+            pattern.setCanHit(false);
+            pattern.setWidth(desired_chargewidth);
+        }
+        else if (opportunity >= opportunitycheck)
+        {
+            pattern.setCanHit(true);
+            pattern.setWidth(desired_width);
+        }
     }
 
     //--------------------reset functions-----------------------
@@ -34,6 +65,7 @@ public class Enemy_Laser1Command : MonoBehaviour
 
     public void actionNull()
     {
+        isShooting = false;
         pattern.setCanShoot(false);
         resetSpinSpeed();
     }
@@ -46,6 +78,7 @@ public class Enemy_Laser1Command : MonoBehaviour
         {
             actionNull();
         }
+        isShooting = true;
         pattern.setCanShoot(true);
     }
 
@@ -55,6 +88,7 @@ public class Enemy_Laser1Command : MonoBehaviour
         {
             actionNull();
         }
+        isShooting = true;
         pattern.setCanShoot(true);
         laser.setSpinSpeed(desired_spinspeed);
     }
@@ -65,6 +99,7 @@ public class Enemy_Laser1Command : MonoBehaviour
         {
             actionNull();
         }
+        isShooting = true;
         pattern.setCanShoot(true);
         laser.setSpinSpeed(-1 * desired_spinspeed);
     }

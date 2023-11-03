@@ -9,6 +9,7 @@ public class Enemy_LaserPattern : MonoBehaviour
     public List<LineRenderer> lineRenderers;
 
     private LaserMaker laserMaker;
+    private LayerMask LayerMask;
 
     private bool canShoot;
     private bool canHit;
@@ -25,6 +26,8 @@ public class Enemy_LaserPattern : MonoBehaviour
 
         laserMaker = GetComponent<LaserMaker>();
         canShoot = true;
+        canHit = false;
+        LayerMask = laserMaker.getLayerMask();
     }
 
     private List<Transform> GetChildren(Transform parent)
@@ -40,14 +43,24 @@ public class Enemy_LaserPattern : MonoBehaviour
 
     // Update is called once per frame
     void Update()//do the spin here & draw the raycast hits
-    {
+    {   
+
+        if (!canHit)
+        {
+            LayerMask -= GameObject.FindGameObjectWithTag("Player").layer;
+        }
+        else
+        {
+            LayerMask = laserMaker.getLayerMask();
+        }
+
         foreach(LineRenderer child in lineRenderers)      
             {
                 child.SetPosition(0, this.transform.position);
                 RaycastHit2D hit;
                 if (Physics2D.Raycast(this.transform.position, child.transform.forward))
                 {
-                    hit = Physics2D.Raycast(child.transform.position, child.transform.forward, 1000f, laserMaker.getLayerMask());
+                    hit = Physics2D.Raycast(child.transform.position, child.transform.forward, 1000f, LayerMask);
                     child.SetPosition(1, hit.point);
                     Debug.Log("hit laser");
                 }
@@ -67,7 +80,7 @@ public class Enemy_LaserPattern : MonoBehaviour
                 }
             }
         }
-        else if (!canShoot)
+        else
         {
             foreach (LineRenderer line in lineRenderers)
             {

@@ -15,7 +15,11 @@ public class Enemy_LaserAimCommand : MonoBehaviour
     public float desired_chargewidth;
     public float desired_spinspeed;
 
+    private int opportunity;
+    private int opportunitycheck;
+
     private bool nullNeeded;
+    private bool isShooting;
     private Vector2 direction;
     private float angle;
     // Start is called before the first frame update
@@ -24,9 +28,13 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         pattern = this.GetComponent<Enemy_LaserPattern>();
         laser = this.GetComponent<LaserMaker>();
         player = GameObject.FindGameObjectWithTag("Player");
+        opportunitycheck = attackPattern.getOpportunityCheck();
 
         pattern.setWidth(desired_width);
         laser.setSpinSpeed(desired_spinspeed);
+
+        nullNeeded = true;
+        isShooting = false;
     }
 
     void Update()
@@ -41,6 +49,26 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         }
 
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        if (isShooting)
+        {
+            opportunity++;
+        }
+        else
+        {
+            opportunity = 0;
+        }
+
+        if (opportunity <= opportunitycheck / 2)
+        {
+            pattern.setCanHit(false);
+            pattern.setWidth(desired_chargewidth);
+        }
+        else if (opportunity >= opportunitycheck)
+        {
+            pattern.setCanHit(true);
+            pattern.setWidth(desired_width);
+        }
     }
 
     //--------------------reset functions-----------------------
@@ -54,6 +82,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
 
     public void actionNull()
     {
+        isShooting = false;
         pattern.setCanShoot(false);
         resetSpinSpeed();
     }
@@ -66,6 +95,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         {
             actionNull();
         }
+        isShooting = true;
         pattern.setCanShoot(true);
     }
 
@@ -75,6 +105,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         {
             actionNull();
         }
+        isShooting = true;
         pattern.setCanShoot(true);
         laser.setSpinSpeed(desired_spinspeed);
     }
@@ -85,6 +116,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         {
             actionNull();
         }
+        isShooting = true;
         pattern.setCanShoot(true);
         laser.setSpinSpeed(-1 * desired_spinspeed);
     }

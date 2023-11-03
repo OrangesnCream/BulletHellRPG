@@ -8,7 +8,7 @@ public class LaserMaker : MonoBehaviour
     public int number_of_columns;
     public Color color;
     public Material material;
-    public float spin_speed;
+    private float spin_speed;
     private float time;
     public LayerMask collision_layers;
     private float angle;
