@@ -7,6 +7,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
 {
     private Enemy_LaserPattern pattern;
     private LaserMaker laser;
+    private Enemy_AttackPattern attackPattern;
     private GameObject player;
     public GameObject enemy;
 

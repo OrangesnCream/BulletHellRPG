@@ -12,6 +12,7 @@ public class Enemy_LaserPattern : MonoBehaviour
 
     private bool canShoot;
     private bool canHit;
+
     // Start is called before the first frame update
     void Start()
     {
