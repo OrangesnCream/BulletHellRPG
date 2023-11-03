@@ -107,4 +107,6 @@ public class Enemy_AttackPattern : MonoBehaviour
             this.iterator++;
         }
     }
+
+    public int getOpportunityCheck() { return this.oppurtinutycheck; }
 }

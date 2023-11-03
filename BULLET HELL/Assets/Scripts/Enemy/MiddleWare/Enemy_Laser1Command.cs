@@ -6,6 +6,7 @@ public class Enemy_Laser1Command : MonoBehaviour
 {
     private Enemy_LaserPattern pattern;
     private LaserMaker laser;
+    private Enemy_AttackPattern attackPattern;
 
     public float desired_width;
     public float desired_chargewidth;
@@ -17,6 +18,9 @@ public class Enemy_Laser1Command : MonoBehaviour
     {
         pattern = this.GetComponent<Enemy_LaserPattern>();
         laser = this.GetComponent<LaserMaker>();
+
+        pattern.setWidth(desired_width);
+        laser.setSpinSpeed(desired_spinspeed);
     }
 
     //--------------------reset functions-----------------------
