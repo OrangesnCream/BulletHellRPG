@@ -76,8 +76,8 @@ public class Enemy_Laser1Command : MonoBehaviour
         {
             actionNull();
         }
-        isShooting = true;
         pattern.setCanShoot(true);
+        isShooting = true;
     }
 
     public void Spin()
@@ -86,8 +86,8 @@ public class Enemy_Laser1Command : MonoBehaviour
         {
             actionNull();
         }
-        isShooting = true;
         pattern.setCanShoot(true);
+        isShooting = true;
         laser.setSpinSpeed(desired_spinspeed);
     }
 
@@ -97,8 +97,8 @@ public class Enemy_Laser1Command : MonoBehaviour
         {
             actionNull();
         }
-        isShooting = true;
         pattern.setCanShoot(true);
+        isShooting = true;
         laser.setSpinSpeed(-1 * desired_spinspeed);
     }
     public void doNothing()

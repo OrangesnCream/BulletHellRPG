@@ -42,16 +42,16 @@ public class Enemy_LaserPattern : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()//do the spin here & draw the raycast hits
+    void Update()//draw the raycast hits
     {   
 
         if (!canHit)
         {
-            LayerMask -= GameObject.FindGameObjectWithTag("Player").layer;
+            //no damage
         }
         else if (canHit)
         {
-            LayerMask = laserMaker.getLayerMask();
+            //do damage
         }
 
         if (canShoot)

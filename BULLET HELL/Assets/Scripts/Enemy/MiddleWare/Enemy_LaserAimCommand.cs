@@ -63,7 +63,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
                 pattern.setCanHit(false);
                 pattern.setWidth(desired_chargewidth);
             }
-            else if (opportunity > opportunitycheck)
+            else if (opportunity > opportunitycheck / 2)
             {
                 canRotate = false;
                 pattern.setCanHit(true);
@@ -98,8 +98,8 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         {
             actionNull();
         }
-        isShooting = true;
         pattern.setCanShoot(true);
+        isShooting = true;
     }
 
     public void Spin()
@@ -108,8 +108,8 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         {
             actionNull();
         }
-        isShooting = true;
         pattern.setCanShoot(true);
+        isShooting = true;
         laser.setSpinSpeed(desired_spinspeed);
     }
 
@@ -119,8 +119,8 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         {
             actionNull();
         }
-        isShooting = true;
         pattern.setCanShoot(true);
+        isShooting = true;
         laser.setSpinSpeed(-1 * desired_spinspeed);
     }
     public void doNothing()
