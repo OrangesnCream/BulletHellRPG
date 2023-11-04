@@ -31,22 +31,22 @@ public class Enemy_Laser2Command : MonoBehaviour
         isShooting = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isShooting)
         {
+            Debug.Log("opp: " + opportunity);
             opportunity++;
-        }
-
-        if (opportunity <= (opportunitycheck * 8) / 2)
-        {
-            pattern.setCanHit(false);
-            pattern.setWidth(desired_chargewidth);
-        }
-        else if (opportunity >= opportunitycheck)
-        {
-            pattern.setCanHit(true);
-            pattern.setWidth(desired_width);
+            if (opportunity < opportunitycheck / 2)
+            {
+                pattern.setCanHit(false);
+                pattern.setWidth(desired_chargewidth);
+            }
+            else if (opportunity > opportunitycheck / 2)
+            {
+                pattern.setCanHit(true);
+                pattern.setWidth(desired_width);
+            }
         }
     }
 

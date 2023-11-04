@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7581e7ec43a58f4d9543137b0312dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPattern: {fileID: 814568801}
   desired_width: 1
   desired_chargewidth: 0.2
   desired_spinspeed: 20
@@ -573,6 +574,10 @@ PrefabInstance:
       propertyPath: color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4450529453510085088, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+      propertyPath: number_of_columns
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5115482149615774263, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: laser1Command
       value: 
@@ -591,7 +596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5437008409480091089, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: number_of_columns
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6039894310255634259, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: m_Name
@@ -640,6 +645,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8579055973875199395, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
   m_PrefabInstance: {fileID: 814568794}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &814568801 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5115482149615774263, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+  m_PrefabInstance: {fileID: 814568794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814568795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27cf296865b4c0748b609fd1c603116e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &859680268
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a970ab7a955ca4c89496fa7eb0ffe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPattern: {fileID: 814568801}
   enemy: {fileID: 814568795}
   desired_width: 1
   desired_chargewidth: 0.2
@@ -900,6 +917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af6b105ea7acad4e89441e8b26f0071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPattern: {fileID: 814568801}
   desired_width: 1
   desired_chargewidth: 0.2
   desired_spinspeed: 20

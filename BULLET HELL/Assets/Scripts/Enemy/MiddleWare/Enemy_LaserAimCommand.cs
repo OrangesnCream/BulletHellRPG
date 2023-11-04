@@ -39,7 +39,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         canRotate = true;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (canRotate) 
         {
@@ -56,8 +56,9 @@ public class Enemy_LaserAimCommand : MonoBehaviour
 
         if (isShooting)
         {
+            Debug.Log("opp: " + opportunity);
             opportunity++;
-            if (opportunity < (opportunitycheck * 8) / 2)
+            if (opportunity < opportunitycheck / 2)
             {
                 pattern.setCanHit(false);
                 pattern.setWidth(desired_chargewidth);
