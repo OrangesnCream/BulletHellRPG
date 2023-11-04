@@ -123,27 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &44377281 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8076964142896677217, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+--- !u!114 &44377285 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3165392765957903830, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
   m_PrefabInstance: {fileID: 814568794}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &44377285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44377281}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7581e7ec43a58f4d9543137b0312dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPattern: {fileID: 814568801}
-  desired_width: 1
-  desired_chargewidth: 0.2
-  desired_spinspeed: 20
 --- !u!1 &253372836
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,22 +548,6 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4436386552226417019, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: m_Name
-      value: Shootpoint_BulletAim
-      objectReference: {fileID: 0}
-    - target: {fileID: 4450529453510085088, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4450529453510085088, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4450529453510085088, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: color.r
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4450529453510085088, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: number_of_columns
       value: 3
@@ -591,16 +565,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246368892}
     - target: {fileID: 5437008409480091089, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: spin_speed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437008409480091089, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: number_of_columns
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039894310255634259, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: m_Name
-      value: Shootpoint_Bullet2
       objectReference: {fileID: 0}
     - target: {fileID: 6296802709629211088, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: m_AnchorMax.x
@@ -610,52 +576,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7699354975784902216, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: m_Name
-      value: Shootpoint_Bullet1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8076964142896677217, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: m_Name
-      value: Shootpoint_Laser1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8076964142896677217, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8076964142896677217, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      propertyPath: m_TagString
-      value: Enemy_Laser
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8076964142896677217, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 44377285}
-    - targetCorrespondingSourceObject: {fileID: 3172823236100994890, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1506320315}
-    - targetCorrespondingSourceObject: {fileID: 6816200718542339722, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1246368892}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
---- !u!1 &814568795 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8579055973875199395, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-  m_PrefabInstance: {fileID: 814568794}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &814568801 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5115482149615774263, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
-  m_PrefabInstance: {fileID: 814568794}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814568795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27cf296865b4c0748b609fd1c603116e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &859680268
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,49 +803,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1246368888 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6816200718542339722, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+--- !u!114 &1246368892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5057271810459408732, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
   m_PrefabInstance: {fileID: 814568794}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1246368892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246368888}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30a970ab7a955ca4c89496fa7eb0ffe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPattern: {fileID: 814568801}
-  enemy: {fileID: 814568795}
-  desired_width: 1
-  desired_chargewidth: 0.2
-  desired_spinspeed: 20
---- !u!1 &1506320311 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3172823236100994890, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+--- !u!114 &1506320315 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6427713223299635233, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
   m_PrefabInstance: {fileID: 814568794}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1506320315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506320311}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7af6b105ea7acad4e89441e8b26f0071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPattern: {fileID: 814568801}
-  desired_width: 1
-  desired_chargewidth: 0.2
-  desired_spinspeed: 20
 --- !u!1 &2001457635
 GameObject:
   m_ObjectHideFlags: 0

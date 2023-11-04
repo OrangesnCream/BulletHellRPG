@@ -53,30 +53,15 @@ public class Enemy_ShootAimCommand : MonoBehaviour
 
     //--------------------reset functions-----------------------
 
-    public void resetFireRate()
-    {
-        shootingPattern.setFireRate(desired_FireRate);
-    }
+    public void resetFireRate() { shootingPattern.setFireRate(desired_FireRate); }
 
-    public void resetBulletSpeed()
-    {
-        shootingPattern.setBulletSpeed(desired_BulletSpeed);
-    }
+    public void resetBulletSpeed() { shootingPattern.setBulletSpeed(desired_BulletSpeed); }
 
-    public void resetSpinSpeed()
-    {
-        particles.setSpinSpeed(0);
-    }
+    public void resetSpinSpeed() { particles.setSpinSpeed(0); }
 
-    public void resetSize()
-    {
-        shootingPattern.setSize(desired_Size);
-    }
+    public void resetSize() { shootingPattern.setSize(desired_Size); }
 
-    public void resetBounce()
-    {
-        shootingPattern.setBounce(desired_Bounce);
-    }
+    public void resetBounce() { shootingPattern.setBounce(desired_Bounce); }
 
     //----------action nullifier---------------------
 
@@ -94,18 +79,14 @@ public class Enemy_ShootAimCommand : MonoBehaviour
     public void Shoot()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
         shootingPattern.setCanShoot(true);
     }
 
     public void FireFaster()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
         shootingPattern.setFireRate(desired_FireRate * 2);
         shootingPattern.setCanShoot(true);
     }
@@ -113,9 +94,7 @@ public class Enemy_ShootAimCommand : MonoBehaviour
     public void FireSlower()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
         shootingPattern.setFireRate((int)(desired_FireRate / 2));
         shootingPattern.setCanShoot(true);
     }
@@ -123,9 +102,7 @@ public class Enemy_ShootAimCommand : MonoBehaviour
     public void BulletFaster()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
         shootingPattern.setBulletSpeed(desired_BulletSpeed * 2);
         shootingPattern.setCanShoot(true);
     }
@@ -133,9 +110,7 @@ public class Enemy_ShootAimCommand : MonoBehaviour
     public void BulletSlower()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
         shootingPattern.setBulletSpeed(desired_BulletSpeed / 2);
         shootingPattern.setCanShoot(true);
     }

@@ -35,7 +35,6 @@ public class Enemy_Laser2Command : MonoBehaviour
     {
         if (isShooting)
         {
-            Debug.Log("opp: " + opportunity);
             opportunity++;
             if (opportunity < opportunitycheck / 2)
             {
@@ -52,10 +51,7 @@ public class Enemy_Laser2Command : MonoBehaviour
 
     //--------------------reset functions-----------------------
 
-    public void resetSpinSpeed()
-    {
-        laser.setSpinSpeed(0);
-    }
+    public void resetSpinSpeed() { laser.setSpinSpeed(0); }
 
     //----------action nullifier---------------------
 
@@ -72,9 +68,7 @@ public class Enemy_Laser2Command : MonoBehaviour
     public void Shoot()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
         pattern.setCanShoot(true);
         isShooting = true;
     }
@@ -82,9 +76,7 @@ public class Enemy_Laser2Command : MonoBehaviour
     public void Spin()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
         pattern.setCanShoot(true);
         isShooting = true;
         laser.setSpinSpeed(desired_spinspeed);
@@ -93,9 +85,7 @@ public class Enemy_Laser2Command : MonoBehaviour
     public void SpinOpposite()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
         pattern.setCanShoot(true);
         isShooting = true;
         laser.setSpinSpeed(-1 * desired_spinspeed);

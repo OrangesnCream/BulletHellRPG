@@ -61,12 +61,14 @@ public class Enemy_AttackPattern : MonoBehaviour
             patternMove.Add(moveCommand.Movement);  patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);     patternLaser1.Add(laser1Command.doNothing);     patternLaser2.Add(laser2Command.doNothing);     patternLaserAim.Add(laserAimCommand.doNothing);
             patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.BulletSlower);              patternShoot2.Add(shoot2Command.BulletSlowerSpin);          patternShootAim.Add(shootAimCommand.doNothing);     patternLaser1.Add(laser1Command.Shoot);         patternLaser2.Add(laser2Command.doNothing);     patternLaserAim.Add(laserAimCommand.doNothing);
             patternMove.Add(moveCommand.Movement);  patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);     patternLaser1.Add(laser1Command.doNothing);     patternLaser2.Add(laser2Command.doNothing);     patternLaserAim.Add(laserAimCommand.doNothing);
-            patternMove.Add(moveCommand.Dash);      patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);     patternLaser1.Add(laser1Command.doNothing);     patternLaser2.Add(laser2Command.doNothing);     patternLaserAim.Add(laserAimCommand.doNothing);
             patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.FireFasterSpin);            patternShoot2.Add(shoot2Command.FireFasterSpinOpposite);    patternShootAim.Add(shootAimCommand.Shoot);         patternLaser1.Add(laser1Command.Spin);          patternLaser2.Add(laser2Command.doNothing);     patternLaserAim.Add(laserAimCommand.doNothing);
             patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.Shoot);         patternLaser1.Add(laser1Command.Spin);          patternLaser2.Add(laser2Command.SpinOpposite);  patternLaserAim.Add(laserAimCommand.doNothing);
             patternMove.Add(moveCommand.Movement);  patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);     patternLaser1.Add(laser1Command.doNothing);     patternLaser2.Add(laser2Command.doNothing);     patternLaserAim.Add(laserAimCommand.doNothing);
             patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.FireFasterSpinOpposite);    patternShoot2.Add(shoot2Command.BulletSlower);              patternShootAim.Add(shootAimCommand.doNothing);     patternLaser1.Add(laser1Command.doNothing);     patternLaser2.Add(laser2Command.doNothing);     patternLaserAim.Add(laserAimCommand.Shoot);
-
+            patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);     patternLaser1.Add(laser1Command.doNothing);     patternLaser2.Add(laser2Command.doNothing);     patternLaserAim.Add(laserAimCommand.SwingClock);
+            patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);     patternLaser1.Add(laser1Command.doNothing);     patternLaser2.Add(laser2Command.doNothing);     patternLaserAim.Add(laserAimCommand.SwingCounter);
+            patternMove.Add(moveCommand.Dash);      patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);     patternLaser1.Add(laser1Command.doNothing);     patternLaser2.Add(laser2Command.doNothing);     patternLaserAim.Add(laserAimCommand.doNothing);
+            
             added1 = true;
         }
 
@@ -88,11 +90,12 @@ public class Enemy_AttackPattern : MonoBehaviour
             added3 = true;
         }
 
+
         //-------pattern part-------------------
 
         patternopportunity++;
 
-        if(patternopportunity >= oppurtinutycheck)
+        if(patternopportunity > oppurtinutycheck)
         {
             pattern();
 
@@ -102,10 +105,8 @@ public class Enemy_AttackPattern : MonoBehaviour
 
     public void pattern()
     {
-        if (iterator >= patternMove.Count)
-        {
+        if (iterator == patternMove.Count)
             this.iterator = 0;
-        }
         else
         {
             patternMove[iterator].Invoke();

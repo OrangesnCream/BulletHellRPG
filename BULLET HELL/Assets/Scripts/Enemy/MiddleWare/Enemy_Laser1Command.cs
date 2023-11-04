@@ -36,7 +36,6 @@ public class Enemy_Laser1Command : MonoBehaviour
     {
         if (isShooting)
         {
-            Debug.Log("opp: " + opportunity);
             opportunity++;
             if (opportunity < opportunitycheck / 2)
             {
@@ -53,10 +52,7 @@ public class Enemy_Laser1Command : MonoBehaviour
 
     //--------------------reset functions-----------------------
 
-    public void resetSpinSpeed()
-    {
-        laser.setSpinSpeed(0);
-    }
+    public void resetSpinSpeed() { laser.setSpinSpeed(0); }
 
     //----------action nullifier---------------------
 

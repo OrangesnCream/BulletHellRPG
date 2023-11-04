@@ -47,11 +47,17 @@ public class Enemy_LaserPattern : MonoBehaviour
 
         if (!canHit)
         {
-            //do no damage
+            foreach(Transform child in children)
+            {
+                child.tag = "NoReg";
+            }
         }
         else if (canHit)
         {
-            //do damage call here
+            foreach(Transform child in children)
+            {
+                child.tag = GetComponentInParent<Transform>().tag;
+            }
         }
 
         if (canShoot)

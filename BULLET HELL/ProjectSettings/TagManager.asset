@@ -11,6 +11,7 @@ TagManager:
   - Background
   - Wall
   - Enemy_Laser
+  - NoReg
   layers:
   - Default
   - TransparentFX

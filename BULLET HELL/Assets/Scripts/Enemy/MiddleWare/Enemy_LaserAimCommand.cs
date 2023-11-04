@@ -21,6 +21,9 @@ public class Enemy_LaserAimCommand : MonoBehaviour
     private bool nullNeeded;
     private bool isShooting;
     private bool canRotate;
+    private bool canSwingClock;
+    private bool canSwingCounter;
+
     private Vector2 direction;
     private float angle;
     // Start is called before the first frame update
@@ -37,6 +40,8 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         nullNeeded = true;
         isShooting = false;
         canRotate = true;
+        canSwingClock = false;
+        canSwingCounter = false;
     }
 
     void FixedUpdate()
@@ -48,15 +53,17 @@ public class Enemy_LaserAimCommand : MonoBehaviour
             angle = (Mathf.Atan2(direction.y, direction.x) * 180) / Mathf.PI;
 
             if (laser.getColumns() > 1)
-            {
                 angle += laser.getDegrees() / 4;
-            }
+
+            if (canSwingClock)
+                angle += opportunitycheck / 4;
+
+            if (canSwingCounter)
+                angle -= opportunitycheck / 4;
         }
-        this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
 
         if (isShooting)
         {
-            Debug.Log("opp: " + opportunity);
             opportunity++;
             if (opportunity < opportunitycheck / 2)
             {
@@ -68,16 +75,20 @@ public class Enemy_LaserAimCommand : MonoBehaviour
                 canRotate = false;
                 pattern.setCanHit(true);
                 pattern.setWidth(desired_width);
+
+                if (canSwingClock)
+                    angle--;
+                if (canSwingCounter)
+                    angle++;
             }
         }
+
+        this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     //--------------------reset functions-----------------------
 
-    public void resetSpinSpeed()
-    {
-        laser.setSpinSpeed(0);
-    }
+    public void resetSpinSpeed() { laser.setSpinSpeed(0); }
 
     //----------action nullifier---------------------
 
@@ -88,6 +99,8 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         pattern.setCanShoot(false);
         resetSpinSpeed();
         canRotate = true;
+        canSwingClock = false;
+        canSwingCounter = false;
     }
 
     //----------------------actions-----------------------
@@ -95,33 +108,27 @@ public class Enemy_LaserAimCommand : MonoBehaviour
     public void Shoot()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
         pattern.setCanShoot(true);
         isShooting = true;
     }
 
-    public void Spin()
+    public void SwingClock()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
+        canSwingClock = true;
         pattern.setCanShoot(true);
         isShooting = true;
-        laser.setSpinSpeed(desired_spinspeed);
     }
 
-    public void SpinOpposite()
+    public void SwingCounter()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
+        canSwingCounter = true;
         pattern.setCanShoot(true);
         isShooting = true;
-        laser.setSpinSpeed(-1 * desired_spinspeed);
     }
     public void doNothing()
     {

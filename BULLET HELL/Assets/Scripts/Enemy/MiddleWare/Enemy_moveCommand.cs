@@ -46,9 +46,7 @@ public class Enemy_moveCommand : MonoBehaviour
     public void Dash()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
         move.setMoveSpeed(this.dashMultiplier * this.desired_MoveSpeed);
         move.setCanMove(true);
     }
@@ -56,9 +54,7 @@ public class Enemy_moveCommand : MonoBehaviour
     public void Movement()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
         move.setCanMove(true);
     }
 
