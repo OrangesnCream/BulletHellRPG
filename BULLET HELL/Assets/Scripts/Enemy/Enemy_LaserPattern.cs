@@ -47,11 +47,11 @@ public class Enemy_LaserPattern : MonoBehaviour
 
         if (!canHit)
         {
-            //no damage
+            //do no damage
         }
         else if (canHit)
         {
-            //do damage
+            //do damage call here
         }
 
         if (canShoot)
