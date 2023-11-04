@@ -26,7 +26,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
 
     private Vector2 direction;
     private float angle;
-    // Start is called before the first frame update
+   
     void Awake()
     {
         pattern = this.GetComponent<Enemy_LaserPattern>();

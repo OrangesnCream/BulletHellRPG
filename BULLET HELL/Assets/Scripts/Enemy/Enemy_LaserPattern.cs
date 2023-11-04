@@ -14,7 +14,6 @@ public class Enemy_LaserPattern : MonoBehaviour
     private bool canShoot;
     private bool canHit;
 
-    // Start is called before the first frame update
     void Start()
     {
         children = GetChildren(transform);//for the barrel projectile do a thing where you give it a random vector & set velocity and set the gravity scale on then turn it off after a bit
@@ -41,7 +40,6 @@ public class Enemy_LaserPattern : MonoBehaviour
         return children;
     }
 
-    // Update is called once per frame
     void Update()//draw the raycast hits
     {   
 

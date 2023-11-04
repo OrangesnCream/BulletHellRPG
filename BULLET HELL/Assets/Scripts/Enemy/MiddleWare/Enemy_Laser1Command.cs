@@ -17,7 +17,7 @@ public class Enemy_Laser1Command : MonoBehaviour
 
     private bool nullNeeded;
     private bool isShooting;
-    // Start is called before the first frame update
+    
     void Awake()
     {
         pattern = this.GetComponent<Enemy_LaserPattern>();
@@ -69,9 +69,7 @@ public class Enemy_Laser1Command : MonoBehaviour
     public void Shoot()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
         pattern.setCanShoot(true);
         isShooting = true;
     }
@@ -79,9 +77,7 @@ public class Enemy_Laser1Command : MonoBehaviour
     public void Spin()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
         pattern.setCanShoot(true);
         isShooting = true;
         laser.setSpinSpeed(desired_spinspeed);
@@ -90,9 +86,7 @@ public class Enemy_Laser1Command : MonoBehaviour
     public void SpinOpposite()
     {
         if (nullNeeded)
-        {
             actionNull();
-        }
         pattern.setCanShoot(true);
         isShooting = true;
         laser.setSpinSpeed(-1 * desired_spinspeed);

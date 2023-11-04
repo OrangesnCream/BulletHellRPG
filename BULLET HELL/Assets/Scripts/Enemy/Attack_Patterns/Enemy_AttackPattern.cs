@@ -31,9 +31,6 @@ public class Enemy_AttackPattern : MonoBehaviour
     public bool halfpattern;
     public bool fourthpattern;
 
-    private bool half;
-    private bool fourth;
-    // Start is called before the first frame update
     void Awake()
     {
         patternMove = new List<Action>();
@@ -52,7 +49,6 @@ public class Enemy_AttackPattern : MonoBehaviour
         added3 = false;
     }
 
-    // Update is called once per frame
     private void FixedUpdate()
     {
         if(!added1)//health patterns || boss specific attacks || change hitbox for 2.5d look
@@ -67,7 +63,6 @@ public class Enemy_AttackPattern : MonoBehaviour
             patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.FireFasterSpinOpposite);    patternShoot2.Add(shoot2Command.BulletSlower);              patternShootAim.Add(shootAimCommand.doNothing);     patternLaser1.Add(laser1Command.doNothing);     patternLaser2.Add(laser2Command.doNothing);     patternLaserAim.Add(laserAimCommand.Shoot);
             patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);     patternLaser1.Add(laser1Command.doNothing);     patternLaser2.Add(laser2Command.doNothing);     patternLaserAim.Add(laserAimCommand.SwingClock);
             patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);     patternLaser1.Add(laser1Command.doNothing);     patternLaser2.Add(laser2Command.doNothing);     patternLaserAim.Add(laserAimCommand.SwingCounter);
-            patternMove.Add(moveCommand.Dash);      patternShoot1.Add(Shoot1Command.doNothing);                 patternShoot2.Add(shoot2Command.doNothing);                 patternShootAim.Add(shootAimCommand.doNothing);     patternLaser1.Add(laser1Command.doNothing);     patternLaser2.Add(laser2Command.doNothing);     patternLaserAim.Add(laserAimCommand.doNothing);
             
             added1 = true;
         }
@@ -95,19 +90,10 @@ public class Enemy_AttackPattern : MonoBehaviour
 
         patternopportunity++;
 
-        if(patternopportunity > oppurtinutycheck)
-        {
-            pattern();
-
-            patternopportunity = 0;
-        }
-    }
-
-    public void pattern()
-    {
-        if (iterator == patternMove.Count)
+        if (iterator >= patternMove.Count)
             this.iterator = 0;
-        else
+
+        if (patternopportunity > oppurtinutycheck)
         {
             patternMove[iterator].Invoke();
             patternShoot1[iterator].Invoke();
@@ -116,8 +102,10 @@ public class Enemy_AttackPattern : MonoBehaviour
             patternLaser1[iterator].Invoke();
             patternLaser2[iterator].Invoke();
             patternLaserAim[iterator].Invoke();
-            Debug.Log(iterator);
+            Debug.Log("move: " + iterator);
             this.iterator++;
+
+            patternopportunity = 0;
         }
     }
 
