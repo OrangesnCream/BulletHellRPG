@@ -6,7 +6,7 @@ public class Enemy_Laser1Command : MonoBehaviour
 {
     private Enemy_LaserPattern pattern;
     private LaserMaker laser;
-    private Enemy_AttackPattern attackPattern;
+    public Enemy_AttackPattern attackPattern;
 
     public float desired_width;
     public float desired_chargewidth;
@@ -29,6 +29,7 @@ public class Enemy_Laser1Command : MonoBehaviour
 
         nullNeeded = true;
         isShooting = false;
+        opportunity = 0;
     }
 
     private void Update()
@@ -36,21 +37,16 @@ public class Enemy_Laser1Command : MonoBehaviour
         if (isShooting)
         {
             opportunity++;
-        }
-        else
-        {
-            opportunity = 0;
-        }
-
-        if (opportunity <= opportunitycheck / 2)
-        {
-            pattern.setCanHit(false);
-            pattern.setWidth(desired_chargewidth);
-        }
-        else if (opportunity >= opportunitycheck)
-        {
-            pattern.setCanHit(true);
-            pattern.setWidth(desired_width);
+            if (opportunity <= (opportunitycheck * 8) / 2)
+            {
+                pattern.setCanHit(false);
+                pattern.setWidth(desired_chargewidth);
+            }
+            else if (opportunity >= opportunitycheck)
+            {
+                pattern.setCanHit(true);
+                pattern.setWidth(desired_width);
+            }
         }
     }
 
@@ -66,6 +62,7 @@ public class Enemy_Laser1Command : MonoBehaviour
     public void actionNull()
     {
         isShooting = false;
+        opportunity = 0;
         pattern.setCanShoot(false);
         resetSpinSpeed();
     }

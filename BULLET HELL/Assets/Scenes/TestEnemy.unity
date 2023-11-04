@@ -553,6 +553,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3902730029352369384, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4436386552226417019, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: m_Name
       value: Shootpoint_BulletAim
@@ -569,6 +573,18 @@ PrefabInstance:
       propertyPath: color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5115482149615774263, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+      propertyPath: laser1Command
+      value: 
+      objectReference: {fileID: 44377285}
+    - target: {fileID: 5115482149615774263, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+      propertyPath: laser2Command
+      value: 
+      objectReference: {fileID: 1506320315}
+    - target: {fileID: 5115482149615774263, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
+      propertyPath: laserAimCommand
+      value: 
+      objectReference: {fileID: 1246368892}
     - target: {fileID: 5437008409480091089, guid: 00c48033ee50995448bc751f3de47f98, type: 3}
       propertyPath: spin_speed
       value: 20

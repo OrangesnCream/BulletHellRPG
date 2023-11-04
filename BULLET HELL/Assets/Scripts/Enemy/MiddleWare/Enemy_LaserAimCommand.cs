@@ -7,7 +7,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
 {
     private Enemy_LaserPattern pattern;
     private LaserMaker laser;
-    private Enemy_AttackPattern attackPattern;
+    public Enemy_AttackPattern attackPattern;
     private GameObject player;
     public GameObject enemy;
 
@@ -20,6 +20,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
 
     private bool nullNeeded;
     private bool isShooting;
+    private bool canRotate;
     private Vector2 direction;
     private float angle;
     // Start is called before the first frame update
@@ -35,39 +36,38 @@ public class Enemy_LaserAimCommand : MonoBehaviour
 
         nullNeeded = true;
         isShooting = false;
+        canRotate = true;
     }
 
     void Update()
     {
-        direction.x = player.transform.position.x - enemy.transform.position.x;
-        direction.y = player.transform.position.y - enemy.transform.position.y;
-        angle = (Mathf.Atan2(direction.y, direction.x) * 180) / Mathf.PI;
-
-        if (laser.getColumns() > 1)
+        if (canRotate) 
         {
-            angle += laser.getDegrees() / 4;
-        }
+            direction.x = player.transform.position.x - enemy.transform.position.x;
+            direction.y = player.transform.position.y - enemy.transform.position.y;
+            angle = (Mathf.Atan2(direction.y, direction.x) * 180) / Mathf.PI;
 
+            if (laser.getColumns() > 1)
+            {
+                angle += laser.getDegrees() / 4;
+            }
+        }
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
 
         if (isShooting)
         {
             opportunity++;
-        }
-        else
-        {
-            opportunity = 0;
-        }
-
-        if (opportunity <= opportunitycheck / 2)
-        {
-            pattern.setCanHit(false);
-            pattern.setWidth(desired_chargewidth);
-        }
-        else if (opportunity >= opportunitycheck)
-        {
-            pattern.setCanHit(true);
-            pattern.setWidth(desired_width);
+            if (opportunity < (opportunitycheck * 8) / 2)
+            {
+                pattern.setCanHit(false);
+                pattern.setWidth(desired_chargewidth);
+            }
+            else if (opportunity > opportunitycheck)
+            {
+                canRotate = false;
+                pattern.setCanHit(true);
+                pattern.setWidth(desired_width);
+            }
         }
     }
 
@@ -83,8 +83,10 @@ public class Enemy_LaserAimCommand : MonoBehaviour
     public void actionNull()
     {
         isShooting = false;
+        opportunity = 0;
         pattern.setCanShoot(false);
         resetSpinSpeed();
+        canRotate = true;
     }
 
     //----------------------actions-----------------------
