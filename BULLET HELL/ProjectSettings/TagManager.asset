@@ -12,6 +12,9 @@ TagManager:
   - Wall
   - Enemy_Laser
   - NoReg
+  - Weapon_Sniper
+  - Weapon_SMG
+  - Weapon_Shotgun
   layers:
   - Default
   - TransparentFX

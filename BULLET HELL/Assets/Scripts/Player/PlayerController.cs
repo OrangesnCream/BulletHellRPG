@@ -22,8 +22,11 @@ public class PlayerController : MonoBehaviour
 
     private bool isDevMode = false;
 
+    private Player_Weapon_Active pwa;
+
     void Start(){
         tr = gameObject.transform.GetComponent<TrailRenderer>();
+        pwa = gameObject.transform.GetComponent<Player_Weapon_Active>();
     }
 
     void Update(){
@@ -59,6 +62,21 @@ public class PlayerController : MonoBehaviour
                 gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 gameObject.transform.GetChild(1).GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 Debug.Log("Dev mode disabled");
+            }
+        }
+
+        if(isDevMode){
+            if(Input.GetKeyDown(KeyCode.F2)){
+                pwa.SetWeapon("Sniper");
+                Debug.Log("Sniper");
+            }
+            if(Input.GetKeyDown(KeyCode.F3)){
+                pwa.SetWeapon("Shotgun");
+                Debug.Log("Shotgun");
+            }
+            if(Input.GetKeyDown(KeyCode.F4)){
+                pwa.SetWeapon("SMG");
+                Debug.Log("SMG");
             }
         }
     }
