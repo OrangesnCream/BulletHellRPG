@@ -91,7 +91,7 @@ public class Enemy_Shoot1Command : MonoBehaviour
     {
         if (nullNeeded)
             actionNull();
-        shootingPattern.setFireRate((int)(desired_FireRate / 2));
+        shootingPattern.setFireRate((desired_FireRate / 2));
         shootingPattern.setCanShoot(true);
     }
 

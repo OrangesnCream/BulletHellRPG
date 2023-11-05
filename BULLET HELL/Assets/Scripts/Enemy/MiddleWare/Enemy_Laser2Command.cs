@@ -12,12 +12,12 @@ public class Enemy_Laser2Command : MonoBehaviour
     public float desired_chargewidth;
     public float desired_spinspeed;
 
-    private int opportunity;
+    private float opportunity;
     private int opportunitycheck;
 
     private bool nullNeeded;
     private bool isShooting;
-    // Start is called before the first frame update
+    
     void Awake()
     {
         pattern = this.GetComponent<Enemy_LaserPattern>();
@@ -36,12 +36,19 @@ public class Enemy_Laser2Command : MonoBehaviour
         if (isShooting)
         {
             opportunity++;
-            if (opportunity < opportunitycheck / 2)
+        }
+    }
+
+    private void Update()
+    {
+        if (isShooting)
+        {
+            if (opportunity < opportunitycheck / 4)
             {
                 pattern.setCanHit(false);
                 pattern.setWidth(desired_chargewidth);
             }
-            else if (opportunity > opportunitycheck / 2)
+            else if (opportunity > opportunitycheck / 4)
             {
                 pattern.setCanHit(true);
                 pattern.setWidth(desired_width);

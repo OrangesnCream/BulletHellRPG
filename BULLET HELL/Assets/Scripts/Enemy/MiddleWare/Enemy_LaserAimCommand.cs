@@ -15,7 +15,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
     public float desired_chargewidth;
     public float desired_spinspeed;
 
-    private int opportunity;
+    private float opportunity;
     private int opportunitycheck;
 
     private bool nullNeeded;
@@ -26,6 +26,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
 
     private Vector2 direction;
     private float angle;
+    private float tempAngle;
    
     void Awake()
     {
@@ -44,7 +45,14 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         canSwingCounter = false;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
+    {
+        if (isShooting)
+        {
+            opportunity++;
+        }
+    }
+    void Update()
     {
         if (canRotate) 
         {
@@ -60,11 +68,12 @@ public class Enemy_LaserAimCommand : MonoBehaviour
 
             if (canSwingCounter)
                 angle -= opportunitycheck / 4;
+
+            tempAngle = angle;
         }
 
         if (isShooting)
         {
-            opportunity++;
             if (opportunity < opportunitycheck / 2)
             {
                 pattern.setCanHit(false);
@@ -77,9 +86,9 @@ public class Enemy_LaserAimCommand : MonoBehaviour
                 pattern.setWidth(desired_width);
 
                 if (canSwingClock)
-                    angle--;
+                    angle = Mathf.Lerp(tempAngle, tempAngle - (opportunitycheck / 2), (opportunity - opportunitycheck / 2) / (opportunitycheck - opportunitycheck / 2));
                 if (canSwingCounter)
-                    angle++;
+                    angle = Mathf.Lerp(tempAngle, tempAngle + (opportunitycheck / 2), (opportunity - opportunitycheck / 2) / (opportunitycheck - opportunitycheck / 2));
             }
         }
 
