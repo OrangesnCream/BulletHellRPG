@@ -78,7 +78,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
             {
                 pattern.setCanHit(false);
                 pattern.setWidth(desired_chargewidth);
-            }
+            } 
             else if (opportunity > opportunitycheck / 2)
             {
                 canRotate = false;
