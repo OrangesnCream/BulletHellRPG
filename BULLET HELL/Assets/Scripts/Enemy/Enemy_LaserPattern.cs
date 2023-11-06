@@ -42,22 +42,6 @@ public class Enemy_LaserPattern : MonoBehaviour
 
     void Update()//draw the raycast hits
     {   
-
-        if (!canHit)
-        {
-            foreach(Transform child in children)
-            {
-                child.tag = "NoReg";
-            }
-        }
-        else if (canHit)
-        {
-            foreach(Transform child in children)
-            {
-                child.tag = GetComponentInParent<Transform>().tag;
-            }
-        }
-
         if (canShoot)
         {
             foreach (LineRenderer child in lineRenderers)
@@ -90,6 +74,21 @@ public class Enemy_LaserPattern : MonoBehaviour
                 {
                     line.enabled = false;
                 }
+            }
+        }
+
+        if (!canHit)
+        {
+            foreach (Transform child in children)
+            {
+                //child.tag = "NoReg";
+            }
+        }
+        else if (canHit)
+        {
+            foreach (Transform child in children)
+            {
+                //child.tag = GetComponentInParent<Transform>().tag;
             }
         }
     }

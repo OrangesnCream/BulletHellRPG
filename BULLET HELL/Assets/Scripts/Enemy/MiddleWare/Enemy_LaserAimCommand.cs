@@ -28,7 +28,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
     private float angle;
     private float tempAngle;
    
-    void Awake()
+    void Start()
     {
         pattern = this.GetComponent<Enemy_LaserPattern>();
         laser = this.GetComponent<LaserMaker>();
@@ -51,23 +51,21 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         {
             opportunity++;
         }
-    }
-    void Update()
-    {
-        if (canRotate) 
+
+        if (canRotate)
         {
             direction.x = player.transform.position.x - enemy.transform.position.x;
             direction.y = player.transform.position.y - enemy.transform.position.y;
-            angle = (Mathf.Atan2(direction.y, direction.x) * 180) / Mathf.PI;
+            angle = Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x);
 
             if (laser.getColumns() > 1)
                 angle += laser.getDegrees() / 4;
 
             if (canSwingClock)
-                angle += opportunitycheck / 4;
+                angle += laser.getDegrees() / 2;
 
             if (canSwingCounter)
-                angle -= opportunitycheck / 4;
+                angle -= laser.getDegrees() / 2;
 
             tempAngle = angle;
         }
@@ -78,7 +76,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
             {
                 pattern.setCanHit(false);
                 pattern.setWidth(desired_chargewidth);
-            } 
+            }
             else if (opportunity > opportunitycheck / 2)
             {
                 canRotate = false;
@@ -86,12 +84,14 @@ public class Enemy_LaserAimCommand : MonoBehaviour
                 pattern.setWidth(desired_width);
 
                 if (canSwingClock)
-                    angle = Mathf.Lerp(tempAngle, tempAngle - (opportunitycheck / 2), (opportunity - opportunitycheck / 2) / (opportunitycheck - opportunitycheck / 2));
+                    angle = Mathf.Lerp(tempAngle, tempAngle - laser.getDegrees(), (opportunity - opportunitycheck / 2) / (opportunitycheck - opportunitycheck / 2));
                 if (canSwingCounter)
-                    angle = Mathf.Lerp(tempAngle, tempAngle + (opportunitycheck / 2), (opportunity - opportunitycheck / 2) / (opportunitycheck - opportunitycheck / 2));
+                    angle = Mathf.Lerp(tempAngle, tempAngle + laser.getDegrees(), (opportunity - opportunitycheck / 2) / (opportunitycheck - opportunitycheck / 2));
             }
         }
-
+    }
+    void Update()
+    {
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
