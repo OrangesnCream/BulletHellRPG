@@ -6,14 +6,13 @@ public class Enemy_Laser2Command : MonoBehaviour
 {
     private Enemy_LaserPattern pattern;
     private LaserMaker laser;
-    public Enemy_AttackPattern attackPattern;
 
     public float desired_width;
     public float desired_chargewidth;
     public float desired_spinspeed;
 
     private float opportunity;
-    private int opportunitycheck;
+    public int opportunitycheck;
 
     private bool nullNeeded;
     private bool isShooting;
@@ -25,7 +24,6 @@ public class Enemy_Laser2Command : MonoBehaviour
 
         pattern.setWidth(desired_width);
         laser.setSpinSpeed(desired_spinspeed);
-        opportunitycheck = attackPattern.getOpportunityCheck();
         
         nullNeeded = true;
         isShooting = false;

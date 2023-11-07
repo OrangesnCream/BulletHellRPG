@@ -7,7 +7,6 @@ public class Enemy_LaserAimCommand : MonoBehaviour
 {
     private Enemy_LaserPattern pattern;
     private LaserMaker laser;
-    public Enemy_AttackPattern attackPattern;
     private GameObject player;
     public GameObject enemy;
 
@@ -16,7 +15,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
     public float desired_spinspeed;
 
     private float opportunity;
-    private int opportunitycheck;
+    public int opportunitycheck;
 
     private bool nullNeeded;
     private bool isShooting;
@@ -33,7 +32,6 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         pattern = this.GetComponent<Enemy_LaserPattern>();
         laser = this.GetComponent<LaserMaker>();
         player = GameObject.FindGameObjectWithTag("Player");
-        opportunitycheck = attackPattern.getOpportunityCheck();
 
         pattern.setWidth(desired_width);
         laser.setSpinSpeed(desired_spinspeed);
