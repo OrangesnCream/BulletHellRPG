@@ -41,12 +41,12 @@ public class Enemy_Laser2Command : MonoBehaviour
     {
         if (isShooting)
         {
-            if (opportunity < opportunitycheck / 4)
+            if (opportunity < opportunitycheck / 2)
             {
                 pattern.setCanHit(false);
                 pattern.setWidth(desired_chargewidth);
             }
-            else if (opportunity > opportunitycheck / 4)
+            else if (opportunity > opportunitycheck / 2)
             {
                 pattern.setCanHit(true);
                 pattern.setWidth(desired_width);

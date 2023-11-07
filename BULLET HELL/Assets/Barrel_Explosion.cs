@@ -9,11 +9,11 @@ public class Barrel_Explosion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boomDistance = GetComponentInChildren<CircleCollider2D>().radius;
+        GetComponentInChildren<CircleCollider2D>().radius = 0f;
     }
 
     public void boom()
     {
-
+        GetComponentInChildren<CircleCollider2D>().radius = boomDistance;
     }
 }

@@ -30,13 +30,16 @@ public class Barrel_Hit : MonoBehaviour
 
         if (it >= lifeTime)
         {
-
+            explosion.boom();
         }
     }
-
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == layerHit)
+        Debug.Log("hit: " + collision.gameObject.layer);
+        Debug.Log("hitmath: " + Mathf.Pow(2, collision.gameObject.layer));
+        Debug.Log("LayerHit" + layerHit.value);
+        if (Mathf.Pow(2, collision.gameObject.layer) == layerHit)
         {
             rb.velocity = collision.relativeVelocity;
             isHit = true;
