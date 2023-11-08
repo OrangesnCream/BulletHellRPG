@@ -261,7 +261,7 @@ MonoBehaviour:
   desired_width: 1
   desired_chargewidth: 0.2
   desired_spinspeed: 20
-  opportunitycheck: 0
+  opportunitycheck: 225
 --- !u!1 &3231379570651199168
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +654,7 @@ MonoBehaviour:
   desired_width: 1
   desired_chargewidth: 0.2
   desired_spinspeed: 20
-  opportunitycheck: 0
+  opportunitycheck: 225
 --- !u!1 &7063777921804102979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,7 +1029,7 @@ MonoBehaviour:
   desired_width: 1
   desired_chargewidth: 0.2
   desired_spinspeed: 20
-  opportunitycheck: 0
+  opportunitycheck: 225
 --- !u!1 &8579055973875199395
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,7 +49,9 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         {
             opportunity++;
         }
-
+    }
+    void Update()
+    {
         if (canRotate)
         {
             direction.x = player.transform.position.x - enemy.transform.position.x;
@@ -87,9 +89,6 @@ public class Enemy_LaserAimCommand : MonoBehaviour
                     angle = Mathf.Lerp(tempAngle, tempAngle + laser.getDegrees(), (opportunity - opportunitycheck / 2) / (opportunitycheck - opportunitycheck / 2));
             }
         }
-    }
-    void Update()
-    {
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
