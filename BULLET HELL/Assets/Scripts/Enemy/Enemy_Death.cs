@@ -26,7 +26,7 @@ public class Enemy_Death : MonoBehaviour
         if (healthBar.getHealth() == 0)
         {
             sprite.color = new Color32(r, b, g, countdown);
-            countdown--;
+            countdown -= 10;
         }
 
         if (countdown == (byte) 0)
