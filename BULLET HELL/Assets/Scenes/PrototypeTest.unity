@@ -25962,6 +25962,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 893292953223305844, guid: 4eef6b23f6b81cb46be9484343c4b98a, type: 3}
+      propertyPath: m_Name
+      value: Explosion_img
+      objectReference: {fileID: 0}
     - target: {fileID: 4758786461761848989, guid: 4eef6b23f6b81cb46be9484343c4b98a, type: 3}
       propertyPath: m_Camera
       value: 
@@ -26009,6 +26013,10 @@ PrefabInstance:
     - target: {fileID: 8523267936996361506, guid: 4eef6b23f6b81cb46be9484343c4b98a, type: 3}
       propertyPath: m_Name
       value: Barrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196235641039185533, guid: 4eef6b23f6b81cb46be9484343c4b98a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
