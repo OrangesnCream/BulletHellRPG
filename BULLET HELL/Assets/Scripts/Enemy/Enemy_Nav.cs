@@ -24,15 +24,14 @@ public class Enemy_Nav : MonoBehaviour
     {
         if (canmove)
         {
-            rigidbody.constraints = RigidbodyConstraints2D.None;
-            rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            rigidbody.isKinematic = false;
             agent.acceleration = agent.speed;
             agent.SetDestination(goal.position);
         }
         else
         {
-            rigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
-            rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            rigidbody.velocity = Vector2.zero;
+            rigidbody.isKinematic = true;
             agent.SetDestination(this.transform.position);
         }
     }

@@ -272,6 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3645540203741806786}
   - component: {fileID: 1232507238428474130}
+  - component: {fileID: 8326979291066288162}
   m_Layer: 0
   m_Name: Enemy_Parent_Template
   m_TagString: Untagged
@@ -309,6 +310,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 6441065888978084146}
   sightDistance: 20
+--- !u!114 &8326979291066288162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3231379570651199168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d42959754f7d3428e4f1676242aa42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 3475616584691865037}
+  sprite: {fileID: 4579486160484614913}
 --- !u!1 &4436386552226417019
 GameObject:
   m_ObjectHideFlags: 0
