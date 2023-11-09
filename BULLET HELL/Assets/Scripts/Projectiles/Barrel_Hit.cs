@@ -45,4 +45,6 @@ public class Barrel_Hit : MonoBehaviour
             isHit = true;
         }
     }
+
+    public void setIsHit(bool isHit) { this.isHit = isHit; }
 }

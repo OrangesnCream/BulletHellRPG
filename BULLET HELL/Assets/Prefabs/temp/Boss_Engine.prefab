@@ -329,7 +329,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!58 &8984525959535948297
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   desired_MoveSpeed: 0
-  desired_MaxHealth: 200
+  desired_MaxHealth: 2000
   dashMultiplier: 0
 --- !u!114 &3809210738744740699
 MonoBehaviour:
@@ -442,13 +442,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aff0c701831df24fa663708e6f5f07e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveCommand: {fileID: 0}
-  Shoot1Command: {fileID: 0}
-  shoot2Command: {fileID: 0}
-  laser1Command: {fileID: 0}
-  laserAimCommand: {fileID: 0}
-  healthBar: {fileID: 0}
-  oppurtinutycheck: 0
+  moveCommand: {fileID: 1761799608076985557}
+  Shoot1Command: {fileID: 2056547713934725949}
+  shoot2Command: {fileID: 3434617785290703193}
+  laser1Command: {fileID: 351547093830303045}
+  laserAimCommand: {fileID: 2701007089714691730}
+  healthBar: {fileID: 608205126714224464}
+  oppurtinutycheck: 400
   halfpattern: 0
   fourthpattern: 0
 --- !u!1 &4566548715735604119
@@ -534,7 +534,7 @@ MonoBehaviour:
   desired_width: 1
   desired_chargewidth: 0.2
   desired_spinspeed: 20
-  opportunitycheck: 0
+  opportunitycheck: 400
 --- !u!1 &5608685805654505509
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +618,7 @@ MonoBehaviour:
   desired_width: 1
   desired_chargewidth: 0.2
   desired_spinspeed: 20
-  opportunitycheck: 0
+  opportunitycheck: 400
 --- !u!1 &5889109778516718338
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7086699043615238071}
   - component: {fileID: 7385876371518726491}
+  - component: {fileID: 6576881771993951557}
   m_Layer: 0
   m_Name: Boss_Engine
   m_TagString: Untagged
@@ -755,6 +756,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 5435656984284691701}
   sightDistance: 25
+--- !u!114 &6576881771993951557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463081842868418558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d42959754f7d3428e4f1676242aa42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 608205126714224464}
+  sprite: {fileID: 3828973531844267005}
 --- !u!1 &7102910084964347248
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +779,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5045632856063961820}
+  - component: {fileID: 6064401294853218983}
+  - component: {fileID: 3327177316328818785}
+  - component: {fileID: 6492607351175746}
   m_Layer: 7
   m_Name: Shootpoint_Barrel
   m_TagString: Untagged
@@ -786,6 +804,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5435656984284691701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6064401294853218983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7102910084964347248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50787206716d73245b6373b63206f12a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3327177316328818785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7102910084964347248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94e3dfc2cd16d84a943345eba019f48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6492607351175746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7102910084964347248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09bc969cdae7ef469ba939f60f669bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7571917379771454146
 GameObject:
   m_ObjectHideFlags: 0

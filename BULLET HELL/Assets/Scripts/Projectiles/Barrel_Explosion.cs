@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class Barrel_Explosion : MonoBehaviour
 {
-    public LayerMask layerBoom;
     public float boomDistance;
 
     private byte countdown;
