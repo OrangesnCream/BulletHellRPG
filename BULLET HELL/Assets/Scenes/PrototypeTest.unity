@@ -414,6 +414,10 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 5ec7635bdbc419c4fbce914b26c62ec7, type: 3}
+    - target: {fileID: 5690224215618895085, guid: 55b5fb79a8e65b54a8bc3ccf8bce2809, type: 3}
+      propertyPath: lastJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 93bff8aee9f12354295d33c9480d33b3, type: 3}
     - target: {fileID: 7910476674740708331, guid: 55b5fb79a8e65b54a8bc3ccf8bce2809, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.53
@@ -20143,6 +20147,10 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: c9026e57da53ea94892cfb2216b9ad69, type: 3}
+    - target: {fileID: 5690224215618895085, guid: 55b5fb79a8e65b54a8bc3ccf8bce2809, type: 3}
+      propertyPath: lastJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 93bff8aee9f12354295d33c9480d33b3, type: 3}
     - target: {fileID: 7910476674740708331, guid: 55b5fb79a8e65b54a8bc3ccf8bce2809, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.7
@@ -25649,6 +25657,10 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 10b5203d60748d0438e1e86be2cefb2d, type: 3}
+    - target: {fileID: 5690224215618895085, guid: 55b5fb79a8e65b54a8bc3ccf8bce2809, type: 3}
+      propertyPath: lastJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 93bff8aee9f12354295d33c9480d33b3, type: 3}
     - target: {fileID: 7910476674740708331, guid: 55b5fb79a8e65b54a8bc3ccf8bce2809, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.31
