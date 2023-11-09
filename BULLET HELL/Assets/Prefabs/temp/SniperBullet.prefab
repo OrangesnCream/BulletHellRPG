@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7555322959294034557}
   - component: {fileID: 142107281375722282}
   - component: {fileID: -8222263371391524326}
+  - component: {fileID: 5931539245761286255}
   m_Layer: 9
   m_Name: SniperBullet
   m_TagString: Untagged
@@ -164,4 +165,39 @@ MonoBehaviour:
   speed: 30
   bulletDamage: 45
   lifeTime: 5
-  canPierce: 1
+  canPierce: 0
+--- !u!70 &5931539245761286255
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560372324594568366}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 4096
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 4095
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.42065156, y: 0.42065156}
+  m_Direction: 0
