@@ -13,6 +13,10 @@ public class PlayerStats : MonoBehaviour
     public int dashCooldown = 0;
     public DashBar dashBar;
 
+    public int baseShieldCooldown = 1000;
+    public int shieldCooldown = 0;
+    public ShieldBar shieldBar;
+
     public float baseDamageInvincibilityTime = 1.0f;
     public float damageInvincibilityTime = 0f;
 
@@ -24,29 +28,33 @@ public class PlayerStats : MonoBehaviour
 
         dashBar.setMaxDash(baseDashCooldown);
         dashBar.setDash(dashCooldown);
+
+        shieldBar.setMaxShield(baseShieldCooldown);
+        shieldBar.setShield(shieldCooldown);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            takeDamage(20);
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            heal(20);
-        }
+        // if (Input.GetKeyDown(KeyCode.O))
+        // {
+        //     takeDamage(20);
+        // }
+        // if (Input.GetKeyDown(KeyCode.P))
+        // {
+        //     heal(20);
+        // }
     }
 
     private void OnParticleCollision(GameObject other)
     {
-        takeDamage(10);
+        takeDamage(15);
     }
 
     void FixedUpdate()
     {
         dashTimer();
         damageTimer();
+        shieldTimer();
     }
 
     void damageTimer()
@@ -64,8 +72,19 @@ public class PlayerStats : MonoBehaviour
         dashBar.setDash(dashCooldown);
     }
 
+    public void shieldTimer(){
+        if(shieldCooldown > 0){
+            shieldCooldown -= (int)(Time.deltaTime * 200);
+        }
+        shieldBar.setShield(shieldCooldown);
+    }
+
     public void resetDashCooldown(){
         dashCooldown = baseDashCooldown;
+    }
+
+    public void resetShieldCooldown(){
+        shieldCooldown = baseShieldCooldown;
     }
 
     public void takeDamage(int damage)

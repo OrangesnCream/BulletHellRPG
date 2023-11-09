@@ -10,6 +10,12 @@ TagManager:
   - NPC
   - Background
   - Wall
+  - Enemy_Laser
+  - NoReg
+  - Weapon_Sniper
+  - Weapon_SMG
+  - Weapon_Shotgun
+  - Barrel
   layers:
   - Default
   - TransparentFX
@@ -22,7 +28,7 @@ TagManager:
   - Wall
   - Bullet
   - Enemy_Bullet
-  - 
+  - Player_Interactable
   - 
   - 
   - 
@@ -58,4 +64,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2892209943
+    locked: 0
+  - name: Foreground
+    uniqueID: 2871740401
     locked: 0

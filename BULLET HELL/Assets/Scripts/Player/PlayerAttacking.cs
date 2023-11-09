@@ -12,20 +12,23 @@ public class Attacking : MonoBehaviour
     public float fireRate = 0.5f;
     private float shootTimer = 0.0f;
 
-    public Transform meleePoint;
-    public float meleeRange = 1.0f;
-    public int meleeDamage = 33;
-    public bool canMelee = true;
+    public GameObject shield;
+    public float shieldRange = 2.0f;
+    public int shieldDamage = 33;
+    public float shieldDuration = 0.5f;
+    public bool canShield = true;
 
     private PlayerController pc;
+    private PlayerStats ps;
+
+    public bool isShotgun = false;
 
     // Start is called before the first frame update
     void Start()
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        meleePoint.localScale = new Vector3(meleeRange*2, meleeRange*2, 1.0f);
-        meleePoint.position = firePoint.position;
         pc = transform.parent.gameObject.GetComponent<PlayerController>();
+        ps = transform.parent.gameObject.GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -46,31 +49,62 @@ public class Attacking : MonoBehaviour
             Shoot();
         }
 
-        if(Input.GetMouseButtonDown(1)){
-            Melee();
+        if(Input.GetMouseButtonDown(1) && canShield){
+            StartCoroutine(Shield());
         }
+    }
 
+    void FixedUpdate(){
         if(!canFire){
             ShootTimer();
+        }
+
+        if(!canShield){
+            ps.shieldTimer();
+        }
+
+        if(ps.shieldCooldown <= 0){
+            canShield = true;
         }
     }
 
     void Shoot(){
         //play shoot animation
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        if(!isShotgun){
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        }
+        if(isShotgun){
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        }
         canFire = false;
     }
 
-    void Melee(){
-        //play melee animation
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(firePoint.position, meleeRange, transform.right, 0.0f);
+    private IEnumerator Shield(){
+        //play shield animation
+        shield.GetComponent<CircleCollider2D>().enabled = true;
+        shield.GetComponent<SpriteRenderer>().enabled = true;
+
+        canShield = false;
+
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(shield.transform.position, shieldRange, Vector2.zero, 0.0f);
         foreach(RaycastHit2D hit in hits){
             if(hit.transform.gameObject.tag == "Enemy"){
-                Debug.Log("Hit " + hit.transform.gameObject.name + " for " + (meleeDamage) + " damage");
-                hit.transform.gameObject.GetComponent<Enemy_Hit>().takeDamage(meleeDamage);
+                Debug.Log("Hit " + hit.transform.gameObject.name + " for " + (shieldDamage) + " damage");
+                hit.transform.gameObject.GetComponent<Enemy_Hit>().takeDamage(shieldDamage);
             }
         }
-        // canMelee = false; //TODO: canMelee = true when animation is done
+
+        ps.damageInvincibilityTime = 200f;
+        ps.resetShieldCooldown();
+
+        yield return new WaitForSeconds(shieldDuration); //.25
+
+        shield.GetComponent<CircleCollider2D>().enabled = false;
+        shield.GetComponent<SpriteRenderer>().enabled = false;
+
+        ps.damageInvincibilityTime = 0f;
     }
 
     void ShootTimer(){
@@ -80,4 +114,5 @@ public class Attacking : MonoBehaviour
             shootTimer = 0.0f;
         }
     }
+
 }
