@@ -39,11 +39,13 @@ public class Barrel_Hit : MonoBehaviour
         Debug.Log("hit: " + collision.gameObject.layer);
         Debug.Log("hitmath: " + Mathf.Pow(2, collision.gameObject.layer));
         Debug.Log("LayerHit" + layerHit.value);
-        if (Mathf.Pow(2, collision.gameObject.layer) == layerHit)
-        {
-            rb.velocity = collision.relativeVelocity;
-            isHit = true;
-        }
+        //if (Mathf.Pow(2, collision.gameObject.layer) == layerHit)
+        //{
+        //    rb.velocity = collision.relativeVelocity;
+        //    isHit = true;
+        //}
+        rb.velocity = collision.relativeVelocity;
+        isHit = true;
     }
 
     public void setIsHit(bool isHit) { this.isHit = isHit; }
