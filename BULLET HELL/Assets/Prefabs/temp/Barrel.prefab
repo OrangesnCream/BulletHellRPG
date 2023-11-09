@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4147376029160914180}
   - component: {fileID: 5696041295921798138}
   - component: {fileID: 9196235641039185533}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Explosion_img
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 2815273869466333908}
   - component: {fileID: 3731788163357583431}
   - component: {fileID: 7460159150724961725}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,9 +236,9 @@ GameObject:
   - component: {fileID: 7593079753462434248}
   - component: {fileID: 8415999241207698227}
   - component: {fileID: 4315309087309793533}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Barrel
-  m_TagString: Untagged
+  m_TagString: Barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,9 +367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18a0e61441fa4a4586242b4c2d562df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerBoom:
-    serializedVersion: 2
-    m_Bits: 448
   boomDistance: 10
 --- !u!70 &4315309087309793533
 CapsuleCollider2D:
