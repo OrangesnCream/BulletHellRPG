@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.74275047, b: 0.3150943, a: 0.7019608}
+  m_Color: {r: 1, g: 0.74275047, b: 0.3150943, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -151,6 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2815273869466333908}
   - component: {fileID: 3731788163357583431}
+  - component: {fileID: 7460159150724961725}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -208,6 +209,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 10
+--- !u!114 &7460159150724961725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8424615889187850209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61421f501b9382459a147c87e4ebbc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
 --- !u!1 &8523267936996361506
 GameObject:
   m_ObjectHideFlags: 0

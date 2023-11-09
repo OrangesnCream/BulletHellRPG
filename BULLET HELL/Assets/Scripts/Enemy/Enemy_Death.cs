@@ -29,7 +29,7 @@ public class Enemy_Death : MonoBehaviour
             countdown -= 10;
         }
 
-        if (countdown == (byte) 0)
+        if (countdown <= (byte) 10)
         {
             Destroy(this.gameObject);
         }
