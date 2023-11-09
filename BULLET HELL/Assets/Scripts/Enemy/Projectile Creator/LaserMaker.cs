@@ -27,12 +27,6 @@ public class LaserMaker : MonoBehaviour
         this.transform.rotation = Quaternion.Euler(0, 0, time * spin_speed);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void Summon()
     {
         angle = degrees / number_of_columns;
