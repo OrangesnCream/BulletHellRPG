@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4147376029160914180}
   - component: {fileID: 5696041295921798138}
   - component: {fileID: 9196235641039185533}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Explosion_img
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 2815273869466333908}
   - component: {fileID: 3731788163357583431}
   - component: {fileID: 7460159150724961725}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 7593079753462434248}
   - component: {fileID: 8415999241207698227}
   - component: {fileID: 4315309087309793533}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Barrel
   m_TagString: Barrel
   m_Icon: {fileID: 0}
