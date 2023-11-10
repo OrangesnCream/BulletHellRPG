@@ -48,7 +48,7 @@ public class Barrel_Hit : MonoBehaviour
         //}
         if (canHit)
         {
-            rb.velocity = collision.relativeVelocity;
+            rb.velocity = collision.relativeVelocity / 4;
             isHit = true;
         }
     }
