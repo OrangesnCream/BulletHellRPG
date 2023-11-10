@@ -816,6 +816,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50787206716d73245b6373b63206f12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number_of_barrels: 8
+  barrel: {fileID: 8523267936996361506, guid: 4eef6b23f6b81cb46be9484343c4b98a, type: 3}
+  barrels: []
 --- !u!114 &3327177316328818785
 MonoBehaviour:
   m_ObjectHideFlags: 0
