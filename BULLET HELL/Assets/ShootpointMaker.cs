@@ -14,7 +14,7 @@ public class BarrelSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moreBarrels = true;
+        moreBarrels = false;
         barrels = new List<GameObject>();
     }
 
