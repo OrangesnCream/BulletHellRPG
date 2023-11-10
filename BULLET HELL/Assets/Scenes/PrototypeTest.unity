@@ -26151,6 +26151,14 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6064401294853218983, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: barrel
+      value: 
+      objectReference: {fileID: 8523267936996361506, guid: 4eef6b23f6b81cb46be9484343c4b98a, type: 3}
+    - target: {fileID: 6064401294853218983, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: number_of_barrels
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6463081842868418558, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: m_Name
       value: Boss_Engine
