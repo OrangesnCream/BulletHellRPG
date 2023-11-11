@@ -26057,21 +26057,17 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 365075837}
-    - target: {fileID: 4724656097857123211, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-      propertyPath: Bar_Fade.Array.size
-      value: 0
+    - target: {fileID: 3327177316328818785, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: speed
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4945361860879895692, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 3327177316328818785, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: opportunitycheck
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6463081842868418558, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: m_Name
       value: Boss_Engine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6753637877407693020, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7086699043615238071, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26111,10 +26107,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7086699043615238071, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7858897126284397738, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9118617002889537277, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}

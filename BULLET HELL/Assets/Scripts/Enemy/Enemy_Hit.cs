@@ -19,6 +19,5 @@ public class Enemy_Hit : MonoBehaviour
         {
             bar.fade();
         }
-        Debug.Log("Hit");
     }
 }

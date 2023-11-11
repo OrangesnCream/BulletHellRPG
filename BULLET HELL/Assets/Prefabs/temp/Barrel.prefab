@@ -356,7 +356,7 @@ MonoBehaviour:
     m_Bits: 576
   layerBoom:
     serializedVersion: 2
-    m_Bits: 960
+    m_Bits: 5056
   lifeTime: 120
 --- !u!114 &8415999241207698227
 MonoBehaviour:

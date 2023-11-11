@@ -31,7 +31,7 @@ public class Enemy_AttackPattern : MonoBehaviour
     public bool halfpattern;
     public bool fourthpattern;
 
-    void Awake()
+    void Start()
     {
         patternMove = new List<Action>();
         patternShoot1 = new List<Action>();

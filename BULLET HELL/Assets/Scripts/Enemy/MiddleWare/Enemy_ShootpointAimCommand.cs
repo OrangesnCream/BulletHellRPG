@@ -20,7 +20,7 @@ public class Enemy_ShootAimCommand : MonoBehaviour
     private float angle;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         shootingPattern = this.GetComponent<Enemy_ShootingPattern>();
         particles = this.GetComponent<BulletParticles>();

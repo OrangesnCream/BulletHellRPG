@@ -9,17 +9,19 @@ public class Enemy_moveCommand : MonoBehaviour
 
     public float desired_MoveSpeed;
     public int desired_MaxHealth;
+    public float desired_StoppingDistance;
 
     public int dashMultiplier;
     private bool nullNeeded;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         move = this.gameObject.GetComponent<Enemy_Nav>();
         healthBar = this.gameObject.GetComponentInChildren<HealthBar>();
 
         healthBar.setMaxHealth(desired_MaxHealth);
         healthBar.setHealth(desired_MaxHealth);
+        move.setStoppingDistance(desired_StoppingDistance);
         move.setMoveSpeed(desired_MoveSpeed);
 
         nullNeeded = true;
