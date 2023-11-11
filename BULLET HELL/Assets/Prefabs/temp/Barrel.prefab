@@ -353,7 +353,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerHit:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 576
+  layerBoom:
+    serializedVersion: 2
+    m_Bits: 960
   lifeTime: 120
 --- !u!114 &8415999241207698227
 MonoBehaviour:

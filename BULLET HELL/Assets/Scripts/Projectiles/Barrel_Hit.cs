@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Build;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Barrel_Hit : MonoBehaviour
 {
     public LayerMask layerHit;
+    public LayerMask layerBoom;
     public int lifeTime;
     private int it;
     private bool isHit;
@@ -38,15 +40,11 @@ public class Barrel_Hit : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("hit: " + collision.gameObject.layer);
-        Debug.Log("hitmath: " + Mathf.Pow(2, collision.gameObject.layer));
-        Debug.Log("LayerHit" + layerHit.value);
-        //if (Mathf.Pow(2, collision.gameObject.layer) == layerHit)
-        //{
-        //    rb.velocity = collision.relativeVelocity;
-        //    isHit = true;
-        //}
-        if (canHit)
+        if (isHit && (layerBoom.value & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer)// bit shifting stuff idk what it does
+        {
+            explosion.boom();
+        }
+        else if (canHit && (layerHit.value & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer) // 1<< shifts bits left by 1
         {
             rb.velocity = collision.relativeVelocity / 4;
             isHit = true;
@@ -54,4 +52,8 @@ public class Barrel_Hit : MonoBehaviour
     }
 
     public void setCanHit(bool canHit) { this.canHit = canHit; }
+
+    public void setIsHit(bool isHit) { this.isHit = isHit; }
+
+    public void setIt(int it) { this.it = it; }
 }
