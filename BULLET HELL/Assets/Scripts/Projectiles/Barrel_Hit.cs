@@ -9,6 +9,7 @@ public class Barrel_Hit : MonoBehaviour
     public int lifeTime;
     private int it;
     private bool isHit;
+    private bool canHit;
 
     private Barrel_Explosion explosion;
     private Rigidbody2D rb;
@@ -21,6 +22,7 @@ public class Barrel_Hit : MonoBehaviour
 
         isHit = false;
         it = 0;
+        canHit = true;
     }
 
     private void FixedUpdate()
@@ -44,9 +46,12 @@ public class Barrel_Hit : MonoBehaviour
         //    rb.velocity = collision.relativeVelocity;
         //    isHit = true;
         //}
-        rb.velocity = collision.relativeVelocity;
-        isHit = true;
+        if (canHit)
+        {
+            rb.velocity = collision.relativeVelocity / 4;
+            isHit = true;
+        }
     }
 
-    public void setIsHit(bool isHit) { this.isHit = isHit; }
+    public void setCanHit(bool canHit) { this.canHit = canHit; }
 }

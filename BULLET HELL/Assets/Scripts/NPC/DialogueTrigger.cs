@@ -9,18 +9,28 @@ public class DialogueTrigger : MonoBehaviour {
     [SerializeField] private GameObject triggerVisual;
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
+    [Header("Last Dialogue JSON")]
+    [SerializeField] private TextAsset lastJSON;
     private bool playerInRange;
+    private bool dialoguePlayed;
     private void Awake() {
 
  
         playerInRange = false;
+        dialoguePlayed = false;
         triggerVisual.SetActive(false);
     }
     private void Update() {
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying) {
             triggerVisual.SetActive(true);
             if (Input.GetKeyDown("e")){
-                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                if (dialoguePlayed) {
+                    DialogueManager.GetInstance().EnterDialogueMode(lastJSON);
+                }
+                else {
+                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                    dialoguePlayed = true;
+                }
             }
 
         }
