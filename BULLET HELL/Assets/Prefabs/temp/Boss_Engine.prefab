@@ -426,6 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desired_MoveSpeed: 0
   desired_MaxHealth: 2000
+  desired_StoppingDistance: 0
   dashMultiplier: 0
 --- !u!114 &3809210738744740699
 MonoBehaviour:
@@ -829,7 +830,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  opportunity: 0
   opportunitycheck: 0
 --- !u!114 &6492607351175746
 MonoBehaviour:

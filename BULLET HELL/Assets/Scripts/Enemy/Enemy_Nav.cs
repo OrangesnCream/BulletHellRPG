@@ -7,10 +7,10 @@ public class Enemy_Nav : MonoBehaviour
 {
     private NavMeshAgent agent;
     private Transform goal;
-    private Rigidbody2D rigidbody;
+    private new Rigidbody2D rigidbody;
 
     private bool canmove;
-    void Awake()
+    void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         rigidbody = GetComponent<Rigidbody2D>();
@@ -39,6 +39,8 @@ public class Enemy_Nav : MonoBehaviour
     public void setCanMove(bool canmove) { this.canmove = canmove; }
 
     public void setMoveSpeed(float speed) { this.agent.speed = speed; }
+
+    public void setStoppingDistance(float distance) { this.agent.stoppingDistance = distance; }
 
     public float getMoveSpeed() { return this.agent.speed; }
 }

@@ -1292,4 +1292,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desired_MoveSpeed: 1
   desired_MaxHealth: 200
+  desired_StoppingDistance: 5
   dashMultiplier: 5

@@ -27,8 +27,9 @@ public class BarrelSpawner : MonoBehaviour
             go.name = "Barrel_" + i;
             barrels.Add(go);
             go.transform.position = this.gameObject.transform.position;
-            go.SetActive(false);
             go.GetComponent<Barrel_Hit>().setCanHit(false);
+            go.GetComponent<CapsuleCollider2D>().enabled = false;
+            go.GetComponentInChildren<CircleCollider2D>().enabled = false;
         }
         moreBarrels = false;
     }
@@ -37,4 +38,6 @@ public class BarrelSpawner : MonoBehaviour
     {
         moreBarrels = true;
     }
+
+    public List<GameObject> getBarrels() { return this.barrels; }
 }

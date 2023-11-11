@@ -17,7 +17,7 @@ public class Enemy_Laser2Command : MonoBehaviour
     private bool nullNeeded;
     private bool isShooting;
     
-    void Awake()
+    void Start()
     {
         pattern = this.GetComponent<Enemy_LaserPattern>();
         laser = this.GetComponent<LaserMaker>();
