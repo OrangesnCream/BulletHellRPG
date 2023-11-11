@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 public class Barrel_pattern : MonoBehaviour
@@ -6,7 +7,9 @@ public class Barrel_pattern : MonoBehaviour
     private BarrelSpawner barrel;
     private Vector2 direction;
     private bool canShoot;
-    private float speed;
+    public float speed;
+    private int opportunity;
+    public int opportunitycheck;
 
     //grab rigid body add gravity then stop it after 
     void Start()
@@ -27,7 +30,21 @@ public class Barrel_pattern : MonoBehaviour
                 direction.Normalize();
                 item.GetComponent<Rigidbody2D>().gravityScale = 1;
                 item.GetComponent<Rigidbody2D>().velocity = direction * speed;
-                //do it on a timer to stop them
+            }
+        }
+
+        opportunity++;
+
+        if (opportunity >= opportunitycheck)
+        {
+            foreach (var item in barrel.barrels)
+            {
+                if (item.GetComponent<Rigidbody2D>().gravityScale == 1)
+                {
+                    item.GetComponent<Rigidbody2D>().gravityScale = 0;
+                    item.GetComponent<Barrel_Hit>().setCanHit(true);
+                    item.GetComponent<CapsuleCollider2D>().enabled = true;
+                }
             }
         }
     }

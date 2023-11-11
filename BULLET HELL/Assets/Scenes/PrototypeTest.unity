@@ -26053,17 +26053,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6064401294853218983, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-      propertyPath: barrel
+    - target: {fileID: 3226289203067699813, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 8523267936996361506, guid: 4eef6b23f6b81cb46be9484343c4b98a, type: 3}
-    - target: {fileID: 6064401294853218983, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-      propertyPath: number_of_barrels
-      value: 8
+      objectReference: {fileID: 365075837}
+    - target: {fileID: 4724656097857123211, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: Bar_Fade.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945361860879895692, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6463081842868418558, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: m_Name
       value: Boss_Engine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753637877407693020, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7086699043615238071, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26103,6 +26111,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7086699043615238071, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7858897126284397738, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9118617002889537277, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
