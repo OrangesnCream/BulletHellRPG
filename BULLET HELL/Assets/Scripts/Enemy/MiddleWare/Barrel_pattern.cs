@@ -24,11 +24,11 @@ public class Barrel_pattern : MonoBehaviour
         {
             foreach (GameObject item in barrel.getBarrels())
             {
-                direction.y = Random.Range(-1.0f, 1.0f);
+                direction.y = Random.Range(-0.5f, 2.0f);
                 direction.x = Random.Range(-1.0f, 1.0f);
-                direction.Normalize();
+                //direction.Normalize();
                 item.SetActive(true);
-                item.GetComponent<Rigidbody2D>().gravityScale = 0.4f;
+                item.GetComponent<Rigidbody2D>().gravityScale = 0.7f;
                 item.GetComponent<Rigidbody2D>().velocity = direction * speed;
             }
             active = true;
@@ -39,7 +39,7 @@ public class Barrel_pattern : MonoBehaviour
             opportunity++;
         }
 
-        if (opportunity >= 70)
+        if (opportunity >= 80)
         {
             foreach (GameObject item in barrel.getBarrels())
             {
