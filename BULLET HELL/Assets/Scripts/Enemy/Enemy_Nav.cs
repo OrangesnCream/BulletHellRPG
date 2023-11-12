@@ -10,13 +10,14 @@ public class Enemy_Nav : MonoBehaviour
     private new Rigidbody2D rigidbody;
 
     private bool canmove;
-    void Start()
+    void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         rigidbody = GetComponent<Rigidbody2D>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         goal = GameObject.FindWithTag("Player").transform;
+        Debug.Log(goal.name);
     }
 
     // Update is called once per frame
