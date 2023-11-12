@@ -22,14 +22,13 @@ public class Barrel_pattern : MonoBehaviour
     {
         if (canShoot)
         {
-            barrel.needBarrels();
-            Debug.Log(barrel.getBarrels().Count);
             foreach (GameObject item in barrel.getBarrels())
             {
-                direction.y = Random.Range(-1, 1);
-                direction.x = Random.Range(-1, 1);
+                direction.y = Random.Range(-1.0f, 1.0f);
+                direction.x = Random.Range(-1.0f, 1.0f);
                 direction.Normalize();
-                item.GetComponent<Rigidbody2D>().gravityScale = 1;
+                item.SetActive(true);
+                item.GetComponent<Rigidbody2D>().gravityScale = 0.4f;
                 item.GetComponent<Rigidbody2D>().velocity = direction * speed;
             }
             active = true;
@@ -40,20 +39,21 @@ public class Barrel_pattern : MonoBehaviour
             opportunity++;
         }
 
-        if (opportunity >= 100)
+        if (opportunity >= 70)
         {
             foreach (GameObject item in barrel.getBarrels())
             {
-                if (item.GetComponent<Rigidbody2D>().gravityScale == 1)
-                {
-                    item.GetComponent<Rigidbody2D>().gravityScale = 0;
-                    item.GetComponent<Barrel_Hit>().setCanHit(true);
-                    item.GetComponent<CapsuleCollider2D>().enabled = true;
-                    item.GetComponentInChildren<CircleCollider2D>().enabled = true;
-                }
+                item.GetComponent<Rigidbody2D>().gravityScale = 0;
+                item.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                item.GetComponent<Barrel_Hit>().setCanHit(true);
+                item.GetComponent<Barrel_Hit>().setLifeTime(300);
+                item.GetComponent<CapsuleCollider2D>().enabled = true;
+                item.GetComponentInChildren<CircleCollider2D>().enabled = true;
             }
             barrel.getBarrels().Clear();
+            barrel.needBarrels();
             active = false;
+            opportunity = 0;
         }
     }
 

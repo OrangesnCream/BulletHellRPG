@@ -14,8 +14,8 @@ public class BarrelSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moreBarrels = false;
-        barrels = new List<GameObject>();
+        moreBarrels = true;
+        this.barrels = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -25,11 +25,12 @@ public class BarrelSpawner : MonoBehaviour
         {
             var go = Instantiate(barrel);
             go.name = "Barrel_" + i;
-            barrels.Add(go);
+            this.barrels.Add(go);
             go.transform.position = this.gameObject.transform.position;
             go.GetComponent<Barrel_Hit>().setCanHit(false);
             go.GetComponent<CapsuleCollider2D>().enabled = false;
             go.GetComponentInChildren<CircleCollider2D>().enabled = false;
+            go.SetActive(false);
         }
         moreBarrels = false;
     }

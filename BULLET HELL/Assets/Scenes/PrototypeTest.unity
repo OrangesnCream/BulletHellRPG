@@ -20198,6 +20198,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2355641926191834770, guid: ee6ac8070b0418547a2101104fb0622f, type: 3}
   m_PrefabInstance: {fileID: 1971379107}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &797571975 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6492607351175746, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+  m_PrefabInstance: {fileID: 1842453620506846953}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09bc969cdae7ef469ba939f60f669bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1198018462
 GameObject:
   m_ObjectHideFlags: 0
@@ -26053,18 +26064,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6492607351175746, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: desired_speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3226289203067699813, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 365075837}
-    - target: {fileID: 3327177316328818785, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3327177316328818785, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-      propertyPath: opportunitycheck
-      value: 100
-      objectReference: {fileID: 0}
+    - target: {fileID: 3809210738744740699, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: barrelCommand
+      value: 
+      objectReference: {fileID: 797571975}
     - target: {fileID: 6463081842868418558, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: m_Name
       value: Boss_Engine

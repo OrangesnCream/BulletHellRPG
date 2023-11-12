@@ -445,6 +445,7 @@ MonoBehaviour:
   shoot2Command: {fileID: 3434617785290703193}
   laser1Command: {fileID: 351547093830303045}
   laserAimCommand: {fileID: 2701007089714691730}
+  barrelCommand: {fileID: 6492607351175746}
   healthBar: {fileID: 608205126714224464}
   oppurtinutycheck: 400
   halfpattern: 0
@@ -829,8 +830,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94e3dfc2cd16d84a943345eba019f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  opportunitycheck: 0
 --- !u!114 &6492607351175746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,6 +842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09bc969cdae7ef469ba939f60f669bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  desired_speed: 10
 --- !u!1 &7571917379771454146
 GameObject:
   m_ObjectHideFlags: 0

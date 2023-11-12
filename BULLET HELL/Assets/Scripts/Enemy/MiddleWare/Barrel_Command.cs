@@ -13,6 +13,10 @@ public class Barrel_Command : MonoBehaviour
     void Start()
     {
         pattern = GetComponent<Barrel_pattern>();
+
+        pattern.setSpeed(desired_speed);
+        
+        nullNeeded = true;
     }
 
     //----------action nullifier---------------------
