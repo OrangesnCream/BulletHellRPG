@@ -13,18 +13,15 @@ public class LineOfSight : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        enemy.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
-    void Update()//
+    void Update()
     {
         Vector2 distance = player.position - enemy.position;
         float hypotenuse = Mathf.Sqrt(Mathf.Pow(distance.x, 2) + Mathf.Pow(distance.y,2)); //too fuking lazy to do raycast pythag ez
-        if (hypotenuse > sightDistance)
-        {
-            enemy.gameObject.SetActive(false);
-        }
-        else
+        if (hypotenuse <= sightDistance)
         {
             enemy.gameObject.SetActive(true);
         }
