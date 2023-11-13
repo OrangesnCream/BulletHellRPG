@@ -308,8 +308,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0022500157, y: 0.0028499663, z: 0}
-    m_Extent: {x: 1.0069499, y: 1.00045, z: 0}
+    m_Center: {x: 0.0034499764, y: -0.0048000216, z: 0}
+    m_Extent: {x: 1.00195, y: 0.9955, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -26541,7 +26541,7 @@ PrefabInstance:
     - target: {fileID: 2360537374323277080, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1759267990, guid: 669397f109cfdf143a039772bc8f6e46, type: 3}
+      objectReference: {fileID: -1634234846, guid: 451d2f1e340eed5469cdc510e6fc92f9, type: 3}
     - target: {fileID: 2360537374323277080, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
       propertyPath: m_Color.a
       value: 1
