@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 2
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -238,7 +238,7 @@ Transform:
   m_GameObject: {fileID: 3294851870802216078}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 0, z: -0.088582106}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -292,8 +292,8 @@ SpriteRenderer:
   m_SortingLayerID: 749546621
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.9111123, a: 1}
+  m_Sprite: {fileID: -988267127, guid: 9cb34bafb26d77446a7524ab617ef44e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -447,7 +447,7 @@ MonoBehaviour:
   laserAimCommand: {fileID: 2701007089714691730}
   barrelCommand: {fileID: 6492607351175746}
   healthBar: {fileID: 608205126714224464}
-  oppurtinutycheck: 400
+  oppurtinutycheck: 450
   halfpattern: 0
   fourthpattern: 0
 --- !u!1 &4566548715735604119
@@ -1136,7 +1136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -364}
+  m_AnchoredPosition: {x: 0, y: -190}
   m_SizeDelta: {x: 345, y: 52.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &9014501397027015297
