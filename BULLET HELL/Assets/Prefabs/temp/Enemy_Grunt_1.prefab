@@ -839,9 +839,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2431557b52b006441aa06cf682ad6c7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desired_MoveSpeed: 2
+  desired_MoveSpeed: 3
   desired_MaxHealth: 120
-  desired_StoppingDistance: 5
+  desired_StoppingDistance: 2
   dashMultiplier: 0
 --- !u!114 &2636755911392014522
 MonoBehaviour:

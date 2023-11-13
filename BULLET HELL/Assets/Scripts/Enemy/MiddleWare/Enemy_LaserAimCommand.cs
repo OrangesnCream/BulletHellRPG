@@ -47,7 +47,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
     {
         if (isShooting)
         {
-            opportunity++;
+            this.opportunity++;
         }
     }
     void Update()

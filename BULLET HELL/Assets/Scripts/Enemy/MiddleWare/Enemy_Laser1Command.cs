@@ -6,7 +6,6 @@ public class Enemy_Laser1Command : MonoBehaviour
 {
     private Enemy_LaserPattern pattern;
     private LaserMaker laser;
-    public Enemy_AttackPattern attackPattern;
 
     public float desired_width;
     public float desired_chargewidth;
