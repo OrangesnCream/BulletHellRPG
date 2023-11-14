@@ -14,6 +14,14 @@ public class LineOfSight : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemy.gameObject.SetActive(false);
+        foreach (Transform t in enemy.gameObject.GetComponentInChildren<Transform>())
+        {
+            foreach (Transform t2 in t.gameObject.GetComponentInChildren<Transform>())
+            {
+                t2.gameObject.SetActive(false);
+            }
+            t.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -24,6 +32,14 @@ public class LineOfSight : MonoBehaviour
         if (hypotenuse <= sightDistance)
         {
             enemy.gameObject.SetActive(true);
+            foreach (Transform t in enemy.gameObject.GetComponentInChildren<Transform>())
+            {
+                foreach (Transform t2 in t.gameObject.GetComponentInChildren<Transform>())
+                {
+                    t2.gameObject.SetActive(true);
+                }
+                t.gameObject.SetActive(true);
+            }
         }
     }
 }

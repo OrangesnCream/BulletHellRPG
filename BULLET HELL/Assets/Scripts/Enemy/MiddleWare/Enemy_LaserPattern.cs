@@ -48,15 +48,8 @@ public class Enemy_LaserPattern : MonoBehaviour
             {
                 child.SetPosition(0, this.transform.position);
                 RaycastHit2D hit;
-                if (Physics2D.Raycast(this.transform.position, child.transform.forward))
-                {
-                    hit = Physics2D.Raycast(child.transform.position, child.transform.forward, 1000f, LayerMask);
-                    child.SetPosition(1, hit.point);
-                }
-                else
-                {
-                    child.SetPosition(1, child.transform.forward * 1000f);
-                }
+                hit = Physics2D.Raycast(child.transform.position, child.transform.forward, 1000f, LayerMask);
+                child.SetPosition(1, hit.point);
             }
             foreach (LineRenderer line in lineRenderers)
             {
