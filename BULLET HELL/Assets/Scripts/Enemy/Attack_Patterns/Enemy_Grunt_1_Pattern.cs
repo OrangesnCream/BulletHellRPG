@@ -47,6 +47,7 @@ public class Enemy_Grunt_1_Pattern : MonoBehaviour
         if (patternopportunity > oppurtinutycheck)
         {
             patternMove[iterator].Invoke();
+            patternAim[iterator].Invoke();
             this.iterator++;
 
             patternopportunity = 0;
