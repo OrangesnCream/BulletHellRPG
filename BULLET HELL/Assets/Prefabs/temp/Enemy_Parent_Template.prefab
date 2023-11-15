@@ -309,6 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 6441065888978084146}
+  healthbar: {fileID: 6036864969763423249}
   sightDistance: 20
 --- !u!114 &8326979291066288162
 MonoBehaviour:

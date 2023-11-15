@@ -6,6 +6,7 @@ public class LineOfSight : MonoBehaviour
 {
     private Transform player;
     public Transform enemy;
+    public Canvas healthbar;
 
     public float sightDistance;
 
@@ -14,6 +15,7 @@ public class LineOfSight : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemy.gameObject.GetComponent<Opportunity_Timer>().enabled = false;
+        healthbar.enabled = false;
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class LineOfSight : MonoBehaviour
         if (hypotenuse <= sightDistance)
         {
             enemy.gameObject.GetComponent<Opportunity_Timer>().enabled = true;
+            healthbar.enabled = true;
         }
     }
 }
