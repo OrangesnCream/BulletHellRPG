@@ -12,6 +12,8 @@ public class Enemy_AttackPattern : MonoBehaviour
     public Enemy_Laser2Command laser2Command;
     public Enemy_LaserAimCommand laserAimCommand;
 
+    private Opportunity_Timer timer;
+
     public HealthBar healthBar;
 
     public List<Action> patternMove;
@@ -23,7 +25,6 @@ public class Enemy_AttackPattern : MonoBehaviour
     public List<Action> patternLaserAim;
 
     public int oppurtinutycheck;
-    private int patternopportunity;
     private int iterator;
     private bool added1;
     private bool added2;
@@ -33,6 +34,9 @@ public class Enemy_AttackPattern : MonoBehaviour
 
     void Start()
     {
+        timer = this.gameObject.GetComponent<Opportunity_Timer>();
+        timer.setOpportunity(oppurtinutycheck);
+
         patternMove = new List<Action>();
         patternShoot1 = new List<Action>();
         patternShoot2 = new List<Action>();
@@ -41,8 +45,6 @@ public class Enemy_AttackPattern : MonoBehaviour
         patternLaser2 = new List<Action>();
         patternLaserAim = new List<Action>();
 
-
-        patternopportunity = oppurtinutycheck;
         iterator = 0;
         added1 = false;
         added2 = false;
@@ -88,12 +90,10 @@ public class Enemy_AttackPattern : MonoBehaviour
 
         //-------pattern part-------------------
 
-        patternopportunity++;
-
         if (iterator >= patternMove.Count)
             this.iterator = 0;
 
-        if (patternopportunity > oppurtinutycheck)
+        if (timer.getOpportunity() > oppurtinutycheck && timer.state())
         {
             patternMove[iterator].Invoke();
             patternShoot1[iterator].Invoke();
@@ -105,7 +105,12 @@ public class Enemy_AttackPattern : MonoBehaviour
             Debug.Log("move: " + iterator);
             this.iterator++;
 
-            patternopportunity = 0;
+            timer.setOpportunity(0);
+        }
+
+        if (!timer.state())
+        {
+            CancelInvoke();
         }
     }
 }

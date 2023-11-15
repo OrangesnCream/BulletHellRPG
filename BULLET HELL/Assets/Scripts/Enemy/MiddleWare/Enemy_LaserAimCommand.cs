@@ -38,7 +38,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
 
         nullNeeded = true;
         isShooting = false;
-        canRotate = true;
+        canRotate = false;
         canSwingClock = false;
         canSwingCounter = false;
     }
@@ -102,7 +102,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         opportunity = 0;
         pattern.setCanShoot(false);
         resetSpinSpeed();
-        canRotate = true;
+        canRotate = false;
         canSwingClock = false;
         canSwingCounter = false;
     }
@@ -113,6 +113,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
     {
         if (nullNeeded)
             actionNull();
+        canRotate = true;
         isShooting = true;
         pattern.setCanShoot(true);
     }
@@ -121,6 +122,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
     {
         if (nullNeeded)
             actionNull();
+        canRotate = true;
         canSwingClock = true;
         isShooting = true;
         pattern.setCanShoot(true);
@@ -131,6 +133,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
     {
         if (nullNeeded)
             actionNull();
+        canRotate = true;
         canSwingCounter = true;
         isShooting = true;
         pattern.setCanShoot(true);

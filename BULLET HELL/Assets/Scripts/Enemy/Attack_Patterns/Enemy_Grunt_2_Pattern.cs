@@ -8,6 +8,8 @@ public class Enemy_Grunt_2_Pattern : MonoBehaviour
     public Enemy_Laser1Command laser1Command;
     public Enemy_LaserAimCommand laserAimCommand;
 
+    private Opportunity_Timer timer;
+
     public HealthBar healthBar;
 
     public List<Action> patternMove;
@@ -15,18 +17,19 @@ public class Enemy_Grunt_2_Pattern : MonoBehaviour
     public List<Action> patternLaserAim;
 
     public int oppurtinutycheck;
-    private int patternopportunity;
     private int iterator;
     private bool added1;
 
     void Start()
     {
+        timer = this.gameObject.GetComponent<Opportunity_Timer>();
+        timer.setOpportunity(oppurtinutycheck);
+
         patternMove = new List<Action>();
         patternLaser1 = new List<Action>();
         patternLaserAim = new List<Action>();
 
 
-        patternopportunity = oppurtinutycheck;
         iterator = 0;
         added1 = false;
     }
@@ -45,19 +48,22 @@ public class Enemy_Grunt_2_Pattern : MonoBehaviour
 
         //-------pattern part-------------------
 
-        patternopportunity++;
-
         if (iterator >= patternMove.Count)
             this.iterator = 0;
 
-        if (patternopportunity > oppurtinutycheck)
+        if (timer.getOpportunity() > oppurtinutycheck && timer.state())
         {
             patternMove[iterator].Invoke();
             patternLaser1[iterator].Invoke();
             patternLaserAim[iterator].Invoke();
             this.iterator++;
 
-            patternopportunity = 0;
+            timer.setOpportunity(0);
+        }
+
+        if (!timer.state())
+        {
+            CancelInvoke();
         }
     }
 }

@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
 
 public class Enemy_LaserPattern : MonoBehaviour
 {
@@ -74,14 +72,14 @@ public class Enemy_LaserPattern : MonoBehaviour
         {
             foreach (Transform child in children)
             {
-                //child.tag = "NoReg";
+                child.tag = "NoReg";
             }
         }
         else if (canHit)
         {
             foreach (Transform child in children)
             {
-                //child.tag = GetComponentInParent<Transform>().tag;
+                child.tag = GetComponentInParent<Transform>().tag;
             }
         }
     }

@@ -13,15 +13,7 @@ public class LineOfSight : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        enemy.gameObject.SetActive(false);
-        foreach (Transform t in enemy.gameObject.GetComponentInChildren<Transform>())
-        {
-            foreach (Transform t2 in t.gameObject.GetComponentInChildren<Transform>())
-            {
-                t2.gameObject.SetActive(false);
-            }
-            t.gameObject.SetActive(false);
-        }
+        enemy.gameObject.GetComponent<Opportunity_Timer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -31,15 +23,7 @@ public class LineOfSight : MonoBehaviour
         float hypotenuse = Mathf.Sqrt(Mathf.Pow(distance.x, 2) + Mathf.Pow(distance.y,2)); //too fuking lazy to do raycast pythag ez
         if (hypotenuse <= sightDistance)
         {
-            enemy.gameObject.SetActive(true);
-            foreach (Transform t in enemy.gameObject.GetComponentInChildren<Transform>())
-            {
-                foreach (Transform t2 in t.gameObject.GetComponentInChildren<Transform>())
-                {
-                    t2.gameObject.SetActive(true);
-                }
-                t.gameObject.SetActive(true);
-            }
+            enemy.gameObject.GetComponent<Opportunity_Timer>().enabled = true;
         }
     }
 }

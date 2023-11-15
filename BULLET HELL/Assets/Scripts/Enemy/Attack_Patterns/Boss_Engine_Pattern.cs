@@ -1,3 +1,4 @@
+using Ink.Parsed;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class Boss_Engine_Pattern : MonoBehaviour
     public Enemy_LaserAimCommand laserAimCommand;
     public Barrel_Command barrelCommand;
 
+    private Opportunity_Timer timer;
+
     public HealthBar healthBar;
 
     public List<Action> patternMove;
@@ -21,16 +24,16 @@ public class Boss_Engine_Pattern : MonoBehaviour
     public List<Action> patternBarrel;
 
     public int oppurtinutycheck;
-    private int patternopportunity;
     private int iterator;
     private bool added1;
     private bool added2;
-    private bool added3;
     public bool halfpattern;
-    public bool fourthpattern;
 
     void Start()
     {
+        timer = this.gameObject.GetComponent<Opportunity_Timer>();
+        timer.setOpportunity(oppurtinutycheck);
+
         patternMove = new List<Action>();
         patternShoot1 = new List<Action>();
         patternShoot2 = new List<Action>();
@@ -38,11 +41,9 @@ public class Boss_Engine_Pattern : MonoBehaviour
         patternLaserAim = new List<Action>();
         patternBarrel = new List<Action>();
 
-        patternopportunity = oppurtinutycheck;
         iterator = 0;
         added1 = false;
         added2 = false;
-        added3 = false;
     }
 
     private void FixedUpdate()
@@ -69,24 +70,12 @@ public class Boss_Engine_Pattern : MonoBehaviour
             added2 = true;
         }
 
-        else if (!added3 && fourthpattern && healthBar.getHealth() <= healthBar.getMaxHealth() / 4)
-        {
-            patternMove.Clear(); patternShoot1.Clear(); patternShoot2.Clear(); patternLaser1.Clear(); patternLaserAim.Clear();
-
-            
-
-            added3 = true;
-        }
-
-
         //-------pattern part-------------------
-
-        patternopportunity++;
 
         if (iterator >= patternMove.Count)
             this.iterator = 0;
 
-        if (patternopportunity > oppurtinutycheck)
+        if (timer.getOpportunity() >= oppurtinutycheck && timer.state())
         {
             patternMove[iterator].Invoke();
             patternShoot1[iterator].Invoke();
@@ -97,7 +86,12 @@ public class Boss_Engine_Pattern : MonoBehaviour
             Debug.Log("move: " + iterator);
             this.iterator++;
 
-            patternopportunity = 0;
+            timer.setOpportunity(0);
+        }
+
+        if (!timer.state())
+        {
+            CancelInvoke();
         }
     }
 }
