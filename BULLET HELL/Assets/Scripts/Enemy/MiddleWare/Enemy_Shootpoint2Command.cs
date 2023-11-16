@@ -7,7 +7,7 @@ public class Enemy_Shoot2Command : MonoBehaviour
     private Enemy_ShootingPattern shootingPattern;
     private BulletParticles particles;
 
-    public int desired_FireRate;
+    public float desired_FireRate;
     public float desired_BulletSpeed;
     public float desired_SpinSpeed;
     public float desired_Size;

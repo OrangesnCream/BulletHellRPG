@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 2
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 4724656097857123211}
   - component: {fileID: 1761799608076985557}
   - component: {fileID: 3809210738744740699}
+  - component: {fileID: 5223830796705547356}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -238,7 +239,7 @@ Transform:
   m_GameObject: {fileID: 3294851870802216078}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 0, z: -0.088582106}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -290,10 +291,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 749546621
-  m_SortingLayer: 2
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.9111123, a: 1}
+  m_Sprite: {fileID: -988267127, guid: 9cb34bafb26d77446a7524ab617ef44e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -425,7 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   desired_MoveSpeed: 0
-  desired_MaxHealth: 2000
+  desired_MaxHealth: 2500
   desired_StoppingDistance: 0
   dashMultiplier: 0
 --- !u!114 &3809210738744740699
@@ -446,10 +447,22 @@ MonoBehaviour:
   laser1Command: {fileID: 351547093830303045}
   laserAimCommand: {fileID: 2701007089714691730}
   barrelCommand: {fileID: 6492607351175746}
+  spawnerCommand: {fileID: 4709909476889530487}
   healthBar: {fileID: 608205126714224464}
-  oppurtinutycheck: 400
-  halfpattern: 0
-  fourthpattern: 0
+  oppurtinutycheck: 350
+  halfpattern: 1
+--- !u!114 &5223830796705547356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3294851870802216078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a71dd0affa52fa4c9959a366df22314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4566548715735604119
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +626,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7581e7ec43a58f4d9543137b0312dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPattern: {fileID: 0}
   desired_width: 1
   desired_chargewidth: 0.2
   desired_spinspeed: 20
@@ -754,6 +766,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5435656984284691701}
+  healthbar: {fileID: 3226289203067699813}
+  Enemy_Hit: {fileID: 4724656097857123211}
   sightDistance: 25
 --- !u!114 &6576881771993951557
 MonoBehaviour:
@@ -994,6 +1008,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5405513721604100129}
+  - component: {fileID: 170566035354274810}
+  - component: {fileID: 8841469562422569919}
+  - component: {fileID: 4709909476889530487}
   m_Layer: 7
   m_Name: Enemy_Spawner
   m_TagString: Untagged
@@ -1016,6 +1033,45 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5435656984284691701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &170566035354274810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216566239332975915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2393b22cdab057643b3c56b2336ae42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number_of_minions: 6
+  minion: {fileID: 3541695325289322056, guid: 73a1dd513b3238b4b810a85ab9a7e741, type: 3}
+  minions: []
+--- !u!114 &8841469562422569919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216566239332975915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef73e10497afedc4195758caee06a9f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4709909476889530487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216566239332975915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec4f6eb8388e014a9c2452fe529907a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8596938650593601326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,7 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ed7cef5867f944896729a30c9b278e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desired_FireRate: 2
+  desired_FireRate: 1
   desired_BulletSpeed: 3
   desired_SpinSpeed: 20
   desired_Size: 0.5
@@ -1136,7 +1192,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -364}
+  m_AnchoredPosition: {x: 0, y: -190}
   m_SizeDelta: {x: 345, y: 52.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &9014501397027015297
@@ -1220,7 +1276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438f7990a47cc8348acd16682070a277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desired_FireRate: 2
+  desired_FireRate: 1
   desired_BulletSpeed: 3
   desired_SpinSpeed: 20
   desired_Size: 0.5

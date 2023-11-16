@@ -38,7 +38,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
 
         nullNeeded = true;
         isShooting = false;
-        canRotate = true;
+        canRotate = false;
         canSwingClock = false;
         canSwingCounter = false;
     }
@@ -47,49 +47,50 @@ public class Enemy_LaserAimCommand : MonoBehaviour
     {
         if (isShooting)
         {
-            opportunity++;
+            this.opportunity++;
         }
     }
+
     void Update()
     {
         if (canRotate)
         {
             direction.x = player.transform.position.x - enemy.transform.position.x;
             direction.y = player.transform.position.y - enemy.transform.position.y;
-            angle = Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x);
-
-            if (laser.getColumns() > 1)
-                angle += laser.getDegrees() / 4;
+            this.angle = Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x);
 
             if (canSwingClock)
-                angle += laser.getDegrees() / 2;
+                this.angle += laser.getDegrees() / 2;
 
-            if (canSwingCounter)
-                angle -= laser.getDegrees() / 2;
+            else if (canSwingCounter)
+                this.angle -= laser.getDegrees() / 2;
 
             tempAngle = angle;
         }
 
         if (isShooting)
         {
-            if (opportunity < opportunitycheck / 2)
+            if (opportunity < opportunitycheck / 4)
             {
                 pattern.setCanHit(false);
                 pattern.setWidth(desired_chargewidth);
             }
-            else if (opportunity > opportunitycheck / 2)
+            else if (opportunity < opportunitycheck / 2 && opportunity > opportunity / 4)
             {
                 canRotate = false;
+            }
+            else if (opportunity > opportunitycheck / 2)
+            {
                 pattern.setCanHit(true);
                 pattern.setWidth(desired_width);
 
                 if (canSwingClock)
-                    angle = Mathf.Lerp(tempAngle, tempAngle - laser.getDegrees(), (opportunity - opportunitycheck / 2) / (opportunitycheck - opportunitycheck / 2));
+                    this.angle = Mathf.Lerp(tempAngle, tempAngle - laser.getDegrees(), (opportunity - opportunitycheck / 2) / (opportunitycheck - opportunitycheck / 2));
                 if (canSwingCounter)
-                    angle = Mathf.Lerp(tempAngle, tempAngle + laser.getDegrees(), (opportunity - opportunitycheck / 2) / (opportunitycheck - opportunitycheck / 2));
+                    this.angle = Mathf.Lerp(tempAngle, tempAngle + laser.getDegrees(), (opportunity - opportunitycheck / 2) / (opportunitycheck - opportunitycheck / 2));
             }
         }
-        this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
+        this.gameObject.transform.rotation = Quaternion.Euler(0, 0, this.angle);
     }
 
     //--------------------reset functions-----------------------
@@ -104,7 +105,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         opportunity = 0;
         pattern.setCanShoot(false);
         resetSpinSpeed();
-        canRotate = true;
+        canRotate = false;
         canSwingClock = false;
         canSwingCounter = false;
     }
@@ -115,15 +116,18 @@ public class Enemy_LaserAimCommand : MonoBehaviour
     {
         if (nullNeeded)
             actionNull();
-        pattern.setCanShoot(true);
+        canRotate = true;
         isShooting = true;
+        pattern.setCanShoot(true);
     }
 
     public void SwingClock()
     {
         if (nullNeeded)
             actionNull();
+        canRotate = true;
         canSwingClock = true;
+        isShooting = true;
         pattern.setCanShoot(true);
         isShooting = true;
     }
@@ -132,9 +136,10 @@ public class Enemy_LaserAimCommand : MonoBehaviour
     {
         if (nullNeeded)
             actionNull();
+        canRotate = true;
         canSwingCounter = true;
-        pattern.setCanShoot(true);
         isShooting = true;
+        pattern.setCanShoot(true);
     }
     public void doNothing()
     {

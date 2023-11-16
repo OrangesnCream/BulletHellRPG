@@ -21,7 +21,7 @@ public class Enemy_Death : MonoBehaviour
         b = (byte)(color.b * 255);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (healthBar.getHealth() == 0)
         {

@@ -17,7 +17,6 @@ public class Enemy_Nav : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         goal = GameObject.FindWithTag("Player").transform;
-        Debug.Log(goal.name);
     }
 
     // Update is called once per frame

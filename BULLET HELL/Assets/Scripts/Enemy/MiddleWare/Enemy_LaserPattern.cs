@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
 
 public class Enemy_LaserPattern : MonoBehaviour
 {
@@ -48,15 +46,8 @@ public class Enemy_LaserPattern : MonoBehaviour
             {
                 child.SetPosition(0, this.transform.position);
                 RaycastHit2D hit;
-                if (Physics2D.Raycast(this.transform.position, child.transform.forward))
-                {
-                    hit = Physics2D.Raycast(child.transform.position, child.transform.forward, 1000f, LayerMask);
-                    child.SetPosition(1, hit.point);
-                }
-                else
-                {
-                    child.SetPosition(1, child.transform.forward * 1000f);
-                }
+                hit = Physics2D.Raycast(child.transform.position, child.transform.forward, 1000f, LayerMask);
+                child.SetPosition(1, hit.point);
             }
             foreach (LineRenderer line in lineRenderers)
             {
@@ -81,14 +72,14 @@ public class Enemy_LaserPattern : MonoBehaviour
         {
             foreach (Transform child in children)
             {
-                //child.tag = "NoReg";
+                child.tag = "NoReg";
             }
         }
         else if (canHit)
         {
             foreach (Transform child in children)
             {
-                //child.tag = GetComponentInParent<Transform>().tag;
+                child.tag = GetComponentInParent<Transform>().tag;
             }
         }
     }

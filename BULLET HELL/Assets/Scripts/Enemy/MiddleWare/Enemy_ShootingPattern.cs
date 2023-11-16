@@ -54,7 +54,7 @@ public class Enemy_ShootingPattern : MonoBehaviour
 
     public void setCanShoot(bool canShoot) { this.canShoot = canShoot; }
 
-    public void setFireRate(int rate)
+    public void setFireRate(float rate)
     {
         foreach(ParticleSystem particle in particleSystems)
         {
