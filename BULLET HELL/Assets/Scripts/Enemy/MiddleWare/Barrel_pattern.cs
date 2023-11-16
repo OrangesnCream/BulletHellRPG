@@ -37,6 +37,21 @@ public class Barrel_pattern : MonoBehaviour
         if (active)
         {
             opportunity++;
+            if (opportunity <= 40)
+            {
+                foreach (GameObject item in barrel.getBarrels())
+                {
+                    item.transform.localScale =  new Vector3(Mathf.Lerp(1f, 1.5f, opportunity / 40),Mathf.Lerp(1f, 1.5f, opportunity / 40),0);
+                }
+            }
+            else
+            {
+                foreach (GameObject item in barrel.getBarrels())
+                {
+                    item.transform.localScale = new Vector3(Mathf.Lerp(1.5f, 1f, (opportunity- 40) / 40), Mathf.Lerp(1.5f, 1f, (opportunity - 40) / 40), 0);
+                }
+            }
+            
         }
 
         if (opportunity >= 80)

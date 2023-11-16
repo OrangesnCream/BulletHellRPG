@@ -24,6 +24,7 @@ public class Barrel_Hit : MonoBehaviour
         it = 0;
         canHit = true;
         boomtime = false;
+        rb.isKinematic = true;
     }
 
     private void FixedUpdate()
@@ -41,10 +42,12 @@ public class Barrel_Hit : MonoBehaviour
     {
         if (isHit && (layerBoom.value & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer)// bit shifting stuff idk what it does
         {
+            rb.isKinematic = false;
             explosion.boom();
         }
         else if (canHit && (layerHit.value & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer) // 1<< shifts bits left by 1
         {
+            rb.isKinematic = false;
             rb.velocity = collision.relativeVelocity / 3;
             isHit = true;
         }

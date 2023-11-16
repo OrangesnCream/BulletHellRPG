@@ -9,7 +9,7 @@ public class Enemy_ShootAimCommand : MonoBehaviour
     private GameObject player;
     public GameObject enemy;
 
-    public int desired_FireRate;
+    public float desired_FireRate;
     public float desired_BulletSpeed;
     public float desired_SpinSpeed;
     public float desired_Size;
