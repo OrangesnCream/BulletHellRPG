@@ -1,0 +1,1 @@
+VAR weaponEquiped="SMG"

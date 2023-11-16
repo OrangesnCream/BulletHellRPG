@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using Ink.UnityIntegration;
 public class DialogueManager : MonoBehaviour
 {
     [Header("Dialogue UI")]
@@ -12,16 +13,20 @@ public class DialogueManager : MonoBehaviour
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
+    [Header("Load Globals JSON")]
+    [SerializeField] private TextAsset loadGlobalsJSON;
 
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
     private static DialogueManager instance;
     private bool firstMessageRead;
+    private DialogueVariables dialogueVariables;
     private void Awake(){
         if(instance!=null){
             Debug.LogWarning("Found multiple dialogue managers");
         }
-        instance=this;
+        instance = this;
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
     }
     public static DialogueManager GetInstance(){
         return instance;
@@ -51,6 +56,7 @@ public class DialogueManager : MonoBehaviour
         currentStory =new Story(inkJSON.text);
        
         dialoguePanel.SetActive(true);
+        dialogueVariables.StartListening(currentStory);
         ContinueStory();
         dialogueIsPlaying = true;
       
@@ -58,6 +64,7 @@ public class DialogueManager : MonoBehaviour
     }
     private IEnumerator ExitDialougeMode(){
         yield return new WaitForSeconds(0.2f);
+        dialogueVariables.StopListening(currentStory);
         Debug.Log("Exited Dialogue");
         dialogueIsPlaying = false;
         firstMessageRead = false;
@@ -101,5 +108,17 @@ public class DialogueManager : MonoBehaviour
     public void MakeChoice(int choiceIndex) {
         currentStory.ChooseChoiceIndex(choiceIndex);
         ContinueStory();
+    }
+    public Ink.Runtime.Object GetVariableState(string variableName) {
+        Ink.Runtime.Object variableValue = null;
+        dialogueVariables.variables.TryGetValue(variableName, out variableValue);
+        if (variableValue == null) {
+            Debug.LogWarning("Ink Variable was found to be null: " + variableName);
+        }
+        return variableValue;
+    }
+    // This method will get called anytime the application exits.
+    public void OnApplicationQuit() {
+        dialogueVariables.SaveVariables();
     }
 }
