@@ -62,9 +62,6 @@ TagManager:
   - name: Area Objects
     uniqueID: 468535217
     locked: 0
-  - name: Foreground
-    uniqueID: 2871740401
-    locked: 0
   - name: Enemy
     uniqueID: 749546621
     locked: 0
@@ -79,4 +76,7 @@ TagManager:
     locked: 0
   - name: Secondary Gates
     uniqueID: 3468887355
+    locked: 0
+  - name: Foreground
+    uniqueID: 2871740401
     locked: 0
