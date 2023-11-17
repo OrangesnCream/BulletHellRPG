@@ -32,4 +32,11 @@ public class LineOfSight : MonoBehaviour
             Enemy_Hit.enabled = true;
         }
     }
+
+    public bool isSighted()
+    {
+        Vector2 distance = player.position - enemy.position;
+        float hypotenuse = Mathf.Sqrt(Mathf.Pow(distance.x, 2) + Mathf.Pow(distance.y,2));
+        return hypotenuse <= sightDistance;
+    }
 }
