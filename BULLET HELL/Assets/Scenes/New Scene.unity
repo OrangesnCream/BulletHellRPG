@@ -25039,17 +25039,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1689877275766506971, guid: 73a1dd513b3238b4b810a85ab9a7e741, type: 3}
   m_PrefabInstance: {fileID: 710641845}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1723745809 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4709909476889530487, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-  m_PrefabInstance: {fileID: 1807851233}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec4f6eb8388e014a9c2452fe529907a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1754045735 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1689877275766506971, guid: 73a1dd513b3238b4b810a85ab9a7e741, type: 3}
@@ -25177,11 +25166,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eef6b23f6b81cb46be9484343c4b98a, type: 3}
---- !u!223 &1792396210 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 3226289203067699813, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-  m_PrefabInstance: {fileID: 1807851233}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1807851233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25193,22 +25177,6 @@ PrefabInstance:
     - target: {fileID: 170566035354274810, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: number_of_minions
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1761799608076985557, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-      propertyPath: desired_MaxHealth
-      value: 2200
-      objectReference: {fileID: 0}
-    - target: {fileID: 3809210738744740699, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-      propertyPath: halfpattern
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3809210738744740699, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-      propertyPath: spawnerCommand
-      value: 
-      objectReference: {fileID: 1723745809}
-    - target: {fileID: 3809210738744740699, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-      propertyPath: oppurtinutycheck
-      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 5435656984284691701, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25262,10 +25230,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7385876371518726491, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
-      propertyPath: healthbar
-      value: 
-      objectReference: {fileID: 1792396210}
     - target: {fileID: 7385876371518726491, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: sightDistance
       value: 10
