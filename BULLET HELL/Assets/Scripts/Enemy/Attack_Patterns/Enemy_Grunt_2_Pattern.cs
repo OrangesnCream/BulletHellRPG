@@ -34,7 +34,7 @@ public class Enemy_Grunt_2_Pattern : MonoBehaviour
         added1 = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (!added1)//health patterns || boss specific attacks || change hitbox for 2.5d look
         {

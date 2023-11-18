@@ -51,7 +51,7 @@ public class Enemy_AttackPattern : MonoBehaviour
         added3 = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if(!added1)//health patterns || boss specific attacks || change hitbox for 2.5d look
         {

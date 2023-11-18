@@ -30,7 +30,7 @@ public class Enemy_Grunt_1_Pattern : MonoBehaviour
         added1 = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (!added1)
         {
