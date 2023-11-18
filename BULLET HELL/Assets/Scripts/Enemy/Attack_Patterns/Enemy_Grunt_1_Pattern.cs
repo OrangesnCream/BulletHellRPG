@@ -32,7 +32,7 @@ public class Enemy_Grunt_1_Pattern : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!added1)//health patterns || boss specific attacks || change hitbox for 2.5d look
+        if (!added1)
         {
             patternMove.Add(moveCommand.Movement); patternAim.Add(shootAimCommand.Shoot);
             patternMove.Add(moveCommand.Movement); patternAim.Add(shootAimCommand.doNothing);

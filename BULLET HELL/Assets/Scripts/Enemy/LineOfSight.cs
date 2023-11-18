@@ -24,7 +24,7 @@ public class LineOfSight : MonoBehaviour
     void Update()
     {
         Vector2 distance = player.position - enemy.position;
-        float hypotenuse = Mathf.Sqrt(Mathf.Pow(distance.x, 2) + Mathf.Pow(distance.y,2)); //too fuking lazy to do raycast pythag ez
+        float hypotenuse = Mathf.Pow((distance.x * distance.x + distance.y * distance.y), 0.5f); //too fuking lazy to do raycast pythag ez
         if (hypotenuse <= sightDistance)
         {
             enemy.gameObject.GetComponent<Opportunity_Timer>().enabled = true;
@@ -36,7 +36,7 @@ public class LineOfSight : MonoBehaviour
     public bool isSighted()
     {
         Vector2 distance = player.position - enemy.position;
-        float hypotenuse = Mathf.Sqrt(Mathf.Pow(distance.x, 2) + Mathf.Pow(distance.y,2));
+        float hypotenuse = Mathf.Pow((distance.x * distance.x + distance.y * distance.y), 0.5f);
         return hypotenuse <= sightDistance;
     }
 }

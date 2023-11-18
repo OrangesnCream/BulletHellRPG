@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -8,25 +9,27 @@ public class EnemySpawner : MonoBehaviour
     public GameObject minion;
     public List<GameObject> minions;
     private bool moreMinion;
+    private float angle;
 
-    // Start is called before the first frame update
     void Start()
     {
         moreMinion = false;
         this.minions = new List<GameObject>();
+        angle = 360 / number_of_minions;
     }
 
-    // Update is called once per frame
     void Update()
     {
         for (int i = 0; i < number_of_minions && moreMinion; i++)
         {
-            var go = Instantiate(minion);
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle * i);
+            Vector3 SpawnAround = new Vector3(gameObject.GetComponentInParent<Transform>().position.x + gameObject.transform.right.x * 5, gameObject.GetComponentInParent<Transform>().position.y + gameObject.transform.right.y * 5, 0);
+            var go = Instantiate(minion, SpawnAround, Quaternion.Euler(0, 0, 0));
             go.name = "Minion_" + i;
             this.minions.Add(go);
-            go.transform.position = this.gameObject.transform.forward;
             go.GetComponent<LineOfSight>().sightDistance = 1000f;
         }
+        minions.Clear();
         moreMinion = false;
     }
 
