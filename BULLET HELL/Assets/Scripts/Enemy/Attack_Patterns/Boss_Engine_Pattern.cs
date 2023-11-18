@@ -49,7 +49,7 @@ public class Boss_Engine_Pattern : MonoBehaviour
         added2 = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (!added1)//health patterns || boss specific attacks || change hitbox for 2.5d look
         {
