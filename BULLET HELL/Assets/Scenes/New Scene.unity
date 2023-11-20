@@ -25178,6 +25178,18 @@ PrefabInstance:
       propertyPath: number_of_minions
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4756951556867855837, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116846770847899711, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116846770847899711, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5435656984284691701, guid: 24c1209eaac176e40b9c895c78c3ee5e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.4
