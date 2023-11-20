@@ -76,8 +76,6 @@ public class Boss_Engine_Pattern : MonoBehaviour
             patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.BulletSlowerSpinOpposite);  patternShoot2.Add(shoot2Command.doNothing);                 patternLaser1.Add(laser1Command.doNothing);     patternLaserAim.Add(laserAimCommand.SwingCounter);  patternBarrel.Add(barrelCommand.doNothing); patternSpawner.Add(spawnerCommand.doNothing);
             patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.BulletFaster);              patternShoot2.Add(shoot2Command.doNothing);                 patternLaser1.Add(laser1Command.doNothing);     patternLaserAim.Add(laserAimCommand.doNothing);     patternBarrel.Add(barrelCommand.Shoot);     patternSpawner.Add(spawnerCommand.Spawn);
 
-            oppurtinutycheck = oppurtinutycheck * 3 / 4;
-
             added2 = true;
         }
 
