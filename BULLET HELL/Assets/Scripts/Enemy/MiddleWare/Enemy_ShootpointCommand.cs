@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
 
-public class Enemy_Shoot1Command : MonoBehaviour
+public class Enemy_ShootCommand : MonoBehaviour
 {
     private Enemy_ShootingPattern shootingPattern;
     private BulletParticles particles;

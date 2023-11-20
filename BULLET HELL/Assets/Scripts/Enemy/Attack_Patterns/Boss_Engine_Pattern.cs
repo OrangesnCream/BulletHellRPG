@@ -6,9 +6,9 @@ using UnityEngine;
 public class Boss_Engine_Pattern : MonoBehaviour
 {
     public Enemy_moveCommand moveCommand;
-    public Enemy_Shoot1Command Shoot1Command;
-    public Enemy_Shoot2Command shoot2Command;
-    public Enemy_Laser1Command laser1Command;
+    public Enemy_ShootCommand Shoot1Command;
+    public Enemy_ShootCommand shoot2Command;
+    public Enemy_LaserCommand laser1Command;
     public Enemy_LaserAimCommand laserAimCommand;
     public Barrel_Command barrelCommand;
     public EnemySpawner_Command spawnerCommand;

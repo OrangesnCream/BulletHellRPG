@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Laser1Command : MonoBehaviour
+public class Enemy_LaserCommand : MonoBehaviour
 {
     private Enemy_LaserPattern pattern;
     private LaserMaker laser;
