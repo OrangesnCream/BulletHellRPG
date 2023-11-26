@@ -34,7 +34,7 @@ public class Attacking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(pc.isDash){
+        if(pc.isDash || pc.isDead){
             return;
         }
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);

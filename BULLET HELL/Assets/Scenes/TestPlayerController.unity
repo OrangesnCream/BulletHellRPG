@@ -285,7 +285,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 749546621
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -543,7 +543,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 225179537
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 10
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -5852,6 +5852,11 @@ Transform:
   - {fileID: 401344800}
   m_Father: {fileID: 1943621114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &623608894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8086248757000047273, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
+  m_PrefabInstance: {fileID: 4548516583969316010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &853262469
 GameObject:
   m_ObjectHideFlags: 0
@@ -6457,7 +6462,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 749546621
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6551,6 +6556,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 249338754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1572601025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8558778300507277267, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
+  m_PrefabInstance: {fileID: 4548516583969316010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1918070393
 GameObject:
   m_ObjectHideFlags: 0
@@ -6806,34 +6816,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 27196350668738526, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 27196350668738526, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1636206809057684707, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
-      propertyPath: m_Name
-      value: Sniper
-      objectReference: {fileID: 0}
-    - target: {fileID: 1636206809057684707, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
-      propertyPath: m_TagString
-      value: Weapon_Sniper
-      objectReference: {fileID: 0}
+    - target: {fileID: 2261096799168888233, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1572601025}
     - target: {fileID: 3168827038476327125, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3926176083485221888, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
-      propertyPath: fireRate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3926176083485221888, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
-      propertyPath: shieldRange
-      value: 2
-      objectReference: {fileID: 0}
+    - target: {fileID: 3976881652494601076, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
+      propertyPath: pc
+      value: 
+      objectReference: {fileID: 5927829830302511245}
+    - target: {fileID: 3976881652494601076, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
+      propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 623608894}
     - target: {fileID: 4380048351329388155, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6874,10 +6872,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5278195739969553102, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
-      propertyPath: m_Name
-      value: Sprite
-      objectReference: {fileID: 0}
     - target: {fileID: 5389928276766835514, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6902,9 +6896,9 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8466685741104879713, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+    - target: {fileID: 7754927655816283251, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6916,6 +6910,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4380048351329388155, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
   m_PrefabInstance: {fileID: 4548516583969316010}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5927829830302511245 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2261096799168888233, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
+  m_PrefabInstance: {fileID: 4548516583969316010}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21cdac713a2d64545ad1350dd9faabca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

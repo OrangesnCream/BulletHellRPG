@@ -20,6 +20,10 @@ public class PlayerStats : MonoBehaviour
     public float baseDamageInvincibilityTime = 1.0f;
     public float damageInvincibilityTime = 0f;
 
+    public GameObject deathScreen;
+
+    public PlayerController pc;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -98,6 +102,21 @@ public class PlayerStats : MonoBehaviour
         currentHealth -= damage;
         healthBar.setHealth(currentHealth);
         Debug.Log("Player Health: " + currentHealth);
+        if (currentHealth <= 0){
+            StartCoroutine(Die());
+        }
+    }
+
+    private IEnumerator Die()
+    {
+        pc.isDead = true;
+        Time.timeScale = .25f;
+        Debug.Log("Player died");
+
+        yield return new WaitForSeconds(1f);
+
+        Time.timeScale = 0f;
+        deathScreen.SetActive(true);
     }
 
     public void heal(int heal)
