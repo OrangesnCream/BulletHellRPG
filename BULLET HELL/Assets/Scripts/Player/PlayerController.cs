@@ -40,6 +40,11 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        //if timescale is < 1, then the game is paused
+        if(Time.timeScale < 1f){
+            return;
+        }
+
         if(isDash){
             return;
         }
