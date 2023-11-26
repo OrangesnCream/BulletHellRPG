@@ -6,9 +6,9 @@ using UnityEngine;
 public class Boss_Engine_Pattern : MonoBehaviour
 {
     public Enemy_moveCommand moveCommand;
-    public Enemy_Shoot1Command Shoot1Command;
-    public Enemy_Shoot2Command shoot2Command;
-    public Enemy_Laser1Command laser1Command;
+    public Enemy_ShootCommand Shoot1Command;
+    public Enemy_ShootCommand shoot2Command;
+    public Enemy_LaserCommand laser1Command;
     public Enemy_LaserAimCommand laserAimCommand;
     public Barrel_Command barrelCommand;
     public EnemySpawner_Command spawnerCommand;
@@ -75,8 +75,6 @@ public class Boss_Engine_Pattern : MonoBehaviour
             patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.BulletSlowerSpinOpposite);  patternShoot2.Add(shoot2Command.doNothing);                 patternLaser1.Add(laser1Command.doNothing);     patternLaserAim.Add(laserAimCommand.SwingClock);    patternBarrel.Add(barrelCommand.doNothing); patternSpawner.Add(spawnerCommand.doNothing);
             patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.BulletSlowerSpinOpposite);  patternShoot2.Add(shoot2Command.doNothing);                 patternLaser1.Add(laser1Command.doNothing);     patternLaserAim.Add(laserAimCommand.SwingCounter);  patternBarrel.Add(barrelCommand.doNothing); patternSpawner.Add(spawnerCommand.doNothing);
             patternMove.Add(moveCommand.doNothing); patternShoot1.Add(Shoot1Command.BulletFaster);              patternShoot2.Add(shoot2Command.doNothing);                 patternLaser1.Add(laser1Command.doNothing);     patternLaserAim.Add(laserAimCommand.doNothing);     patternBarrel.Add(barrelCommand.Shoot);     patternSpawner.Add(spawnerCommand.Spawn);
-
-            oppurtinutycheck = oppurtinutycheck * 3 / 4;
 
             added2 = true;
         }

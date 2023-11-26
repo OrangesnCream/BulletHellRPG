@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy_Grunt_2_Pattern : MonoBehaviour
 {
     public Enemy_moveCommand moveCommand;
-    public Enemy_Laser1Command laser1Command;
+    public Enemy_LaserCommand laser1Command;
     public Enemy_LaserAimCommand laserAimCommand;
 
     private Opportunity_Timer timer;

@@ -6,6 +6,7 @@ public class Enemy_LaserPattern : MonoBehaviour
     private List<Transform> children;
     public List<LineRenderer> lineRenderers;
 
+    public int Desired_Damage;
     private LaserMaker laserMaker;
     private LayerMask LayerMask;
 
@@ -45,9 +46,13 @@ public class Enemy_LaserPattern : MonoBehaviour
             foreach (LineRenderer child in lineRenderers)
             {
                 child.SetPosition(0, this.transform.position);
-                RaycastHit2D hit;
-                hit = Physics2D.Raycast(child.transform.position, child.transform.forward, 1000f, LayerMask);
+                RaycastHit2D hit = Physics2D.Raycast(child.transform.position, child.transform.forward, 1000f, LayerMask);
                 child.SetPosition(1, hit.point);
+
+                if (hit.transform.tag == "Player" && child.tag == GetComponentInParent<Transform>().tag)
+                {
+                    hit.transform.GetComponent<PlayerStats>().takeDamage(Desired_Damage);
+                }
             }
             foreach (LineRenderer line in lineRenderers)
             {

@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderers: []
+  Desired_Damage: 20
 --- !u!114 &4625644948301876690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,6 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderers: []
+  Desired_Damage: 20
 --- !u!114 &6440103848870603281
 MonoBehaviour:
   m_ObjectHideFlags: 0
