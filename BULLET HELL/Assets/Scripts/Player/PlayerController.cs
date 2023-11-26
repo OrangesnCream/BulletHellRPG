@@ -40,8 +40,17 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        //if timescale is < 1, then the game is paused
-        if(Time.timeScale < 1f){
+        if(Input.GetKeyDown(KeyCode.Tab)){
+            pauseMenu.SetActive(!pauseMenu.activeSelf);
+            if(pauseMenu.activeSelf){
+                Time.timeScale = 0f;
+            } else {
+                Time.timeScale = 1f;
+            }
+        }
+
+        //if timescale is = 0, then the game is paused
+        if(Time.timeScale == 0f){
             return;
         }
 
@@ -52,11 +61,12 @@ public class PlayerController : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         //TODO: get controller inputs for following
-        if(Input.GetKey(KeyCode.LeftShift)){
-            speed = sprintSpeed;
-        } else {
-            speed = baseSpeed;
-        }
+        //player sprinting, not in use
+        // if(Input.GetKey(KeyCode.LeftShift)){
+        //     speed = sprintSpeed;
+        // } else {
+        //     speed = baseSpeed;
+        // }
 
         if(movement.x != 0 || movement.y != 0){
             lastDirection = movement.normalized;
@@ -77,15 +87,6 @@ public class PlayerController : MonoBehaviour
                 gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 gameObject.transform.GetChild(1).GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 Debug.Log("Dev mode disabled");
-            }
-        }
-
-        if(Input.GetKeyDown(KeyCode.Tab)){
-            pauseMenu.SetActive(!pauseMenu.activeSelf);
-            if(pauseMenu.activeSelf){
-                Time.timeScale = 0f;
-            } else {
-                Time.timeScale = 1f;
             }
         }
 
@@ -110,7 +111,11 @@ public class PlayerController : MonoBehaviour
             if (DialogueManager.GetInstance().dialogueIsPlaying) {
                 Debug.Log("freeze movement");
                 //freezes player during dialogue
+                isDead = true;
                 return;
+            }
+            else {
+                isDead = false;
             }
         }
         if(isDash){
