@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Attacking : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class Attacking : MonoBehaviour
 
     public bool isShotgun = false;
 
+    public AudioSource gunSound;
+    public AudioSource pumpSound;
+    //public AudioSource shieldSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +39,7 @@ public class Attacking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(pc.isDash || pc.isDead){
+        if(pc.isDash || pc.isDead || Time.timeScale == 0f){
             return;
         }
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -44,6 +49,13 @@ public class Attacking : MonoBehaviour
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+        //flips gun
+        if(mousePos.x > transform.position.x){
+            firePoint.localScale = new Vector3(1f, 1f, 1f);
+        } else {
+            firePoint.localScale = new Vector3(1f, -1f, 1f);
+        }
 
         if(Input.GetMouseButton(0) && canFire){
             Shoot();
@@ -77,6 +89,10 @@ public class Attacking : MonoBehaviour
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        }
+        gunSound.Play();
+        if(pumpSound != null){
+            pumpSound.PlayDelayed(gunSound.clip.length);
         }
         canFire = false;
     }

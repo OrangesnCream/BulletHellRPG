@@ -15,10 +15,10 @@ public class Open_Close_Door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        doors = this.gameObject.GetComponent<Tilemap>();
-        doorCollider = this.gameObject.GetComponent<TilemapCollider2D>();
-        doorShow = this.gameObject.GetComponent<TilemapRenderer>();
-        bossCheck = this.gameObject.GetComponent<BoxCollider2D>();
+        doors = this.gameObject.GetComponentInParent<Tilemap>();
+        doorCollider = this.gameObject.GetComponentInParent<TilemapCollider2D>();
+        doorShow = this.gameObject.GetComponentInParent<TilemapRenderer>();
+        bossCheck = this.gameObject.GetComponentInParent<BoxCollider2D>();
         isOpen = true;
     }
 
