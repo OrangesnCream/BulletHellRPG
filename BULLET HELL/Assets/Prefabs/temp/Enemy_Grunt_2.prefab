@@ -116,9 +116,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2719405713614462952}
-  image: {fileID: 3878892943920952611}
+  healthColor: {fileID: 3878892943920952611}
+  inlineColor: {fileID: 6271376516969087877}
   maxHealth: 240
   stacks: 1
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
 --- !u!1 &1347014107200338205
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +233,7 @@ MonoBehaviour:
   desired_width: 1
   desired_chargewidth: 0.2
   desired_spinspeed: 20
-  opportunitycheck: 300
+  opportunitycheck: 250
 --- !u!1 &2572706115427621397
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +650,7 @@ MonoBehaviour:
   laser1Command: {fileID: 4625644948301876690}
   laserAimCommand: {fileID: 6440103848870603281}
   healthBar: {fileID: 2236295465617382839}
-  oppurtinutycheck: 300
+  oppurtinutycheck: 250
 --- !u!114 &8163923325842698414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -959,4 +990,4 @@ MonoBehaviour:
   desired_width: 1
   desired_chargewidth: 0.2
   desired_spinspeed: 20
-  opportunitycheck: 300
+  opportunitycheck: 250

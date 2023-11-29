@@ -205,7 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1926292776857880839}
-  image: {fileID: 6728711196419591409}
+  healthColor: {fileID: 6728711196419591409}
+  inlineColor: {fileID: 2475475443168244358}
   maxHealth: 2200
   stacks: 2
   gradient:
@@ -481,7 +482,7 @@ MonoBehaviour:
   barrelCommand: {fileID: 6492607351175746}
   spawnerCommand: {fileID: 4709909476889530487}
   healthBar: {fileID: 3663191382469117551}
-  oppurtinutycheck: 350
+  oppurtinutycheck: 200
   halfpattern: 1
 --- !u!114 &5223830796705547356
 MonoBehaviour:
@@ -547,7 +548,7 @@ MonoBehaviour:
   collision_layers:
     serializedVersion: 2
     m_Bits: 320
-  degrees: 135
+  degrees: 90
   system: {fileID: 0}
 --- !u!114 &9159376529961511352
 MonoBehaviour:
@@ -579,7 +580,7 @@ MonoBehaviour:
   desired_width: 1
   desired_chargewidth: 0.2
   desired_spinspeed: 20
-  opportunitycheck: 400
+  opportunitycheck: 200
 --- !u!1 &5608685805654505509
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,7 +664,7 @@ MonoBehaviour:
   desired_width: 1
   desired_chargewidth: 0.2
   desired_spinspeed: 20
-  opportunitycheck: 400
+  opportunitycheck: 200
 --- !u!1 &5889109778516718338
 GameObject:
   m_ObjectHideFlags: 0

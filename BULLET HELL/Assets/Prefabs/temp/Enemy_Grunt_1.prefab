@@ -219,7 +219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 7102745754742822369}
-  image: {fileID: 7338880595385641723}
+  healthColor: {fileID: 7338880595385641723}
+  inlineColor: {fileID: 644785137050457193}
   maxHealth: 120
   stacks: 1
   gradient:
