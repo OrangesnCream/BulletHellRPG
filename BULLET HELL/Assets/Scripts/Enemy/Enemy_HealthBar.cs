@@ -39,16 +39,14 @@ public class Enemy_HealthBar : MonoBehaviour
             ColorKeys[0] = new GradientColorKey (new Color32(255, 0, 0, 255), 1.0f);
             AlphaKeys[0] = new GradientAlphaKey (1.0f, 1.0f);
         }
-        Array.Reverse(ColorKeys);
-        Array.Reverse(AlphaKeys);
 
         this.gradient.SetKeys(ColorKeys, AlphaKeys);
 
-        this.healthColor.color = this.gradient.Evaluate(1.0f);
+        this.healthColor.color = ColorKeys[currentStack - 1].color;
         if (currentStack == 1)
             this.inlineColor.color = Color.white;
         else
-            this.inlineColor.color = this.gradient.Evaluate(((float)currentStack - 1) / (float)stacks);
+            this.inlineColor.color = ColorKeys[currentStack - 2].color;
     }
 
     public void damage(int damage)
@@ -67,13 +65,11 @@ public class Enemy_HealthBar : MonoBehaviour
             this.slider.value -= damage;
         }
 
-        this.healthColor.color = this.gradient.Evaluate ((float)currentStack / (float)stacks); // get % and cast to float
-
+        this.healthColor.color = ColorKeys[currentStack - 1].color;
         if (currentStack == 1)
             this.inlineColor.color = Color.white;
         else
-            this.inlineColor.color = this.gradient.Evaluate(((float)currentStack - 1) / (float)stacks);
-        Debug.Log((float)currentStack / (float)stacks);
+            this.inlineColor.color = ColorKeys[currentStack - 2].color;
     }
 
     public int getMaxHealth() { return this.maxHealth; }
