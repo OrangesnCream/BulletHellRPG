@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d42959754f7d3428e4f1676242aa42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 3475616584691865037}
+  healthBar: {fileID: 1807949603578844831}
   sprite: {fileID: 4579486160484614913}
 --- !u!1 &4436386552226417019
 GameObject:
@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 6036864969763423249}
   - component: {fileID: 945937184977981187}
   - component: {fileID: 5429433606260237167}
-  - component: {fileID: 3475616584691865037}
+  - component: {fileID: 1807949603578844831}
   m_Layer: 7
   m_Name: Enemy_UI
   m_TagString: Untagged
@@ -866,7 +866,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3475616584691865037
+--- !u!114 &1807949603578844831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -875,10 +875,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 7220133452215337511}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe49410e00f53774e9536b7fc61e5de1, type: 3}
+  m_Script: {fileID: 11500000, guid: c3ce48507b738c045ab8fb16f982b733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 3902730029352369384}
+  image: {fileID: 8941137381096810320}
+  maxHealth: 15000
+  stacks: 15
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
 --- !u!1 &7699354975784902216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,7 +1262,7 @@ MonoBehaviour:
   laser1Command: {fileID: 3165392765957903830}
   laser2Command: {fileID: 5315378610747414271}
   laserAimCommand: {fileID: 5057271810459408732}
-  healthBar: {fileID: 3475616584691865037}
+  healthBar: {fileID: 1807949603578844831}
   oppurtinutycheck: 225
   halfpattern: 0
   fourthpattern: 0
@@ -1296,7 +1329,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   desired_MoveSpeed: 1
-  desired_MaxHealth: 200
   desired_StoppingDistance: 5
   dashMultiplier: 5
 --- !u!114 &7221371278886978786

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6723543846856673196}
   - component: {fileID: 3307304629697041668}
   - component: {fileID: 1901023157485761594}
-  - component: {fileID: 6457593300803822630}
+  - component: {fileID: 2236295465617382839}
   m_Layer: 7
   m_Name: Enemy_UI
   m_TagString: Untagged
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6457593300803822630
+--- !u!114 &2236295465617382839
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,10 +112,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1063965287795999936}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe49410e00f53774e9536b7fc61e5de1, type: 3}
+  m_Script: {fileID: 11500000, guid: c3ce48507b738c045ab8fb16f982b733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2719405713614462952}
+  image: {fileID: 3878892943920952611}
+  maxHealth: 240
+  stacks: 1
 --- !u!1 &1347014107200338205
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +601,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   desired_MoveSpeed: 2
-  desired_MaxHealth: 240
   desired_StoppingDistance: 5
   dashMultiplier: 0
 --- !u!114 &1350956921763067259
@@ -616,7 +618,7 @@ MonoBehaviour:
   moveCommand: {fileID: 1047936346993358551}
   laser1Command: {fileID: 4625644948301876690}
   laserAimCommand: {fileID: 6440103848870603281}
-  healthBar: {fileID: 6457593300803822630}
+  healthBar: {fileID: 2236295465617382839}
   oppurtinutycheck: 300
 --- !u!114 &8163923325842698414
 MonoBehaviour:
@@ -871,7 +873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d42959754f7d3428e4f1676242aa42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 6457593300803822630}
+  healthBar: {fileID: 2236295465617382839}
   sprite: {fileID: 5523154626333936976}
 --- !u!1 &9141696752170349911
 GameObject:

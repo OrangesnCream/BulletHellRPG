@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 5647109688293415965}
   - component: {fileID: 4578946087652736786}
   - component: {fileID: 7120842382576156056}
+  - component: {fileID: 6664758365009657609}
   m_Layer: 7
   m_Name: Enemy_UI
   m_TagString: Untagged
@@ -205,6 +206,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 7102745754742822369}
+--- !u!114 &6664758365009657609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2291894812652575245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ce48507b738c045ab8fb16f982b733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 7102745754742822369}
+  image: {fileID: 7338880595385641723}
+  maxHealth: 120
+  stacks: 1
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
 --- !u!1 &2913699200797405132
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d42959754f7d3428e4f1676242aa42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 7120842382576156056}
+  healthBar: {fileID: 6664758365009657609}
   sprite: {fileID: 4175187474100048238}
 --- !u!1 &4513175632769552685
 GameObject:
@@ -843,7 +890,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   desired_MoveSpeed: 3
-  desired_MaxHealth: 120
   desired_StoppingDistance: 2
   dashMultiplier: 0
 --- !u!114 &2636755911392014522
@@ -860,7 +906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveCommand: {fileID: 8606444046343681382}
   shootAimCommand: {fileID: 3743961330365613448}
-  healthBar: {fileID: 7120842382576156056}
+  healthBar: {fileID: 6664758365009657609}
   oppurtinutycheck: 150
 --- !u!114 &4033456147766464908
 MonoBehaviour:
