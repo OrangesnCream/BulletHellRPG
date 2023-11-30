@@ -14,7 +14,7 @@ public class Enemy_AttackPattern : MonoBehaviour
 
     private Opportunity_Timer timer;
 
-    public HealthBar healthBar;
+    public Enemy_HealthBar healthBar;
 
     public List<Action> patternMove;
     public List<Action> patternShoot1;

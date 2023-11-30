@@ -5,10 +5,8 @@ using UnityEngine;
 public class Enemy_moveCommand : MonoBehaviour
 {
     private Enemy_Nav move;
-    private HealthBar healthBar;
 
     public float desired_MoveSpeed;
-    public int desired_MaxHealth;
     public float desired_StoppingDistance;
 
     public int dashMultiplier;
@@ -17,10 +15,6 @@ public class Enemy_moveCommand : MonoBehaviour
     void Start()
     {
         move = this.gameObject.GetComponent<Enemy_Nav>();
-        healthBar = this.gameObject.GetComponentInChildren<HealthBar>();
-
-        healthBar.setMaxHealth(desired_MaxHealth);
-        healthBar.setHealth(desired_MaxHealth);
         move.setStoppingDistance(desired_StoppingDistance);
         move.setMoveSpeed(desired_MoveSpeed);
 
@@ -30,10 +24,6 @@ public class Enemy_moveCommand : MonoBehaviour
     //--------------------reset functions-----------------------
 
     public void resetMoveSpeed() { move.setMoveSpeed(desired_MoveSpeed); }
-
-    public void resetMaxHealth() { healthBar.setMaxHealth(desired_MaxHealth); }
-
-    public void resetHealth() { healthBar.setHealth(desired_MaxHealth); }
 
     //----------action nullifier---------------------
 
@@ -45,7 +35,7 @@ public class Enemy_moveCommand : MonoBehaviour
 
     //----------------------actions-----------------------
 
-    public void Dash()
+    public void Dash()// make more options later cuz 2 is so fucking boring
     {
         if (nullNeeded)
             actionNull();

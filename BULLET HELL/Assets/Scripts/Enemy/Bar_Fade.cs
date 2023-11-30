@@ -8,9 +8,9 @@ public class Bar_Fade : MonoBehaviour
 
     public GameObject theImage;
     private Color color;
-    private byte r;
-    private byte g;
-    private byte b;
+    private float r;
+    private float g;
+    private float b;
 
     private byte dim;
     private int startDim;
@@ -19,13 +19,13 @@ public class Bar_Fade : MonoBehaviour
     void Start()
     {
         color = theImage.GetComponent<Image>().color;
-        r = (byte)(color.r * 255);
-        g = (byte)(color.g * 255);
-        b = (byte)(color.b * 255);
+        r = (color.r);
+        g = (color.g);
+        b = (color.b);
         this.dim = 0;
         this.startDim = 0;
 
-        theImage.GetComponent<Image>().color = new Color32(r, g, b, dim);
+        theImage.GetComponent<Image>().color = new Color(r, g, b, dim);
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class Bar_Fade : MonoBehaviour
         }
         else if (dim > 0)
         {
-            theImage.GetComponent<Image>().color = new Color32(r, g, b, dim);
+            theImage.GetComponent<Image>().color = new Color(r, g, b, dim);
             dim--;
         }
     }
@@ -47,6 +47,6 @@ public class Bar_Fade : MonoBehaviour
         this.dim = 255;
         this.startDim = temp_startDim;
 
-        theImage.GetComponent<Image>().color = new Color32(r, g, b, dim);
+        theImage.GetComponent<Image>().color = new Color(r, g, b, dim);
     }
 }

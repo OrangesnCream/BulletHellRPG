@@ -53,6 +53,7 @@ public class Enemy_LaserCommand : MonoBehaviour
             {
                 pattern.setCanHit(true);
                 pattern.setWidth(desired_width);
+                chargeNeeded = false;
             }
         }
     }
@@ -79,7 +80,6 @@ public class Enemy_LaserCommand : MonoBehaviour
             actionNull();
         pattern.setCanShoot(true);
         isShooting = true;
-        chargeNeeded = false;
     }
 
     public void Spin()
@@ -88,7 +88,6 @@ public class Enemy_LaserCommand : MonoBehaviour
             actionNull();
         pattern.setCanShoot(true);
         isShooting = true;
-        chargeNeeded = false;
         laser.setSpinSpeed(desired_spinspeed);
     }
 
@@ -98,7 +97,6 @@ public class Enemy_LaserCommand : MonoBehaviour
             actionNull();
         pattern.setCanShoot(true);
         isShooting = true;
-        chargeNeeded = false;
         laser.setSpinSpeed(-1 * desired_spinspeed);
     }
     public void doNothing()
