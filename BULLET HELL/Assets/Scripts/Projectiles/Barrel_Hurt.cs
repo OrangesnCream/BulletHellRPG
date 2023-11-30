@@ -8,7 +8,7 @@ public class Barrel_Hurt : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy") && collision.GetComponentInParent<LineOfSight>().getSeen())
         {
             collision.GetComponent<Enemy_Hit>().takeDamage(damage * 2);
         }
