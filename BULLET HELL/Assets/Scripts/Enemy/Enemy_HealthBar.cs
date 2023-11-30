@@ -43,10 +43,14 @@ public class Enemy_HealthBar : MonoBehaviour
         this.gradient.SetKeys(ColorKeys, AlphaKeys);
 
         this.healthColor.color = ColorKeys[currentStack - 1].color;
+        this.healthColor.color = new Color(healthColor.color.r, healthColor.color.g, healthColor.color.b, 0.0f);
         if (currentStack == 1)
-            this.inlineColor.color = Color.white;
+            this.inlineColor.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
         else
+        {
             this.inlineColor.color = ColorKeys[currentStack - 2].color;
+            this.inlineColor.color = new Color(inlineColor.color.r, inlineColor.color.g, inlineColor.color.b, 0.0f);
+        }
     }
 
     public void damage(int damage)

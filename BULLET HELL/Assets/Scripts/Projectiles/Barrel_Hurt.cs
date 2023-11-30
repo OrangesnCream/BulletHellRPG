@@ -10,7 +10,7 @@ public class Barrel_Hurt : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            collision.GetComponent<Enemy_Hit>().takeDamage(damage);
+            collision.GetComponent<Enemy_Hit>().takeDamage(damage * 2);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {

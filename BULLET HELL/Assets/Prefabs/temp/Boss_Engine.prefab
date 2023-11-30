@@ -803,7 +803,7 @@ MonoBehaviour:
   enemy: {fileID: 5435656984284691701}
   healthbar: {fileID: 3226289203067699813}
   Enemy_Hit: {fileID: 4724656097857123211}
-  sightDistance: 10
+  sightDistance: 24.5
 --- !u!114 &6576881771993951557
 MonoBehaviour:
   m_ObjectHideFlags: 0
