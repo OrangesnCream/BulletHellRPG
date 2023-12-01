@@ -10,7 +10,7 @@ public class Enemy_Grunt_2_Pattern : MonoBehaviour
 
     private Opportunity_Timer timer;
 
-    public HealthBar healthBar;
+    public Enemy_HealthBar healthBar;
 
     public List<Action> patternMove;
     public List<Action> patternLaser1;
@@ -38,7 +38,6 @@ public class Enemy_Grunt_2_Pattern : MonoBehaviour
     {
         if (!added1)//health patterns || boss specific attacks || change hitbox for 2.5d look
         {
-            patternMove.Add(moveCommand.Movement);  patternLaser1.Add(laser1Command.doNothing);         patternLaserAim.Add(laserAimCommand.doNothing);
             patternMove.Add(moveCommand.doNothing); patternLaser1.Add(laser1Command.doNothing);         patternLaserAim.Add(laserAimCommand.Shoot);
             patternMove.Add(moveCommand.Movement);  patternLaser1.Add(laser1Command.doNothing);         patternLaserAim.Add(laserAimCommand.doNothing);
             patternMove.Add(moveCommand.doNothing); patternLaser1.Add(laser1Command.Shoot);             patternLaserAim.Add(laserAimCommand.doNothing);

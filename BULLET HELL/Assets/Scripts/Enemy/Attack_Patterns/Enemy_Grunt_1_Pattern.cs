@@ -9,7 +9,7 @@ public class Enemy_Grunt_1_Pattern : MonoBehaviour
 
     private Opportunity_Timer timer;
 
-    public HealthBar healthBar;
+    public Enemy_HealthBar healthBar;
 
     public List<Action> patternMove;
     public List<Action> patternAim;

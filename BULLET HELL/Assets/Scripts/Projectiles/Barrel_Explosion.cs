@@ -32,10 +32,10 @@ public class Barrel_Explosion : MonoBehaviour
         if (GetComponentInChildren<Image>().enabled)
         {
             GetComponentInChildren<Image>().color = new Color32(r, b, g, countdown);
-            countdown -= (byte) 5;
+            countdown -= (byte) 10;
         }
 
-        if (countdown <= (byte) 5)
+        if (countdown <= (byte) 10)
         {
             Destroy(this.gameObject);
         }

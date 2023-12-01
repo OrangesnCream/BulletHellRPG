@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_Death : MonoBehaviour
 {
-    public HealthBar healthBar;
+    public Enemy_HealthBar healthBar;
     public SpriteRenderer sprite;
     private byte countdown;
     private Color color;
@@ -23,7 +23,7 @@ public class Enemy_Death : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (healthBar.getHealth() == 0)
+        if (healthBar.getHealth() <= 0)
         {
             sprite.color = new Color32(r, b, g, countdown);
             countdown -= 10;

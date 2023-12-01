@@ -15,7 +15,7 @@ public class Boss_Engine_Pattern : MonoBehaviour
 
     private Opportunity_Timer timer;
 
-    public HealthBar healthBar;
+    public Enemy_HealthBar healthBar;
 
     public List<Action> patternMove;
     public List<Action> patternShoot1;

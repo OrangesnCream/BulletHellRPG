@@ -40,7 +40,22 @@ public class Enemy_LaserPattern : MonoBehaviour
     }
 
     void Update()//draw the raycast hits
-    {   
+    {
+        if (!canHit)
+        {
+            foreach (Transform child in children)
+            {
+                child.tag = "NoReg";
+            }
+        }
+        else if (canHit)
+        {
+            foreach (Transform child in children)
+            {
+                child.tag = GetComponentInParent<Transform>().tag;
+            }
+        }
+
         if (canShoot)
         {
             foreach (LineRenderer child in lineRenderers)
@@ -49,7 +64,7 @@ public class Enemy_LaserPattern : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(child.transform.position, child.transform.forward, 1000f, LayerMask);
                 child.SetPosition(1, hit.point);
 
-                if (hit.transform.tag == "Player" && child.tag == GetComponentInParent<Transform>().tag)
+                if (hit.transform.tag == "Player" && child.tag != "NoReg")
                 {
                     hit.transform.GetComponent<PlayerStats>().takeDamage(Desired_Damage);
                 }
@@ -70,21 +85,6 @@ public class Enemy_LaserPattern : MonoBehaviour
                 {
                     line.enabled = false;
                 }
-            }
-        }
-
-        if (!canHit)
-        {
-            foreach (Transform child in children)
-            {
-                child.tag = "NoReg";
-            }
-        }
-        else if (canHit)
-        {
-            foreach (Transform child in children)
-            {
-                child.tag = GetComponentInParent<Transform>().tag;
             }
         }
     }

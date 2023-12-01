@@ -8,7 +8,6 @@ public class Open_Close_Door : MonoBehaviour
     private Tilemap doors;
     private TilemapCollider2D doorCollider;
     private TilemapRenderer doorShow;
-    private BoxCollider2D bossCheck;
     private bool isOpen;
     private GameObject boss;
 
@@ -18,7 +17,6 @@ public class Open_Close_Door : MonoBehaviour
         doors = this.gameObject.GetComponentInParent<Tilemap>();
         doorCollider = this.gameObject.GetComponentInParent<TilemapCollider2D>();
         doorShow = this.gameObject.GetComponentInParent<TilemapRenderer>();
-        bossCheck = this.gameObject.GetComponentInParent<BoxCollider2D>();
         isOpen = true;
     }
 
@@ -47,20 +45,16 @@ public class Open_Close_Door : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D entity)
     {
-        Debug.Log("testing enter: ");
         if(entity.gameObject.layer == LayerMask.NameToLayer("Boss"))
         {
-            Debug.Log("Success");
             boss = entity.gameObject;
         }
     }
 
     void OnTriggerExit2D(Collider2D entity)
     {
-        Debug.Log("testing exit: ");
         if(entity.gameObject.layer == LayerMask.NameToLayer("Boss"))
         {
-            Debug.Log("Success");
             isOpen = true;
         }
     }

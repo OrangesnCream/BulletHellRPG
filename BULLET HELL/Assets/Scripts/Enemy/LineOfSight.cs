@@ -10,6 +10,7 @@ public class LineOfSight : MonoBehaviour
     public Enemy_Hit Enemy_Hit;
 
     public float sightDistance;
+    private bool seen;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class LineOfSight : MonoBehaviour
         enemy.gameObject.GetComponent<Opportunity_Timer>().enabled = false;
         healthbar.enabled = false;
         Enemy_Hit.enabled = false;
+        seen = false;
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class LineOfSight : MonoBehaviour
             enemy.gameObject.GetComponent<Opportunity_Timer>().enabled = true;
             healthbar.enabled = true;
             Enemy_Hit.enabled = true;
+            seen = true;
         }
     }
 
@@ -39,4 +42,6 @@ public class LineOfSight : MonoBehaviour
         float hypotenuse = Mathf.Pow((distance.x * distance.x + distance.y * distance.y), 0.5f);
         return hypotenuse <= sightDistance;
     }
+
+    public bool getSeen() { return this.seen; }
 }

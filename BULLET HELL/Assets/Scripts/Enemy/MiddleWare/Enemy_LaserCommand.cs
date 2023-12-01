@@ -16,6 +16,7 @@ public class Enemy_LaserCommand : MonoBehaviour
 
     private bool nullNeeded;
     private bool isShooting;
+    private bool chargeNeeded;
     
     void Start()
     {
@@ -27,6 +28,7 @@ public class Enemy_LaserCommand : MonoBehaviour
 
         nullNeeded = true;
         isShooting = false;
+        chargeNeeded = true;
         opportunity = 0;
     }
 
@@ -42,15 +44,16 @@ public class Enemy_LaserCommand : MonoBehaviour
     {
         if (isShooting)
         {
-            if (opportunity < opportunitycheck / 2)
+            if (opportunity < opportunitycheck / 2 && chargeNeeded)
             {
                 pattern.setCanHit(false);
                 pattern.setWidth(desired_chargewidth);
             }
-            else if (opportunity > opportunitycheck / 2)
+            else if (opportunity > opportunitycheck / 2 || !chargeNeeded)
             {
                 pattern.setCanHit(true);
                 pattern.setWidth(desired_width);
+                chargeNeeded = false;
             }
         }
     }
@@ -99,6 +102,7 @@ public class Enemy_LaserCommand : MonoBehaviour
     public void doNothing()
     {
         //nothing happens
+        chargeNeeded = true;
         actionNull();
     }
 }

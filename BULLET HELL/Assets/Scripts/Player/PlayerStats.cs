@@ -51,7 +51,7 @@ public class PlayerStats : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        takeDamage(15);
+        takeDamage(10);
     }
 
     void FixedUpdate()
