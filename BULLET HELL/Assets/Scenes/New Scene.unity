@@ -299,6 +299,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -1.0300293
       objectReference: {fileID: 0}
+    - target: {fileID: 2261096799168888233, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
+      propertyPath: AnimationDirection
+      value: 
+      objectReference: {fileID: 977984166}
     - target: {fileID: 2360537374323277080, guid: 5bd29c34c79a43c44be807e63be11250, type: 3}
       propertyPath: m_Enabled
       value: 1

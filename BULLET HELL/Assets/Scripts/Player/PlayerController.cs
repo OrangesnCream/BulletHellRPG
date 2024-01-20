@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float sprintSpeed = 15f;
     private float speed = 10f;
 
+    public Transform AnimationDirection;//to flip animation
+    private SpriteRenderer m_SpriteRenderer;
     private Vector2 lastDirection = new Vector2(0, -1);
     public bool isDash = false;
     private bool canDash = true;
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public bool isDead = false;
 
     void Start(){
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
         tr = gameObject.transform.GetComponent<TrailRenderer>();
         pwa = gameObject.transform.GetComponent<Player_Weapon_Active>();
     }
@@ -104,6 +107,17 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("SMG");
             }
         }
+
+        //player anim flip
+        if(movement.x > 0){
+            m_SpriteRenderer.flipX=false;
+           // AnimationDirection.localScale = new Vector3(1f, 1f, 1f);
+        } else if(movement.x<0) {
+             m_SpriteRenderer.flipX=true;
+          //  AnimationDirection.localScale = new Vector3(-1f, 1f, 1f);
+        }
+
+
     }
 
     void FixedUpdate(){
