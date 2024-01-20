@@ -30,7 +30,9 @@ public class PlayerController : MonoBehaviour
 
     public bool isDead = false;
 
+    private Animator anim;//for setting animation
     void Start(){
+        anim=GetComponent<Animator>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         tr = gameObject.transform.GetComponent<TrailRenderer>();
         pwa = gameObject.transform.GetComponent<Player_Weapon_Active>();
@@ -107,7 +109,14 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("SMG");
             }
         }
-
+        //set player animation
+        
+        if(movement.x!=0||movement.y!=0){
+            anim.SetBool("IsRunning",true);
+        }else{
+            anim.SetBool("IsRunning",false);
+        }
+        
         //player anim flip
         if(movement.x > 0){
             m_SpriteRenderer.flipX=false;
