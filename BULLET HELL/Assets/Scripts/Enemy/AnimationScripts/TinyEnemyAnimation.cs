@@ -8,6 +8,7 @@ public class TinyEnemyAnimation : MonoBehaviour
      private Animator anim;
     private float speed;
     private Rigidbody2D rb;
+    public Transform firePoint;
 
     private SpriteRenderer m_SpriteRenderer;
     private Vector2 enemyMovement;
@@ -34,11 +35,19 @@ public class TinyEnemyAnimation : MonoBehaviour
         }
         if(move.getMoveVelocity().x > 0){
             m_SpriteRenderer.flipX=false;
+            if(firePoint.localPosition.x<0){
+                //flips the enemy gun right
+                firePoint.localPosition = new Vector3(-firePoint.localPosition.x, firePoint.localPosition.y, firePoint.localPosition.z);
+            }
         } else if(move.getMoveVelocity().x<0) {
              m_SpriteRenderer.flipX=true;
-          
+            if(firePoint.localPosition.x>0){
+                //flips the enemy gun left
+                firePoint.localPosition = new Vector3(-firePoint.localPosition.x, firePoint.localPosition.y, firePoint.localPosition.z);
+            }
         }
         //add seperate transform flip for the gun
+
 
     }
 }
