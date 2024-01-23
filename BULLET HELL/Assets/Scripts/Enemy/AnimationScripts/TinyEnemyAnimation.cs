@@ -8,10 +8,14 @@ public class TinyEnemyAnimation : MonoBehaviour
      private Animator anim;
     private float speed;
     private Rigidbody2D rb;
+
+    private SpriteRenderer m_SpriteRenderer;
     private Vector2 enemyMovement;
     // Start is called before the first frame update
     void Start()
     {
+        
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         anim=GetComponent<Animator>();
         move = this.gameObject.GetComponent<Enemy_Nav>();
@@ -28,6 +32,13 @@ public class TinyEnemyAnimation : MonoBehaviour
         }else{
             anim.SetBool("IsRunning",false);
         }
+        if(move.getMoveVelocity().x > 0){
+            m_SpriteRenderer.flipX=false;
+        } else if(move.getMoveVelocity().x<0) {
+             m_SpriteRenderer.flipX=true;
+          
+        }
+        //add seperate transform flip for the gun
 
     }
 }

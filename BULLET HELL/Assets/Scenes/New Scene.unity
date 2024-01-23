@@ -4213,6 +4213,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1485869664179475756, guid: e129087669718244e9fa4c9f627b38b5, type: 3}
+      propertyPath: m_Size.x
+      value: 4.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485869664179475756, guid: e129087669718244e9fa4c9f627b38b5, type: 3}
+      propertyPath: m_Size.y
+      value: 3.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485869664179475756, guid: e129087669718244e9fa4c9f627b38b5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b81dcbb61f195af48826eea3866e30c5, type: 3}
+    - target: {fileID: 1485869664179475756, guid: e129087669718244e9fa4c9f627b38b5, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1634368881101675187, guid: e129087669718244e9fa4c9f627b38b5, type: 3}
       propertyPath: m_Name
       value: Gun guy Variant
@@ -4221,6 +4237,10 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: c9026e57da53ea94892cfb2216b9ad69, type: 3}
+    - target: {fileID: 3272531173514086715, guid: e129087669718244e9fa4c9f627b38b5, type: 3}
+      propertyPath: triggerVisual
+      value: 
+      objectReference: {fileID: 1165969604}
     - target: {fileID: 4331292898377861531, guid: e129087669718244e9fa4c9f627b38b5, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -4606,6 +4626,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1689877275766506971, guid: 73a1dd513b3238b4b810a85ab9a7e741, type: 3}
   m_PrefabInstance: {fileID: 1650794683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1165969604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 478267738012664195, guid: e129087669718244e9fa4c9f627b38b5, type: 3}
+  m_PrefabInstance: {fileID: 997622365}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1166810926
 PrefabInstance:
@@ -6986,15 +7011,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1689877275766506971, guid: 73a1dd513b3238b4b810a85ab9a7e741, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1689877275766506971, guid: 73a1dd513b3238b4b810a85ab9a7e741, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1689877275766506971, guid: 73a1dd513b3238b4b810a85ab9a7e741, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1689877275766506971, guid: 73a1dd513b3238b4b810a85ab9a7e741, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
