@@ -43,6 +43,4 @@ public class Enemy_Nav : MonoBehaviour
     public void setStoppingDistance(float distance) { this.agent.stoppingDistance = distance; }
 
     public float getMoveSpeed() { return this.agent.speed; }
-
-    public Vector2 getMoveVelocity() { return this.agent.velocity; }
 }
