@@ -131,9 +131,7 @@ public class Enemy_LaserAimCommand : MonoBehaviour
         pattern.setCanShoot(true);
         isShooting = true;
     }
-    public bool GetIsShooting(){
-        return isShooting;
-    }
+
     public void SwingCounter()
     {
         if (nullNeeded)
