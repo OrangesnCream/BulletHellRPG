@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 210702e4b8de9b64b8dd8050286990be
+guid: c492b3d788f0ae642954db1191314b01
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -160,175 +160,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: small_enemy-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 750ee36cd9838fa4e8655cccda21895d
-      internalID: -1585947363
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: small_enemy-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e4f28aace65eb444b56b3ded07fa7e3
-      internalID: 886119826
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: small_enemy-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 26
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 534c7c1b96d65ca42ba128007fe7f522
-      internalID: 710507701
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: small_enemy-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 35c5f299ba8a3e447a4616ab3920f2c0
-      internalID: 1885616988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: small_enemy-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf87a61c7a2bec04d9499da07aef724a
-      internalID: -1093148819
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: small_enemy-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5768967338c34cc468c9118090f0fe00
-      internalID: 1447097685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: small_enemy-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 219b2616e9dff3c4b8ada03c9679afe7
-      internalID: 585047370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: small_enemy-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 91
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39bd409efdf175144948d659bd599edb
-      internalID: -1432969929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -339,15 +171,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      small_enemy-Sheet_0: -1585947363
-      small_enemy-Sheet_1: 886119826
-      small_enemy-Sheet_2: 710507701
-      small_enemy-Sheet_3: 1885616988
-      small_enemy-Sheet_4: -1093148819
-      small_enemy-Sheet_5: 1447097685
-      small_enemy-Sheet_6: 585047370
-      small_enemy-Sheet_7: -1432969929
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
