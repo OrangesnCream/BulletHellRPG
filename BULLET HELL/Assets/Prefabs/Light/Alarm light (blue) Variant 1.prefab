@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &470595578744767415
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 142737724368589279, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.301723
+      objectReference: {fileID: 0}
+    - target: {fileID: 142737724368589279, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 22.362175
+      objectReference: {fileID: 0}
+    - target: {fileID: 142737724368589279, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.5197742
+      objectReference: {fileID: 0}
+    - target: {fileID: 142737724368589279, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.021077309
+      objectReference: {fileID: 0}
+    - target: {fileID: 142737724368589279, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 142737724368589279, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 142737724368589279, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.99977785
+      objectReference: {fileID: 0}
+    - target: {fileID: 142737724368589279, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 142737724368589279, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 142737724368589279, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180.278
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592625379109084905, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_Name
+      value: Alarm light (blue) Variant 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592625379109084905, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250695747966696146, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250695747966696146, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6718514
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250695747966696146, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250695747966696146, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250695747966696146, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_PointLightInnerAngle
+      value: 188.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250695747966696146, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 188.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250695747966696146, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.51277155
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250695747966696146, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 6.346009
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c3bfa3cc100d8b7438a076c32411e145, type: 3}
