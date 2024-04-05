@@ -30,7 +30,9 @@ public class Enemy_Death : MonoBehaviour
         }
 
         if (countdown <= (byte) 10)
-        {
+        {   if (gameObject.tag=="Boss"){
+                 Debug.Log("Player WON");
+            }
             Destroy(this.gameObject);
         }
     }

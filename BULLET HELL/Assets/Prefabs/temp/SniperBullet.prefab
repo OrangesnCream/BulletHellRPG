@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  bulletDamage: 45
+  bulletDamage: 65
   lifeTime: 5
   canPierce: 1
 --- !u!70 &5931539245761286255

@@ -12,7 +12,9 @@ public class WeaponChoice : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+
+    //CHANGE THIS LATER TO ADD GAINING WEAPONS THROUGH DIALOGUE NOT TO SWITCH
+   /* void Update()
     {
         string weaponChoice = ((Ink.Runtime.StringValue)DialogueManager
             .GetInstance()
@@ -34,5 +36,5 @@ public class WeaponChoice : MonoBehaviour
                 Debug.LogWarning("weapon choice not handled by switch statement: " + weaponChoice);
                 break;
         }
-    }
+    }*/
 }
