@@ -12,6 +12,9 @@ public class Enemy_Death : MonoBehaviour
     private byte g;
     private byte b;
 
+    public GameObject WinScreen;
+
+
     void Start()
     {
         countdown = 255;
@@ -31,7 +34,9 @@ public class Enemy_Death : MonoBehaviour
 
         if (countdown <= (byte) 10)
         {   if (gameObject.tag=="Boss"){
-                 Debug.Log("Player WON");
+                Debug.Log("Player WON");
+                Time.timeScale = 0f;
+                WinScreen.SetActive(true);
             }
             Destroy(this.gameObject);
         }
