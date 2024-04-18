@@ -26,7 +26,6 @@ public class BigEnemyAnimation : MonoBehaviour
     {
        
         enemyMovement=rb.velocity;
-         Debug.Log("test:"+enemyMovement.x);
         if(move.getMoveVelocity()!=Vector2.zero){
             anim.SetBool("IsRunning",true);
         }else{

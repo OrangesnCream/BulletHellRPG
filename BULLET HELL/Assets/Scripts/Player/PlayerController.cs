@@ -95,20 +95,18 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(isDevMode){
-            if(Input.GetKeyDown(KeyCode.F2)){
+            if(Input.GetKeyDown(KeyCode.Alpha1)){
                 pwa.SetWeapon("Sniper");
                 Debug.Log("Sniper");
             }
-            if(Input.GetKeyDown(KeyCode.F3)){
+            if(Input.GetKeyDown(KeyCode.Alpha2)){
                 pwa.SetWeapon("Shotgun");
                 Debug.Log("Shotgun");
             }
-            if(Input.GetKeyDown(KeyCode.F4)){
+            if(Input.GetKeyDown(KeyCode.Alpha3)){
                 pwa.SetWeapon("SMG");
                 Debug.Log("SMG");
             }
-        }
         //set player animation
         
         if(movement.x!=0||movement.y!=0){

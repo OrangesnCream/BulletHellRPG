@@ -89,6 +89,9 @@ public class Attacking : MonoBehaviour
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         }
         gunSound.Play();
         if(pumpSound != null){
