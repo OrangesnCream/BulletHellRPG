@@ -17,6 +17,7 @@ TagManager:
   - Weapon_Shotgun
   - Barrel
   - Boss
+  - Weapon_Launcher
   layers:
   - Default
   - TransparentFX

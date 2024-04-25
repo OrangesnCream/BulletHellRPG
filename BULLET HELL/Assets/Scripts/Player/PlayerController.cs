@@ -107,6 +107,10 @@ public class PlayerController : MonoBehaviour
                 pwa.SetWeapon("SMG");
                 Debug.Log("SMG");
             }
+            if(Input.GetKeyDown(KeyCode.Alpha4)){
+                pwa.SetWeapon("Launcher");
+                Debug.Log("Launcher");
+            }          
         //set player animation
         
         if(movement.x!=0||movement.y!=0){
