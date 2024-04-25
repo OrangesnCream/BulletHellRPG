@@ -1,13 +1,8 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:BULLET HELL/Assets/Scenes/Level 2/NavMesh-NavMesh.asset.meta
 guid: c47f54fca6fbb7648a6a186c73fa6f73
 NativeFormatImporter:
-========
-guid: 743f8a3f60a772840a676f0dafe169f9
-folderAsset: yes
-DefaultImporter:
->>>>>>>> origin/PresentationBranch:BULLET HELL/Assets/Art/Object Art.meta
   externalObjects: {}
+  mainObjectFileID: 23800000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
