@@ -85,3 +85,6 @@ TagManager:
   - name: UI
     uniqueID: 163960679
     locked: 0
+  - name: Soft Lights
+    uniqueID: 2388462187
+    locked: 0
