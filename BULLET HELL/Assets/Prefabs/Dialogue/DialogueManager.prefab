@@ -51,3 +51,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  loadGlobalsJSON: {fileID: 4900000, guid: 986baa6892a726647856d53954f1562d, type: 3}
