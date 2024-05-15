@@ -147,6 +147,7 @@ public class PlayerController : MonoBehaviour
             if (DialogueManager.GetInstance().dialogueIsPlaying) {
                 Debug.Log("freeze movement");
                 //freezes player during dialogue
+                rb.velocity= new Vector2(0, 0);
                 isDead = true;
                 return;
             }
