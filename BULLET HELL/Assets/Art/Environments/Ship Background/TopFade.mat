@@ -78,11 +78,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Bottom_fade: 4.19
+    - _Bottom_fade: 2.27
     - _EnableExternalAlpha: 0
-    - _Left_Fade: 1
+    - _Left_Fade: 0.41
     - _Right_fade: 3
-    - _Shade_top: 0
+    - _Shade_top: 1
     - _Visibility: 3.16
     - _shadebottom: 1
     - _top_fade: 10

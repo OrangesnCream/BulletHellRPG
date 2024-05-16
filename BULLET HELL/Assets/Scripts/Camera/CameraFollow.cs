@@ -5,9 +5,10 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform player;
+    private Transform Boss;
     private Vector3 offset = new Vector3(0, 0, -10);
     Vector3 target, mousePos, refVel, shakeOffset;
-    float cameraDist = 5.0f;
+    float cameraDist = 5.625f;
     float smoothTime = 0.2f, zStart;
     private Vector3 velocity = Vector3.zero;
 
@@ -16,6 +17,7 @@ public class CameraFollow : MonoBehaviour
     public bool isBossCamera = false;
     void Start()
     {
+        Boss = GameObject.FindGameObjectWithTag("BossCamera").transform;
         target=player.position;
         zStart = transform.position.z;
     }
@@ -26,13 +28,12 @@ public class CameraFollow : MonoBehaviour
 
     void FixedUpdate(){
         if(isBossCamera){
-            Vector3 targetPosition = player.TransformPoint(offset);
+            Vector3 targetPosition = Boss.TransformPoint(offset);
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
         }
         mousePos = CaptureMousePos();
         if(isBossCamera){
-            player = GameObject.FindGameObjectWithTag("BossCamera").transform;
-            transform.GetComponent<Camera>().orthographicSize = Mathf.Lerp(transform.GetComponent<Camera>().orthographicSize, 20, 0.01f);
+            transform.GetComponent<Camera>().orthographicSize = Mathf.Lerp(transform.GetComponent<Camera>().orthographicSize, 16.87f, 0.05f);
         }
         else{
             target = UpdateTargetPos();

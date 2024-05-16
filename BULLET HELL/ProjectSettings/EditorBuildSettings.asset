@@ -7,11 +7,14 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
-    guid: e837a1910aa5812438c1efce49f8564d
-  - enabled: 0
-    path: Assets/Scenes/PrototypeTest.unity
-    guid: daea45d550a592c4bafe20c7a5bb40aa
+    guid: a00ab04975bc1e94498a9f94f314b697
+  - enabled: 1
+    path: Assets/Scenes/New Med Bay.unity
+    guid: e8422af5206f542b5ae9db92c940fe41
   - enabled: 1
     path: Assets/Scenes/Level 2(Demo).unity
     guid: d7c8bfd0075ba453b9b4fa3c2210d46c
+  - enabled: 0
+    path: Assets/Scenes/PrototypeTest.unity
+    guid: daea45d550a592c4bafe20c7a5bb40aa
   m_configObjects: {}

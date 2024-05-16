@@ -52,14 +52,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: BG
     uniqueID: 3249405157
     locked: 0
   - name: Floor
     uniqueID: 975649663
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Barriers
+    uniqueID: 4220216517
     locked: 0
   - name: Area Objects
     uniqueID: 468535217
