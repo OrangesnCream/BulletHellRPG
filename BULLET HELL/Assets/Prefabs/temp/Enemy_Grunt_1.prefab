@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number_of_columns: 1
-  sprite: {fileID: -1541027323, guid: 0a072bce5e92d9944a5e8f3ddca14ced, type: 3}
+  sprite: {fileID: -1276701926, guid: 4151cc34a9ba31a4db77241e3d471aa8, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   lifetime: 100
   material: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
@@ -441,7 +441,7 @@ MonoBehaviour:
   desired_FireRate: 1
   desired_BulletSpeed: 8
   desired_SpinSpeed: 20
-  desired_Size: 1
+  desired_Size: 0.75
   desired_Bounce: 0
 --- !u!212 &7769485763728298874
 SpriteRenderer:
@@ -837,7 +837,7 @@ MonoBehaviour:
   - {x: 0.4375, y: -0.125, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 167024
+  m_InstanceId: 202486
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.4375, y: 0.125, z: 0}
