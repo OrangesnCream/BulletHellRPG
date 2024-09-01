@@ -150,7 +150,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 163960679
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &5647109688293415965
@@ -354,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 6664758365009657609}
   sprite: {fileID: 4175187474100048238}
+  WinScreen: {fileID: 0}
 --- !u!1 &4513175632769552685
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +482,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1402757353
-  m_SortingLayer: 6
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 451157904, guid: 0a072bce5e92d9944a5e8f3ddca14ced, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -797,7 +798,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 468535217
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1882732469, guid: 9cd6b0a6ca97bbd4ba02fcb0b45c3662, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.50980395}
@@ -836,7 +837,7 @@ MonoBehaviour:
   - {x: 0.4375, y: -0.125, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -612942
+  m_InstanceId: 167024
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.4375, y: 0.125, z: 0}
@@ -924,7 +925,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 749546621
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1230540065, guid: 0a072bce5e92d9944a5e8f3ddca14ced, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
