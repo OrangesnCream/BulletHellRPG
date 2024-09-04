@@ -339,7 +339,7 @@ MonoBehaviour:
   enemy: {fileID: 3326128274653619539}
   healthbar: {fileID: 1555176552707428248}
   Enemy_Hit: {fileID: 6677218928519668526}
-  sightDistance: 15
+  sightDistance: 20
 --- !u!114 &2935270803376802415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -837,7 +837,7 @@ MonoBehaviour:
   - {x: 0.4375, y: -0.125, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 202486
+  m_InstanceId: -287514
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.4375, y: 0.125, z: 0}
