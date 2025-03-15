@@ -63,10 +63,11 @@ public class Enemy_LaserPattern : MonoBehaviour
                 child.SetPosition(0, this.transform.position);
                 RaycastHit2D hit = Physics2D.Raycast(child.transform.position, child.transform.forward, 1000f, LayerMask);
                 child.SetPosition(1, hit.point);
-
-                if (hit.transform.tag == "Player" && child.tag != "NoReg")
-                {
-                    hit.transform.GetComponent<PlayerStats>().takeDamage(Desired_Damage);
+                if(child.tag!=null){
+                    if (hit.transform.tag == "Player" && child.tag != "NoReg")
+                    {
+                      hit.transform.GetComponent<PlayerStats>().takeDamage(Desired_Damage);
+                    }
                 }
             }
             foreach (LineRenderer line in lineRenderers)

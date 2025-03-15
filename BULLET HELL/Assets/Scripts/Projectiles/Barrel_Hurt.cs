@@ -18,7 +18,9 @@ public class Barrel_Hurt : MonoBehaviour
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Barrel"))
         {
-            collision.GetComponent<Barrel_Hit>().setLifeTime(300);
+            if( collision.GetComponent<Barrel_Hit>() != null ){
+                collision.GetComponent<Barrel_Hit>().setLifeTime(300);
+            }
         }
     }
 }

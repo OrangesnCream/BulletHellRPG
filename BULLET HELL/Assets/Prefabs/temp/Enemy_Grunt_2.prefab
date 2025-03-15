@@ -966,7 +966,7 @@ MonoBehaviour:
   enemy: {fileID: 7156193855306661184}
   healthbar: {fileID: 6723543846856673196}
   Enemy_Hit: {fileID: 7793966311811165107}
-  sightDistance: 15
+  sightDistance: 30
 --- !u!114 &7636611770320709370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,7 +1150,7 @@ MonoBehaviour:
   enemy: {fileID: 3859898341857341277}
   desired_width: 1
   desired_chargewidth: 0.2
-  desired_spinspeed: 20
+  desired_spinspeed: 10
   opportunitycheck: 250
 --- !u!212 &7059049873015119665
 SpriteRenderer:

@@ -21,10 +21,19 @@ public class LaserMaker : MonoBehaviour
         Summon();
     }
 
+    private void Update()
+    {
+        if(transform.parent.gameObject.layer!=LayerMask.NameToLayer("Boss")){
+            time += Time.fixedDeltaTime;
+            this.transform.rotation = Quaternion.Euler(0, 0, time * spin_speed);
+        }
+    }
     private void FixedUpdate()
     {
-        time += Time.fixedDeltaTime;
-        this.transform.rotation = Quaternion.Euler(0, 0, time * spin_speed);
+        if(transform.parent.gameObject.layer==LayerMask.NameToLayer("Boss")){
+            time += Time.fixedDeltaTime;
+            this.transform.rotation = Quaternion.Euler(0, 0, time * spin_speed);
+        }
     }
 
     void Summon()
