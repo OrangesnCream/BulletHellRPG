@@ -10,11 +10,13 @@ public class Barrel_Hurt : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy") && collision.GetComponentInParent<LineOfSight>().getSeen())
         {
-            collision.GetComponent<Enemy_Hit>().takeDamage(damage * 2);
+            if(collision.GetComponent<Enemy_Hit>()!=null)
+                collision.GetComponent<Enemy_Hit>().takeDamage(damage * 2);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            collision.GetComponent<PlayerStats>().takeDamage(damage);
+            if(collision.GetComponent<PlayerStats>()!=null)
+                collision.GetComponent<PlayerStats>().takeDamage(damage);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Barrel"))
         {
