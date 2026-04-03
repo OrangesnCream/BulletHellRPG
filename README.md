@@ -1,4 +1,4 @@
-# Untitled_BulletHellRPG
+#Prjct.B
 Bullet Hell/RPG project for ACM GameDev
 
 ### Credits
